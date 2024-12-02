@@ -9,7 +9,7 @@ const Carditems1 = () => {
   const navigate = useNavigate();
   return (
     <div className="">
-      <div className="w-[836px] h-[140px] rounded-[16px] border border-[#293056] mt-8 p-8    gap-2 max-sm:p-4 max-sm:w-[500px] ">
+      <div className="w-full h-[140px] rounded-[16px] border border-[#293056] mt-8 p-8    gap-2 max-sm:p-4 max-sm:w-[500px] ">
         <h3 className="w-[799px] h-[29px] font-kern text-[24px] font-medium leading-[28.8px] ml-1">
           Project Leads
         </h3>
@@ -23,10 +23,10 @@ const Carditems1 = () => {
           </p>
         </div>
       </div>
-      <div className="w-[863px] h-[742px] border border-[#293056] mt-5 rounded-[20px] p-3  max-sm:w-full">
-        <div className="w-[831px] h-[710px] rounded-[20px] border border-[#293056] relative  shadow-md sm:rounded-lg ">
+      <div className="w-full h-[742px] border border-[#293056] mt-5 rounded-[20px] p-3  max-sm:w-full">
+        <div className="w-full h-[710px] rounded-[20px] border border-[#293056] relative  shadow-md sm:rounded-lg ">
           <table className="w-full text-left rtl:text-right border-separate border-spacing-y-1 ">
-            <thead className="text-sm  bg-[#0D0F1C] w-[831px] h-[80px] rounded-[20px] ">
+            <thead className="text-sm  bg-[#0D0F1C] w-full h-[80px] rounded-[20px] ">
               <tr>
                 <th className="py-3 px-4">Contributors</th>
                 <th className="py-3 px-4">Roles</th>
@@ -37,7 +37,7 @@ const Carditems1 = () => {
             <tbody>
               {/* Row 1 */}
               <tr
-                className="bg-[#101323] w-[831px] h-[80px] "
+                className="w-full h-[80px] "
                 onClick={() => {
                   navigate("/Profile");
                 }}
@@ -55,7 +55,7 @@ const Carditems1 = () => {
                 </td>
               </tr>
               {/* Row 2 */}
-              <tr className="bg-[#101323] w-[831px] h-[80px]">
+              <tr className="w-full h-[80px]">
                 <td className="rounded-[20px] border border-[#293056] w-[120px] h-[40px] bg-[#0D0F1C] p-2 flex items-center gap-2 mt-4">
                   <img src={elis2} alt="" className="" />
                   Vhee
@@ -70,7 +70,7 @@ const Carditems1 = () => {
                 </td>
               </tr>
               {/* Row 3 */}
-              <tr className="bg-[#101323] w-[831px] h-[80px]">
+              <tr className="w-full h-[80px]">
                 <td className="rounded-[20px] border border-[#293056] w-[66px] h-[32px] bg-[#0D0F1C] p-2 flex items-center gap-2 mt-4">
                   <img src={image2} alt="" className="" />
                   Aj
@@ -85,7 +85,7 @@ const Carditems1 = () => {
                 </td>
               </tr>
               {/* Add more rows as needed */}
-              <tr className="bg-[#101323] w-[831px] h-[80px]">
+              <tr className="w-full h-[80px]">
                 <td className="rounded-[20px] border border-[#293056] w-[84px] h-[32px] bg-[#0D0F1C] p-2 flex items-center gap-2 mt-4">
                   <img src={image} alt="" className="" />
                   Fufu
@@ -99,7 +99,7 @@ const Carditems1 = () => {
                   </span>
                 </td>
               </tr>
-              <tr className="bg-[#101323] w-[831px] h-[80px] ">
+              <tr className="w-full h-[80px] ">
                 <td className="rounded-[20px] border border-[#293056] w-[120px] h-[40px] bg-[#0D0F1C] p-2 flex items-center gap-2 mt-4">
                   <img src={elish} alt="" /> Noyi24_7
                 </td>
@@ -113,7 +113,7 @@ const Carditems1 = () => {
                 </td>
               </tr>
               {/* Row 2 */}
-              <tr className="bg-[#101323] w-[831px] h-[80px]">
+              <tr className="w-full h-[80px]">
                 <td className="rounded-[20px] border border-[#293056] w-[120px] h-[40px] bg-[#0D0F1C] p-2 flex items-center gap-2 mt-4">
                   <img src={elis2} alt="" className="" />
                   Vhee
@@ -128,7 +128,7 @@ const Carditems1 = () => {
                 </td>
               </tr>
               {/* Row 3 */}
-              <tr className="bg-[#101323] w-[831px] h-[80px]">
+              <tr className="w-full h-[80px]">
                 <td className="rounded-[20px] border border-[#293056] w-[66px] h-[32px] bg-[#0D0F1C] p-2 flex items-center gap-2 mt-4">
                   <img src={image2} alt="" className="" />
                   Aj
@@ -143,7 +143,7 @@ const Carditems1 = () => {
                 </td>
               </tr>
               {/* Add more rows as needed */}
-              <tr className="bg-[#101323] w-[831px] h-[80px]">
+              <tr className="w-full h-[80px]">
                 <td className="rounded-[20px] border border-[#293056] w-[84px] h-[32px] bg-[#0D0F1C] p-2 flex items-center gap-2 mt-4">
                   <img src={image} alt="" className="" />
                   Fufu

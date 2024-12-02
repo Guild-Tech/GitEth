@@ -7,12 +7,12 @@ import frames from "../../../assets/images/Frame (12).png";
 const Pros = () => {
   return (
     <div className="  mt-28 p-3  max-sm:mt-12 min-h-[100vh] relative z-10 ">
-      <div className="flex ml-24 gap-1 max-sm:m-0  max-sm:p-5  ">
+      <div className="flex  gap-1 max-sm:m-0  max-sm:p-5  ">
         <img src={frame} alt="" className="w-4 h-4 mt-1 cursor-pointer" />
         <p>Back</p>
       </div>
       <div className="  ">
-        <div className="border border-custmBlue rounded-[16px] w-[413px] h-[820px]  ml-24 mt-8 max-sm:ml-0 max-sm:mt-0 max-sm:p-2 max-sm:w-full ">
+        <div className="border border-custmBlue rounded-[16px] w-[413px] h-[820px]   mt-8 max-sm:ml-0 max-sm:mt-0 max-sm:p-2 max-sm:w-full ">
           <div className="flex items-center gap-4 mt-5 p-2">
             <img src={frames} alt="" className="ml-2" />
             <h3>Project Overview</h3>

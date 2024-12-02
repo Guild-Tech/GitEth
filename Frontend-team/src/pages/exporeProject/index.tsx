@@ -8,7 +8,7 @@ import Filterbtn from "./component/Filterbtn";
 const ExploreProjecs = () => {
   const [openSide, setOpenSide] = useState(false);
   return (
-    <div className="  mt-12 p-20   min-h-[100vh] relative z-30 ">
+    <section className="container mx-auto  mt-12 p-20   min-h-[100vh] relative z-30 ">
       <ExploreProjec />
       <main className=" flex gap-4 justify-between">
         {!openSide ? (
@@ -18,7 +18,7 @@ const ExploreProjecs = () => {
         )}
         <Newest />
       </main>
-    </div>
+    </section>
   );
 };
 

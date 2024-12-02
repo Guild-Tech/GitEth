@@ -18,7 +18,7 @@ const ProjecCard = ({ project }: any) => {
   return (
     <>
       <div
-        className={` p-8 border border-border backdrop-blur-md w-[863px] h-[408px]  bg-white bg-opacity-5 rounded-3xl `}
+        className={` p-8 border border-border backdrop-blur-md w-full h-[408px]  bg-white bg-opacity-5 rounded-3xl `}
       >
         <div></div>
         <div className="flex items-center justify-between">

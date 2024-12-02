@@ -14,7 +14,7 @@ import arrows from "../../../assets/images/Frame (8).png";
 const ProjecCard = () => {
   const [expand, setExpand] = useState(false);
   return (
-    <div className="w-[836px]  border border-[#293056]  rounded-[16px] p-5 max-sm:w-full mt-5">
+    <div className="w-full  border border-[#293056]  rounded-[16px] p-5 max-sm:w-full mt-5">
       <div className="flex items-center justify-between">
         <h2 className="w-[682px] h-[29px] font-sans text-[24px] font-medium leading-[28.8px] ">
           DeFi Protocol Enhancement

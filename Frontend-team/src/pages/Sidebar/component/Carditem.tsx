@@ -24,8 +24,8 @@ const Carditem = () => {
   };
 
   return (
-    <div className="">
-      <div className="w-[836px] h-[204px] rounded-[16px] border border-[#293056] mt-8 p-5 flex   gap-2 max-sm:p-4 max-sm:w-[500px]">
+    <div className="w-full ">
+      <div className="w-full h-[204px] rounded-[16px] border border-[#293056] mt-8 p-5 flex   gap-2 max-sm:p-4 max-sm:w-[500px]">
         <img src={logo1} alt="" className="w-[80px] h-[80px] " />
 
         <div className="flex  flex-col  ">
@@ -62,7 +62,7 @@ Kern font-[24px]"
         >
           Available Tasks
         </h2>
-        <div className="w-[836px]  border border-[#293056] mt-5 rounded-[16px] p-5 max-sm:w-full">
+        <div className="w-full border border-[#293056] mt-5 rounded-[16px] p-5 max-sm:w-full">
           <div className="flex items-center justify-between">
             <h2 className="w-[682px] h-[29px] font-sans text-[24px] font-medium leading-[28.8px] ">
               DeFi Protocol Enhancement
