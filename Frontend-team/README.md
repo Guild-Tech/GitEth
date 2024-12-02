@@ -27,6 +27,7 @@ Ensure the following tools are installed:
 git clone https://github.com/johnsmccain/GitEth.git
 cd GitEth
 cd Frontend-team
+```
 
 
 ### 2. Install Dependencies
