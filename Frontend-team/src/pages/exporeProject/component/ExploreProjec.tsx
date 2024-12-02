@@ -1,4 +1,3 @@
-import vector from "../../../assets/icons/Vector.svg";
 const ExploreProjec = () => {
   return (
     <div className="relative  flex ">

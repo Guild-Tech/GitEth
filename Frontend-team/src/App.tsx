@@ -1,14 +1,14 @@
 // import './App.css'
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/landingPage";
 import MainApp from "./pages/mainApp";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+
 import Onboarding from "./pages/onBoarding";
 import Dashboard from "./pages/dashboard";
 import Sidebar from "./pages/Sidebar";
 
 import ExploreProjecs from "./pages/exporeProject";
+import Profile from "./pages/Proflle";
 
 /**
  * App component renders the main application layout.
@@ -34,6 +34,7 @@ function App() {
           <Route path="/community" element={<h1>Community</h1>} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sidebar" element={<Sidebar />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
 
         {/* <Route element={<MainApp/>} path="/app" /> */}
