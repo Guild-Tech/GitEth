@@ -1,6 +1,4 @@
-import { useState } from "react";
 import Frame from "../../../assets/icons/Frame (2).png";
-import vector from "../../../assets/icons/Vector (1).png";
 
 const Filter = ({ setOpenSide }: any) => {
   return (
@@ -11,7 +9,7 @@ const Filter = ({ setOpenSide }: any) => {
           <img
             src={Frame}
             alt=""
-            onClick={() => setOpenSide(false)}
+            onClick={() => setOpenSide(true)}
             className="cursor-pointer"
           />
         </div>
