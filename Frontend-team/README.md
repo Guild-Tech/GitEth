@@ -23,6 +23,11 @@ Ensure the following tools are installed:
 ## Getting Started
 
 ### 1. Clone the Repository and change directory to Frontend-team
+```bash
+git clone https://github.com/johnsmccain/GitEth.git
+cd GitEth
+cd Frontend-team
+```
 
 
 ### 2. Install Dependencies
@@ -137,7 +142,3 @@ Contributions are welcome! Please follow these steps:
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Let me know if you'd like to further tweak this README!
