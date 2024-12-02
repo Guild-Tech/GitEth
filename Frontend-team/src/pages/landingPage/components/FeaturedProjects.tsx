@@ -8,6 +8,7 @@ import { ArrowRightIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/ProjectCard";
 import CustomText from "./CustomText";
+import { useNavigate } from "react-router-dom";
 
 interface Project {
   title: string;
@@ -53,6 +54,7 @@ const projects: Project[] = [
  * @returns {JSX.Element} The component JSX
  */
 export default function FeaturedProjects() {
+  const navigate = useNavigate();
   return (
     <section className="mx-auto max-w-7xl px-4 pt-16 relative">
       <div className="border border-blue-900 rounded-3xl p-3 pt-0 sm:p-11 sm:pt-0 backdrop-blur-md relative overflow-hidden max-sm:py-5">
@@ -68,7 +70,7 @@ export default function FeaturedProjects() {
 
         {/* Button */}
         <div className="flex justify-center mb-10 max-sm:mb-7">
-          <Button className="rounded-full py-3 px-4 text-base max-sm:text-sm flex items-center">
+          <Button className="rounded-full py-3 px-4 text-base max-sm:text-sm flex items-center" onClick={() => {navigate("/projects")}}>
             View all Projects <ArrowRightIcon className="ml-2" />
           </Button>
         </div>

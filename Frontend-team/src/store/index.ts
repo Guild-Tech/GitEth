@@ -5,11 +5,13 @@ import authReducer from "./reducers/auth"
 import { useDispatch } from 'react-redux'
 import { AppDispatch } from './types'
 
+
 export const store = configureStore({
   reducer: {
     demo: demoReducer,
     counter: counterReducer,
     auth: authReducer
+    // counter: counterReducer
   },
 })
 

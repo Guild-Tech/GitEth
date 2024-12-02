@@ -1,4 +1,5 @@
 import {store} from ".."
+import {store} from "../"
 export interface ICounter {
     value: number;
 }

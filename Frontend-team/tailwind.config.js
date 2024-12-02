@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const flowbite = require("flowbite-react/tailwind");
+const defaultTheme = require('tailwindcss/defaultTheme'); // Ensure this is correct
+
 
 export default {
     darkMode: ["class"],
@@ -63,6 +65,10 @@ export default {
 		animation: {
 			'spin-slow': 'spin-slow 20s linear infinite',
 			'float-slow': 'float-slow 20s linear infinite',
+		},
+		fontFamily: {
+			kern: ['Kern', 'sans-serif'],
+			matter: ['Matter', 'sans-serif'],
 		},
   	}
   },

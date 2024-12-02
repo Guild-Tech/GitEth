@@ -5,6 +5,7 @@ import xIcon from "../assets/icons/xIcon.svg";
 import linkedInIcon from "../assets/icons/indeedIcon.svg";
 import CustomText from "@/pages/landingPage/components/CustomText";
 import CustomBtn from "./CustomBtn";
+import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="border-t border-border py-9  max-sm:py-5 max-sm:px-4">
@@ -21,11 +22,12 @@ export default function Footer() {
           <div className="max-w-[336px] max-sm:mt-9">
             <p className="text-base text-grayBlue">Platform</p>
             <div className="flex flex-wrap gap-3 mt-2">
-              <a href="#" className="border-border border py-2 px-4 rounded-3xl">Home</a>
-              <a href="#" className="border-border border py-2 px-4 rounded-3xl">Projects</a>
-              <a href="#" className="border-border border py-2 px-4 rounded-3xl">Contributors</a>
-              <a href="#" className="border-border border py-2 px-4 rounded-3xl">Rewards</a>
-              <a href="#" className="border-border border py-2 px-4 rounded-3xl">Community</a>
+              <Link to="/" className="border-border border py-2 px-4 rounded-3xl">Home</Link>
+              <Link to="/projects" className="border-border border py-2 px-4 rounded-3xl">Projects</Link>
+              <Link to="/contributors" className="border-border border py-2 px-4 rounded-3xl">Contributors</Link>
+              <Link to="/rewards" className="border-border border py-2 px-4 rounded-3xl">Rewards</Link>
+              <Link to="/community" className="border-border border py-2 px-4 rounded-3xl">Community</Link>
+              <Link to="/learn" className="border-border border py-2 px-4 rounded-3xl">Learn</Link>
             </div>
           </div>
           <div className="max-w-[336px] max-sm:mt-9">

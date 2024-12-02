@@ -89,4 +89,21 @@ export default Onboarding
 
 
 
+export function OnboardingButton(props: any) 
 
+  {
+    return (
+      <div  className={` text-black overflow-hidden p-[2px] rounded-3xl ${props.active !== props.name ? "flex bg-grayBlue" : "flex bg-gradient-to-r from-[#E8D07A] to-[#5312D6] "}`}>
+        <button 
+          className={`flex gap-5 items-center bg-white rounded-3xl p-5 ${props.active === props.name ? "bg-[#f8f8f0] " : "bg-white text-black"}`}
+          onClick={props?.onClick}
+          >
+          <img src={props.icon} alt="icons" className="w-16" />
+          <div className="">
+            <h3 className="text-left text[22px] font-medium mb-1">{props.title}</h3>
+            <p className="text-left text-[16px] font-normal">{props.desc}</p>
+          </div>
+        </button>
+      </div>
+    )
+}

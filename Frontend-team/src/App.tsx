@@ -1,41 +1,56 @@
 // import './App.css'
-import { Route, Routes } from "react-router-dom";
+import {Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/landingPage";
 import MainApp from "./pages/mainApp";
 
 import Onboarding from "./pages/onBoarding";
-  /**
-   * App component renders the main application layout.
-   *
-   * It includes the Navbar, Routes for landing page and main app, and the Footer.
-   *
-   * The container element has a dark gradient background and is set to at least
-   * the height of the viewport.
-   *
-   * @returns {JSX.Element} The App component JSX
-   */
+import Dashboard from "./pages/dashboard";
+import Sidebar from "./pages/Sidebar";
+import diamond from "./assets/icons/diamond.png";
+
+import ExploreProjecs from "./pages/exporeProject";
+import Contributor from "./pages/contributions";
+
+/**
+ * App component renders the main application layout.
+ *
+ * It includes the Navbar, Routes for landing page and main app, and the Footer.
+ *
+ * The container element has a dark gradient background and is set to at least
+ * the height of the viewport.
+ *
+ * @returns {JSX.Element} The App component JSX
+ */
 
 function App() {
   return (
-    <div className="min-h-screen bg-dark-gradient text-white relative overflow-hidden  flex flex-col justify-between">
-      {/* <Navbar /> */}
-      <Routes >
-        <Route path="/" element={<MainApp/>}>
+    <div className="min-h-screen bg-dark-gradient text-white relative overflow-hidden flex flex-col justify-between">
+      <Routes>
+        <Route path="/" element={<MainApp />}>
           <Route index element={<LandingPage />} />
-          <Route path="/contributors" element={<h1>Contributors</h1>} />
-          <Route path="/projects" element={<h1>Projects</h1>} />
+          <Route path="/contributors" element={<Contributor/>} />
+          <Route path="/projects" element={<ExploreProjecs />} />
           <Route path="/rewards" element={<h1>Rewards</h1>} />
-          <Route path="/learn" element={<h1>Learn</h1>} />
-
           <Route path="/community" element={<h1>Community</h1>} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/sidebar" element={<Sidebar />} />
         </Route>
-        {/* <Route element={<MainApp/>} path="/app" /> */}
-        <Route element={<Onboarding/>} path="/onboarding"/>
-      </Routes>
-      {/* <Footer /> */}
 
+        {/* <Route element={<MainApp/>} path="/app" /> */}
+        <Route element={<Onboarding />} path="/onboarding" />
+      </Routes>
+
+         <div className="container mx-auto relative">
+
+         <div className="fixed top-10 left-20 -z-10 hidden md:block">
+        <img src={diamond} alt="Decorative diamond blur" className="rotate-45 w-56 blur-lg animate-float-slow" />
+      </div>
+      <div className="fixed bottom-10 right-20 -z-10 hidden md:block animate-float-slow">
+        <img src={diamond} alt="Decorative diamond " className="w-56 blur-lg" />
+      </div>
+         </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

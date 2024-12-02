@@ -61,3 +61,5 @@ export const users = [
     },
   ];
   
+export const categories = ["Design", "Education", "Development", "Funding", "Security"];
+export const tags = ["DeFi", "NFT", "dApps"];

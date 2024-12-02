@@ -7,6 +7,7 @@ import diamond from "../../../assets/icons/diamond.png";
 import logo from "../../../assets/icons/EthOpenSource.svg";
 import CustomBtn from "@/components/CustomBtn";
 import CustomText from "./CustomText";
+import { useNavigate } from "react-router-dom";
 
 
 /**
@@ -20,6 +21,7 @@ import CustomText from "./CustomText";
  * @returns {JSX.Element} The component JSX
  */
 export default function HowItWorks() {
+  const navigate = useNavigate();
   const h = () => {
     console.log("object")
   }
@@ -54,7 +56,7 @@ export default function HowItWorks() {
                     <p className="text-grayBlue text-lg max-sm:text-lg max">Transform the way you manage projects.</p>
                   </div>
                   <div className="w-full flex flex-col items-center  my-5 gap-3">
-                    <CustomBtn onClick={h} style={"max-w-[416px] h-[48px] w-full"} colored="yes" text="Continue with Github" icon={gitHubIcon} />
+                    <CustomBtn onClick={() => {navigate("/onboarding"); h()}} style={"max-w-[416px] h-[48px] w-full"} colored="yes" text="Continue with Github" icon={gitHubIcon} />
                     <div className="flex justify-between items-center w-full">
                       <hr className="w-full  "/>
                       <span className=" text-gray-400 px-4">OR</span>
@@ -73,13 +75,8 @@ export default function HowItWorks() {
               <img src={diamond} alt="" className=" w-56 blur-sm animate-pulse" />
             </div>
           </Tabs>
-
         </div>
-
       </div>
-
-
-
     </section>
   );
 }
