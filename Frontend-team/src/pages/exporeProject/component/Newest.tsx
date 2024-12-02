@@ -6,8 +6,7 @@ import frame from "../../../assets/images/Frame (7).png";
 import icon2 from "../../../assets/icons/icon2.svg";
 import icon3 from "../../../assets/icons/icon3.svg";
 import Frame2 from "../../../assets/icons/Frame (2).svg";
-import { useNavigate } from "react-router-dom";
-import Domaindata from "../../../Domaindata.json";
+
 const Newest = () => {
   interface Project {
     title: string;

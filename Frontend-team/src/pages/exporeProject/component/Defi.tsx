@@ -1,4 +1,3 @@
-import logo1 from "../../../assets/images/logo1.png";
 
 import skillIcon from "../../../assets/icons/skill.svg";
 import frame from "../../../assets/icons/Frame.svg";
@@ -8,7 +7,6 @@ import icon3 from "../../../assets/icons/icon3.svg";
 import cicle from "../../../assets/icons/ciclle.png";
 import usdt from "../../../assets/images/usdt.png";
 import arrow from "../../../assets/images/arrow5.png";
-import arrow2 from "../../../assets/images/arrow5.png";
 
 const Defi = ({ project }: any) => {
   return (

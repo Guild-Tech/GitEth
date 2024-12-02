@@ -1,14 +1,15 @@
 // import './App.css'
-import { Outlet, Route, Routes } from "react-router-dom";
+import {Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/landingPage";
 import MainApp from "./pages/mainApp";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+
 import Onboarding from "./pages/onBoarding";
 import Dashboard from "./pages/dashboard";
 import Sidebar from "./pages/Sidebar";
+import diamond from "./assets/icons/diamond.png";
 
 import ExploreProjecs from "./pages/exporeProject";
+import Contributor from "./pages/contributions";
 
 /**
  * App component renders the main application layout.
@@ -24,11 +25,10 @@ import ExploreProjecs from "./pages/exporeProject";
 function App() {
   return (
     <div className="min-h-screen bg-dark-gradient text-white relative overflow-hidden flex flex-col justify-between">
-      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<MainApp />}>
           <Route index element={<LandingPage />} />
-          <Route path="/contributors" element={<h1>Contributors</h1>} />
+          <Route path="/contributors" element={<Contributor/>} />
           <Route path="/projects" element={<ExploreProjecs />} />
           <Route path="/rewards" element={<h1>Rewards</h1>} />
           <Route path="/community" element={<h1>Community</h1>} />
@@ -39,7 +39,16 @@ function App() {
         {/* <Route element={<MainApp/>} path="/app" /> */}
         <Route element={<Onboarding />} path="/onboarding" />
       </Routes>
-      {/* <Footer /> */}
+
+         <div className="container mx-auto relative">
+
+         <div className="fixed top-10 left-20 -z-10 hidden md:block">
+        <img src={diamond} alt="Decorative diamond blur" className="rotate-45 w-56 blur-lg animate-float-slow" />
+      </div>
+      <div className="fixed bottom-10 right-20 -z-10 hidden md:block animate-float-slow">
+        <img src={diamond} alt="Decorative diamond " className="w-56 blur-lg" />
+      </div>
+         </div>
     </div>
   );
 }

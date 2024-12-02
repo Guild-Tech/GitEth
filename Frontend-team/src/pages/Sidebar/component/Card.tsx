@@ -1,4 +1,3 @@
-import React from "react";
 import logo1 from "../../../assets/images/logo1.png";
 import circle from "../../../assets/icons/ciclle.png";
 import skillIcon from "../../../assets/icons/skill.svg";

@@ -5,7 +5,6 @@ import frame from "../assets/icons/Frame.svg";
 import icon2 from "../assets/icons/icon2.svg";
 import icon3 from "../assets/icons/icon3.svg";
 import CustomBtn from "./CustomBtn";
-import Frame2 from "../assets/icons/Frame (2).svg";
 import usdt from "../assets/images/usdt.png";
 import circle from "../assets/icons/ciclle.png";
 import { useState } from "react";

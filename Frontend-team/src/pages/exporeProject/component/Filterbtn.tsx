@@ -1,4 +1,3 @@
-import React from "react";
 import vector from "../../../assets/icons/Vector (1).png";
 
 const Filterbtn = ({ setOpenSide }: any) => {

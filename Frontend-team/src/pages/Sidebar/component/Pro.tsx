@@ -1,4 +1,3 @@
-import React from "react";
 import frame from "../../../assets/images/Frame (10).png";
 import usdt from "../../../assets/images/usdt.png";
 
