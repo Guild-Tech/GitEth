@@ -6,11 +6,11 @@ import Footer from "@/components/Footer"
 const MainApp = () => {
   return (
     <>
-    <Navigation/>
-    <Outlet/>
-    <Footer/>
+      <Navigation />
+      <Outlet />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default MainApp
+export default MainApp;

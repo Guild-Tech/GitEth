@@ -10,8 +10,15 @@ export const ContributorsSideBar = () => {
         <img src="/EthOpenSource.svg" alt="logo" className="w-[255px] z-50" />
         <div className="flex flex-col gap-7 mb-9">
           <img src={star} alt="" className="w-20 " />
-          <CustomText text="Welcome to Eth Open Source!" style="font-semibold text-[60px] leading-[70px]" />
-          <p className="text-white text-lg font-normal z-50">Start building your contributor profile by following a few quick steps. Each detail helps connect you with projects where your skills are needed. Let’s get you set up and ready to contribute!</p>
+          <CustomText
+            text="Welcome to Eth Open Source!"
+            style="font-semibold text-[60px] leading-[70px]"
+          />
+          <p className="text-white text-lg font-normal z-50">
+            Start building your contributor profile by following a few quick
+            steps. Each detail helps connect you with projects where your skills
+            are needed. Let’s get you set up and ready to contribute!
+          </p>
         </div>
       </div>
 
@@ -25,5 +32,5 @@ export const ContributorsSideBar = () => {
         <img src={diamond} alt="" className="blur-xl" />
       </div>
     </div>
-  )
-}
+  );
+};

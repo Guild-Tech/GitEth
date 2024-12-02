@@ -1,4 +1,3 @@
-
 import skillIcon from "../../../assets/icons/skill.svg";
 import frame from "../../../assets/icons/Frame.svg";
 

@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import ExploreProjec from "./component/ExploreProjec";
 import Filter from "./component/Filter";
 import Newest from "./component/Newest";
@@ -11,7 +11,7 @@ const ExploreProjecs = () => {
     <div className="  mt-12 p-20   min-h-[100vh] relative z-30 ">
       <ExploreProjec />
       <main className=" flex gap-4 justify-between">
-        {openSide ? (
+        {!openSide ? (
           <Filter setOpenSide={setOpenSide} />
         ) : (
           <Filterbtn setOpenSide={setOpenSide} />

@@ -1,5 +1,5 @@
 // import './App.css'
-import {Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/landingPage";
 import MainApp from "./pages/mainApp";
 
@@ -10,6 +10,7 @@ import diamond from "./assets/icons/diamond.png";
 
 import ExploreProjecs from "./pages/exporeProject";
 import Contributor from "./pages/contributions";
+import Profile from "./pages/Proflle";
 
 /**
  * App component renders the main application layout.
@@ -34,6 +35,7 @@ function App() {
           <Route path="/community" element={<h1>Community</h1>} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sidebar" element={<Sidebar />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
 
         {/* <Route element={<MainApp/>} path="/app" /> */}
