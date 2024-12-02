@@ -9,7 +9,7 @@ const Filter = ({ setOpenSide }: any) => {
           <img
             src={Frame}
             alt=""
-            onClick={() => setOpenSide(false)}
+            onClick={() => setOpenSide(true)}
             className="cursor-pointer"
           />
         </div>

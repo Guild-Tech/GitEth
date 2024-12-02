@@ -1,14 +1,17 @@
-import Pro from "./component/Pro";
+import Pros from "./component/Pros";
+
 import Card from "./component/Card";
+import Open from "./component/Open";
 
 const Sidebar = () => {
   return (
-    <div>
-      <div className="  sm:flex lg:flex  gap-6 ">
-        <Pro />
+    <section className=" container mx-auto min-h-screen  relative  z-20   max-sm:p-5  ">
+      <div className=" min-h-[100vh] relative z-10 sm:flex lg:flex  gap-6 ">
+        <Pros />
         <Card />
       </div>
-    </div>
+      <Open />
+    </section>
   );
 };
 

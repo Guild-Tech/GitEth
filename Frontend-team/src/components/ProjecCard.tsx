@@ -5,6 +5,7 @@ import frame from "../assets/icons/Frame.svg";
 import icon2 from "../assets/icons/icon2.svg";
 import icon3 from "../assets/icons/icon3.svg";
 import CustomBtn from "./CustomBtn";
+
 import usdt from "../assets/images/usdt.png";
 import circle from "../assets/icons/ciclle.png";
 import { useState } from "react";
@@ -17,7 +18,7 @@ const ProjecCard = ({ project }: any) => {
   return (
     <>
       <div
-        className={` p-8 border border-border backdrop-blur-md w-[863px] h-[408px]  bg-white bg-opacity-5 rounded-3xl `}
+        className={` p-8 border border-border backdrop-blur-md w-full h-[408px]  bg-white bg-opacity-5 rounded-3xl `}
       >
         <div></div>
         <div className="flex items-center justify-between">
