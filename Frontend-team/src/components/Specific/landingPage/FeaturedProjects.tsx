@@ -6,7 +6,7 @@ import diamond from "../../../assets/icons/diamond.png";
 import featureIcon from "../../../assets/icons/feature.svg";
 import { ArrowRightIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "@/components/Common/ProjectCard";
 import CustomText from "./CustomText";
 import { useNavigate } from "react-router-dom";
 

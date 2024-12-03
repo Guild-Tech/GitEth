@@ -1,6 +1,6 @@
 import ethIcon from "../../../assets/icons/eth.svg";
 import tetherIcon from "../../../assets/icons/tether.svg";
-import CustomBtn from "@/components/CustomBtn";
+import CustomBtn from "@/components/Common/CustomBtn";
 import githubIcon from "../../../assets/icons/githubIcon.png"
 import ethicon from "../../../assets/icons/ethIcon.svg"
 import heroBg from "../../../assets/images/Background For Hero.png"

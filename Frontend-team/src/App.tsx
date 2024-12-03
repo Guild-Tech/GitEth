@@ -5,12 +5,12 @@ import MainApp from "./pages/mainApp";
 
 import Onboarding from "./pages/onBoarding";
 import Dashboard from "./pages/dashboard";
-import Sidebar from "./pages/Sidebar";
+import Sidebar from "./pages/exploreProjects";
 import diamond from "./assets/icons/diamond.png";
 
 import ExploreProjecs from "./pages/exporeProject";
-import Contributor from "./pages/contributions";
-import Profile from "./pages/Proflle";
+import Contributor from "./pages/contributors";
+import Profile from "./pages/proflle";
 
 /**
  * App component renders the main application layout.

@@ -1,11 +1,11 @@
 
-import Hero from './components/Hero';
-import FeaturedProjects from './components/FeaturedProjects';
-import HowItWorks from './components/HowItWorks';
-import WhyChooseUs from './components/WhyChooseUs';
-import ProjectCategories from './components/ProjectCategories';
-import JoinCommunity from './components/JoinCommunity';
-import EmpowerProject from './components/EmpowerProject';
+import Hero from '../../components/Specific/landingPage/Hero';
+import FeaturedProjects from '../../components/Specific/landingPage/FeaturedProjects';
+import HowItWorks from '../../components/Specific/landingPage/HowItWorks';
+import WhyChooseUs from '../../components/Specific/landingPage/WhyChooseUs';
+import ProjectCategories from '../../components/Specific/landingPage/ProjectCategories';
+import JoinCommunity from '../../components/Specific/landingPage/JoinCommunity';
+import EmpowerProject from '../../components/Specific/landingPage/EmpowerProject';
 /**
  * LandingPage component.
  *

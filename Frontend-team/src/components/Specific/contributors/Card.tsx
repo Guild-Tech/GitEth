@@ -1,4 +1,4 @@
-import CustomBtn from "@/components/CustomBtn";
+import CustomBtn from "@/components/Common/CustomBtn";
 import inon from "../../../assets/icons/diamond.png"
 import clend from "../../../assets/icons/calender.svg";
 import { Button } from "@/components/ui/button";

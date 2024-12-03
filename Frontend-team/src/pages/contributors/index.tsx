@@ -1,10 +1,10 @@
-import Search from "@/components/Search";
+import Search from "@/components/Common/Search";
 // import searchIcon from "../../assets/icons/searchIcon.svg";
 import upright from "../../assets/icons/uprightarrow.svg"
 import { useState } from "react";
-import Card from "./components/Card";
-import { FAQ } from "./components/FAQ";
-import Filter from "./components/Filter";
+import Card from "../../components/Specific/contributors/Card";
+import { FAQ } from "../../components/Specific/contributors/FAQ";
+import Filter from "../../components/Specific/contributors/Filter";
 export default function Contributor() {
   const [currentScreen, setCurrentScreen] = useState("community");
   return (

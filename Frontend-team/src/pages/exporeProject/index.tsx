@@ -1,9 +1,9 @@
 import { useState } from "react";
-import ExploreProjec from "./component/ExploreProjec";
-import Filter from "./component/Filter";
-import Newest from "./component/Newest";
+import ExploreProjec from "../../components/Specific/exploreProjects/ExploreProjec";
+import Filter from "../../components/Specific/exploreProjects/Filter";
+import Newest from "../../components/Specific/exploreProjects/Newest";
 
-import Filterbtn from "./component/Filterbtn";
+import Filterbtn from "../../components/Specific/exploreProjects/Filterbtn";
 
 const ExploreProjecs = () => {
   const [openSide, setOpenSide] = useState(false);

@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react'
 
 // import personIcon from "../../assets/icons/person.svg"
 // import maintainerIcon from "../../assets/icons/maintainer.svg"
-import { ContributorsSideBar } from './components/ContributorsSideBar'
-import { OBNavbar } from './components/OBNavbar'
+import { ContributorsSideBar } from '../../components/Specific/onBoarding/ContributorsSideBar'
+import { OBNavbar } from '../../components/Specific/onBoarding/OBNavbar'
 // import { Button } from '@/components/ui/button'
-import { FirstScreen } from './components/form/FirstScreen'
-import { SecondScreen } from './components/form/SecondScreen'
-import { ThirdScreen } from './components/form/ThirdScreen'
-import { FourthScreen } from './components/form/FourthScreen'
-import { FifthScreen } from './components/form/FifthScreen'
-import { SixthScreen } from './components/form/SixthScreen'
+import { FirstScreen } from '../../components/Specific/onBoarding/form/FirstScreen'
+import { SecondScreen } from '../../components/Specific/onBoarding/form/SecondScreen'
+import { ThirdScreen } from '../../components/Specific/onBoarding/form/ThirdScreen'
+import { FourthScreen } from '../../components/Specific/onBoarding/form/FourthScreen'
+import { FifthScreen } from '../../components/Specific/onBoarding/form/FifthScreen'
+import { SixthScreen } from '../../components/Specific/onBoarding/form/SixthScreen'
 // import { signInWithGithub } from './components/SignUpWithGithub'
 // import { useDispatch, useSelector } from "react-redux";
 
