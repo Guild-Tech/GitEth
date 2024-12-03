@@ -1,4 +1,4 @@
-import Profilej from "./components/Profilej";
+import Profilej from "../../components/Specific/profile/Profilej";
 
 const Profile = () => {
   return (

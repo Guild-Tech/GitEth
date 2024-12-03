@@ -1,7 +1,7 @@
-import CardItem from "./components/CardItem";
+import CardItem from "../../components/Specific/dashboard/CardItem";
 
-import DashboardComponent from "./components/Dashboard";
-import Setup from "./components/Setup";
+import DashboardComponent from "../../components/Specific/dashboard/Dashboard";
+import Setup from "../../components/Specific/dashboard/Setup";
 
 export default function Dashboard() {
   return (

@@ -1,11 +1,11 @@
 import { Navbar } from 'flowbite-react';
 import { useState } from 'react';
-import CustomBtn from './CustomBtn';
+import CustomBtn from '../Common/CustomBtn';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 // import { DarkThemeToggle } from 'flowbite-react';
-import notificationIcon from "../assets/icons/notificationIcon.svg"
+import notificationIcon from "../../assets/icons/notificationIcon.svg"
 export default function Navigation() {
   const [activeLink, setActiveLink] = useState('Home'); // Initial active link
   const { user } = useSelector((state: RootState) => state.auth);

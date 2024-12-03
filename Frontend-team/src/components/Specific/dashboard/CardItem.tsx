@@ -2,7 +2,7 @@ import logo1 from "../../../assets/images/logo1.png";
 import logo2 from "../../../assets/images/logo2.png";
 import logo3 from "../../../assets/images/logo3.png";
 import Vector from "../../../assets/icons/Vector.png";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "@/components/Common/ProjectCard";
 // import diamond from "../../../assets/icons/diamond.png";
 
 const CardItem = () => {

@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button"
 import closeIcon from "../../../assets/icons/closeIcon.svg"
-import { categories, tags } from "@/dummyData"
+import { categories, tags } from "@/utils/dummyData"
 import { useState } from "react";
-import Filterbtn from "@/components/Filterbtn";
+import Filterbtn from "@/components/Common/Filterbtn";
 
 /**
  * Filter component.

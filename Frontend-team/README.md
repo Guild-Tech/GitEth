@@ -84,26 +84,56 @@ yarn preview
 ## Project Structure
 
 ```plaintext
-.
-├── dist/                # Production build output
-├── node_modules/        # Dependencies
-├── public/              # Static assets
-├── src/                 # Application source code
-│   ├── assets/          # Images, fonts, and other media
-│   ├── components/      # Reusable React components
-│   ├── hooks/           # Custom hooks
-│   ├── lib/             # Common libraries or utilities
-│   ├── pages/           # Page-level components
-│   ├── services/        # API services or business logic
-│   ├── utils/           # Helper functions
-│   ├── App.tsx          # Root component
-│   ├── main.tsx         # Application entry point
-│   └── styles/          # Tailwind and global CSS
-├── .gitignore           # Ignored files and folders
-├── index.html           # HTML template
-├── tailwind.config.js   # Tailwind configuration
-├── tsconfig.json        # TypeScript configuration
-└── vite.config.ts       # Vite configuration
+src/
+│
+├── assets/
+│   ├── fonts/         # Custom fonts
+│   ├── icons/         # SVG or other icon files
+│   ├── images/        # Static images
+│   └── react.svg      # Any standalone assets
+│
+├── components/        # Reusable UI components
+│   ├── Common/        # Shared, generic components (e.g., buttons, modals, forms)
+│   ├── Layout/        # Layout components (e.g., Header, Footer, Sidebar)
+│   └── Specific/      # Components tightly coupled to certain features/pages
+│
+├── hooks/             # Custom React hooks
+│
+├── lib/               # Utility libraries and helpers (e.g., API clients, configs)
+│
+├── pages/             # Page-specific components and logic
+│   ├── contributors/  # Related components and files
+│   ├── dashboard/     
+│   ├── exploreProject/ 
+│   ├── landingPage/   
+│   ├── mainApp/       
+│   ├── onBoarding/    
+│   ├── profile/       
+│   └── projectOverview/       
+│
+├── services/          # External services (e.g., Firebase, API calls)
+│   ├── firebase.ts    # Firebase configuration and API methods
+│   └── index.ts       # Export aggregated services
+│
+├── store/             # State management (e.g., Redux, Context)
+│   ├── actions/       # Redux action creators
+│   ├── reducers/      # Redux reducers
+│   ├── types/         # Redux-related TypeScript types
+│   └── index.ts       # Combine store logic and export
+│
+├── styles/            # Global and modular styles
+│   ├── App.css        # General app-wide CSS
+│   ├── Fonts.css      # Custom font styles
+│   └── index.css      # Base styles and global resets
+│
+├── utils/             # General utilities and helpers
+│   ├── DomainData.json 
+│   ├── DummyData.ts
+│   └── index.ts       # Entry point for exporting utilities
+│
+├── App.tsx            # Root component
+└── index.tsx          # React entry point
+
 ```
 
 ## Scripts

@@ -1,7 +1,7 @@
 import logo1 from "../../../assets/images/logo1.png";
 import logo2 from "../../../assets/images/logo2.png";
 import logo3 from "../../../assets/images/logo3.png";
-import ProjecCard from "@/components/ProjecCard";
+import ProjecCard from "@/components/Common/ProjecCard";
 import frame from "../../../assets/images/Frame (7).png";
 import icon2 from "../../../assets/icons/icon2.svg";
 import icon3 from "../../../assets/icons/icon3.svg";

@@ -1,13 +1,13 @@
-import { Button } from "./ui/button";
-import skillIcon from "../assets/icons/skill.svg";
+import { Button } from "../ui/button";
+import skillIcon from "../../assets/icons/skill.svg";
 import { ArrowRightIcon } from "lucide-react";
-import frame from "../assets/icons/Frame.svg";
-import icon2 from "../assets/icons/icon2.svg";
-import icon3 from "../assets/icons/icon3.svg";
+import frame from "../../assets/icons/Frame.svg";
+import icon2 from "../../assets/icons/icon2.svg";
+import icon3 from "../../assets/icons/icon3.svg";
 import CustomBtn from "./CustomBtn";
 
-import usdt from "../assets/images/usdt.png";
-import circle from "../assets/icons/ciclle.png";
+import usdt from "../../assets/images/usdt.png";
+import circle from "../../assets/icons/ciclle.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import {IProjectItem} from "./types"

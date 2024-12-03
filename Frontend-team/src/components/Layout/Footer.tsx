@@ -1,10 +1,10 @@
 
-import logo from "../assets/icons/EthOpenSource.svg";
-import instagramIcon from "../assets/icons/instagram.svg";
-import xIcon from "../assets/icons/xIcon.svg";
-import linkedInIcon from "../assets/icons/indeedIcon.svg";
-import CustomText from "@/pages/landingPage/components/CustomText";
-import CustomBtn from "./CustomBtn";
+import logo from "../../assets/icons/EthOpenSource.svg";
+import instagramIcon from "../../assets/icons/instagram.svg";
+import xIcon from "../../assets/icons/xIcon.svg";
+import linkedInIcon from "../../assets/icons/indeedIcon.svg";
+import CustomText from "@/components/Specific/landingPage/CustomText";
+import CustomBtn from "../Common/CustomBtn";
 import { Link } from "react-router-dom";
 export default function Footer() {
   return (

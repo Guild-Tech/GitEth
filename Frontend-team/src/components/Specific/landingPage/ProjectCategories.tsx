@@ -1,4 +1,4 @@
-import CustomBtn from "@/components/CustomBtn";
+import CustomBtn from "@/components/Common/CustomBtn";
 import projectHookIcon from "../../../assets/icons/projectHookIcon.svg";
 import ethIcon from "../../../assets/icons/ethIcon.svg";
 import gitHubIcon from "../../../assets/icons/githubIcon.svg";

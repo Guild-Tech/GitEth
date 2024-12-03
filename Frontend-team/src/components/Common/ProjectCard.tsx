@@ -1,5 +1,5 @@
-import { Button } from './ui/button'
-import skillIcon from "../assets/icons/skill.svg";
+import { Button } from '../ui/button'
+import skillIcon from "../../assets/icons/skill.svg";
 import { ArrowRightIcon } from 'lucide-react';
 // import {IProjectItem} from "./types"
 const ProjectCaard = ({ project }: any) => {

@@ -5,7 +5,7 @@ import gmailIcon from "../../../assets/icons/emailIcon.svg";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import diamond from "../../../assets/icons/diamond.png";
 import logo from "../../../assets/icons/EthOpenSource.svg";
-import CustomBtn from "@/components/CustomBtn";
+import CustomBtn from "@/components/Common/CustomBtn";
 import CustomText from "./CustomText";
 import { useNavigate } from "react-router-dom";
 
