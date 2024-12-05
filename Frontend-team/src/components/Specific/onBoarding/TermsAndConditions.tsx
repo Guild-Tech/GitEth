@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import React, { Dispatch, SetStateAction, useRef, useState } from "react";
+import  { useRef, useState } from "react";
 import formStyles from "./contributorForm/formStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { nextStep } from "@/store/reducers/onboardingIndex";

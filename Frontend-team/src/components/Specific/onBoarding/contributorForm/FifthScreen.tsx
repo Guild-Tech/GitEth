@@ -1,15 +1,12 @@
-import { Dispatch, SetStateAction, useState } from "react";
-// import { OnboardingButton } from "../..";
+import {  useState } from "react";
 import { Button } from "@/components/ui/button";
 import personIcon from "../../../../assets/icons/person.svg"
 import { OnboardingButton } from "../OnboardingCTAButton";
-import { useNavigate } from "react-router-dom";
 import formStyles from "./formStyles";
-import { AppDispatch, RootState } from "@/store";
-import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "@/store";
+import { useDispatch } from "react-redux";
 import { updateField } from "@/store/reducers/onboarding";
 import { nextStep, prevStep } from "@/store/reducers/onboardingIndex";
-// import maintainerIcon from "../../assets/icons/maintainer.svg"
 
 
 
@@ -27,9 +24,6 @@ import { nextStep, prevStep } from "@/store/reducers/onboardingIndex";
 export const FifthScreen = () => {
   const [active, setActive] = useState<string | null>(null);
   const dispatch = useDispatch<AppDispatch>();
-  // const dispatch = useDispatch();
-  // const currentIndex = useSelector((state: RootState) => state.onboardingIndex.currentIndex);
-  const navigate = useNavigate()
 
   return (
     <div className={formStyles.container}>

@@ -1,10 +1,6 @@
-import { useEffect, useState } from "react";
-// import { OnboardingButton } from "../..";
-// import { Button } from "@/components/ui/button";
 
 import { RootState, useAppDispatch } from "@/store";
 import { useSelector } from "react-redux";
-// import { FirstScreenProps } from "../types";
 import formStyles from "../contributorForm/formStyles";
 import { nextStep } from "@/store/reducers/onboardingIndex";
 import { Button } from "@/components/ui/button";
@@ -13,6 +9,8 @@ import logos from "../../../../assets/icons/logos.svg";
 import sync from  "../../../../assets/icons/sync.svg";
 import marked from "../../../../assets/icons/mark-success.svg";
 import discordDark from "../../../../assets/icons/discordDark.svg";
+
+
 /**
  * FirstScreen component.
  *
@@ -27,13 +25,8 @@ import discordDark from "../../../../assets/icons/discordDark.svg";
 
 
 export const DiscordScreen = () => {
-  // const dispatch = useDispatch();
-  const [active, setActive] = useState<string | null>(null);
   const dispatch = useAppDispatch();
-  // const currentIndex = useSelector((state: RootState) => state.onboardingIndex.currentIndex);
   const { user } = useSelector((state: RootState) => state.auth);
-  // const onboardingInfo = useSelector((state: RootState) => state.onboarding);
-  // console.log(user)
 
 
   return (

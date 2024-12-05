@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import { OnboardingButton } from "../..";
 import { Button } from "@/components/ui/button";
 import personIcon from "../../../../assets/icons/person.svg"
 import maintainerIcon from "../../../../assets/icons/maintainer.svg"

@@ -1,7 +1,4 @@
-import { useEffect, useState } from 'react'
-
-// import personIcon from "../../assets/icons/person.svg"
-// import maintainerIcon from "../../assets/icons/maintainer.svg"
+import { useEffect } from 'react';
 import { ContributorsSideBar } from '../../components/Specific/onBoarding/ContributorsSideBar'
 import { OBNavbar } from '../../components/Specific/onBoarding/OBNavbar'
 

@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 import Input, { PhoneNumberInput } from "../Input";
 import TextArea from "../TextArea";
 import { Button } from "@/components/ui/button";
@@ -7,9 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import formStyles from "./formStyles";
 import { nextStep, prevStep } from "@/store/reducers/onboardingIndex";
-import { updateField } from "@/store/reducers/onboarding";
-import { setOnboardUser } from "@/store/actions/Onboarding";
-
 
 
 /**
@@ -25,9 +22,7 @@ import { setOnboardUser } from "@/store/actions/Onboarding";
  * @returns {JSX.Element} The component JSX
  */
 export const ThirdScreen = () => {
-  //   const [active, setActive] = useState<string | null>(null);
   const { user } = useSelector((state: RootState) => state.auth);
-  const onboardingInfo = useSelector((state: RootState) => state.onboarding);
   const navigate = useNavigate()
   const dispatch = useDispatch();
   // Local state for inputs
@@ -52,6 +47,10 @@ export const ThirdScreen = () => {
     }));
   };
 
+  /**
+   * Handle the "Next" button click.
+   * Dispatches the formData to Redux and navigates to the next page.
+   */
   const handleNext = () => {
     // You can dispatch the formData to Redux if needed or validate it here
     dispatch(nextStep());

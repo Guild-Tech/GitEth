@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction, useState} from "react";
 import Input from "../Input";
 import { Button } from "@/components/ui/button";
 import gitHubIcon from "../../../../assets/icons/githubIcon.svg"
@@ -6,29 +5,24 @@ import { RootState } from "@/store";
 import { useDispatch, useSelector } from "react-redux";
 import formStyles from "./formStyles";
 import { nextStep, prevStep } from "@/store/reducers/onboardingIndex";
-import { updateField } from "@/store/reducers/onboarding";
 
 
+/**
+ * SecondScreen component.
+ *
+ * This component renders the second screen of the onboarding flow.
+ * It renders a brief overview, two inputs for the user's GitHub account and personal email,
+ * and a call-to-action button.
+ *
+ * The component is responsive and scales according to the screen size.
+ *
+ * @returns {JSX.Element} The component JSX
+ */
+// const [userInfo, setuserInfo] = useState(user)
 export const SecondScreen = () => {
-//   const [active, setActive] = useState<string | null>(null);
 const { user} = useSelector((state: RootState) => state.auth);
-const [secondInfo, setSecondInfo] = useState({
-  email:"",
-})
-// const onboardingInfo = useSelector((state: RootState) => state.onboarding);
+
 const dispatch = useDispatch();
-  /**
-   * SecondScreen component.
-   *
-   * This component renders the second screen of the onboarding flow.
-   * It renders a brief overview, two inputs for the user's GitHub account and personal email,
-   * and a call-to-action button.
-   *
-   * The component is responsive and scales according to the screen size.
-   *
-   * @returns {JSX.Element} The component JSX
-   */
-  // const [userInfo, setuserInfo] = useState(user)
 
   return (
     <div className={formStyles.container}>

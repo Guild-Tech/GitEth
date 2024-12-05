@@ -1,7 +1,6 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 import  { TagFields } from "../Input";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
 import formStyles from "./formStyles";
 import { useDispatch } from "react-redux";
 import { nextStep, prevStep } from "@/store/reducers/onboardingIndex";
@@ -24,7 +23,6 @@ export const FourthScreen = () => {
   const [skill, setSkill] = useState<string[]>([]);
   const [goals, setGoals] = useState<string[]>([]);
   const dispatch = useDispatch();
-  // const navigate = useNavigate()
 
 
   return (
