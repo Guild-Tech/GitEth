@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
 import demoReducer from './reducers/demo'
-import counterReducer from "./reducers/counter"
+import onboardingIndexReducer from "./reducers/onboardingIndex"
 import authReducer from "./reducers/auth"
+import onboardingReducer from "./reducers/onboarding"
 import { useDispatch } from 'react-redux'
 import { AppDispatch } from './types'
 
@@ -9,8 +10,9 @@ import { AppDispatch } from './types'
 export const store = configureStore({
   reducer: {
     demo: demoReducer,
-    counter: counterReducer,
-    auth: authReducer
+    onboardingIndex: onboardingIndexReducer,
+    auth: authReducer,
+    onboarding: onboardingReducer
     // counter: counterReducer
   },
 })
@@ -18,4 +20,4 @@ export const store = configureStore({
 export { type RootState, type AppDispatch} from "./types"
 export const useAppDispatch: () => AppDispatch = useDispatch;
 
-export {decrement, increment, incrementByAmount} from "./reducers/counter"
+// export {nextStep, prevStep, setIndex} from "./reducers/counter"

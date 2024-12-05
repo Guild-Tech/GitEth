@@ -1,4 +1,4 @@
-import {store} from ".."
+// import {store} from ".."
 import {store} from "../"
 export interface ICounter {
     value: number;
@@ -43,9 +43,13 @@ export interface UserInfo {
     role: "Contributor" | "Maintainer";
     photoURL: string;
     bio: string;
+    location: string;
     website: string;
     profession: "Tech" | "Non-Tech";
     expertise: "Beginner" | "Intermediate" | "Expert";
     skills: string[]; // New field for skills
   }
   
+export interface IOnboardingIndex {
+  currentIndex: number;
+}

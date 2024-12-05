@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 // import { OnboardingButton } from "../..";
 import { Button } from "@/components/ui/button";
 import personIcon from "../../../../assets/icons/person.svg"
@@ -6,30 +6,25 @@ import maintainerIcon from "../../../../assets/icons/maintainer.svg"
 import { OnboardingButton } from "../OnboardingCTAButton";
 import { useNavigate } from "react-router-dom";
 import formStyles from "./formStyles";
+import { useDispatch } from "react-redux";
+import { nextStep, prevStep } from "@/store/reducers/onboardingIndex";
 
-interface SixthScreenProps {
-  firstIndex: number; // The current step index in the onboarding process
-  setFirstIndex: Dispatch<SetStateAction<number>>; // Function to update the step index
-//   personIcon: ReactNode; // Icon to be used for the onboarding buttons
-}
 
 /**
  * SixthScreen component.
  *
  * This component renders the sixth screen of the onboarding flow.
- * It renders a brief overview, three options (Beginner, Intermediate, Advanced) and a call-to-action button.
+ * It renders a brief overview, three options for the user's skill level,
+ * and a call-to-action button.
  *
  * The component is responsive and scales according to the screen size.
  *
- * @param {SixthScreenProps} props The component props
  * @returns {JSX.Element} The component JSX
  */
-export const SixthScreen: React.FC<SixthScreenProps> = ({
-  firstIndex,
-  setFirstIndex,
-}) => {
+export const SixthScreen = () => {
   const [active, setActive] = useState<string | null>(null);
   const navigate = useNavigate();
+ const dispatch = useDispatch();
   return (
     <div className={formStyles.container}>
       <div className={formStyles.headWrapper}> 
@@ -74,14 +69,14 @@ export const SixthScreen: React.FC<SixthScreenProps> = ({
       </div>
       <div className={formStyles.btnGroup}>
         <Button
-          onClick={() => setFirstIndex(firstIndex - 1)}
+          onClick={() => dispatch(prevStep())}
           variant={"outline"}
           className="w-full p-6 bg-white rounded-full font-normal text-base"
         >
           Back
         </Button>
         <Button
-          onClick={() => {setFirstIndex(firstIndex + 1);  navigate("/dashboard")}}
+          onClick={() => {dispatch(nextStep());  navigate("/dashboard")}}
           variant={"secondary"}
           className="w-full p-6 rounded-full font-normal text-base"
         >

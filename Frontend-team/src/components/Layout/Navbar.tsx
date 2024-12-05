@@ -3,13 +3,14 @@ import { useState } from 'react';
 import CustomBtn from '../Common/CustomBtn';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { RootState } from '@/store';
+import { RootState, useAppDispatch } from '@/store';
 // import { DarkThemeToggle } from 'flowbite-react';
 import notificationIcon from "../../assets/icons/notificationIcon.svg"
+import { logout } from '@/store/actions/auth';
 export default function Navigation() {
   const [activeLink, setActiveLink] = useState('Home'); // Initial active link
   const { user } = useSelector((state: RootState) => state.auth);
-
+  const dispatch = useAppDispatch()
 
   const navigate = useNavigate();
 
@@ -22,8 +23,8 @@ export default function Navigation() {
 
         {user ? <div className="flex gap-5">
           <CustomBtn text={``} colored="yes" icon={notificationIcon} btnstyle="p-0" iconStyle="w-3 h-3  rounded-full" style="flex w-[48px] h-[48px] max-sm:w-[32px] max-sm:h-[32px]" onClick={() => { navigate("/notifications") }} />
-          <CustomBtn text={`${user?.username}`} icon={user.photoURL} iconStyle="w-8 h-8 rounded-full"  colored="yes" style="hidden md:flex w-[137px] text-[16px]" onClick={() => { navigate("/profile") }} />
-          <CustomBtn text={``} icon={user.photoURL} btnstyle="p-0" iconStyle="w-8 h-8 rounded-full"  colored="yes" style="md:hidden flex max-sm:w-fit max-sm:h-fit text-[16px]" onClick={() => { navigate("/profile") }} />
+          <CustomBtn text={`${user?.username}`} icon={user.photoURL} iconStyle="w-8 h-8 rounded-full"  colored="yes" style="hidden md:flex w-[137px] text-[16px]" onClick={() => { dispatch(logout())}} />
+          <CustomBtn text={``} icon={user.photoURL} btnstyle="p-0" iconStyle="w-8 h-8 rounded-full"  colored="yes" style="md:hidden flex max-sm:w-fit max-sm:h-fit text-[16px]" onClick={() => { dispatch(logout())}} />
         </div> :
           <CustomBtn text={`Login with Github`} colored="yes" style="hidden md:flex" onClick={() => { navigate("/onboarding") }} />
         }
