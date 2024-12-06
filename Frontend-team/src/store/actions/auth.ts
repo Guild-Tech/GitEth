@@ -7,7 +7,7 @@ import { setUser, setLoading, setError } from "../reducers/auth";
  * If there is an error, sets the error state with the error message. Finally, sets the loading state to false.
  * @returns {Promise<void>}
  */
-export const loginWithGitHub = () => async (dispatch: AppDispatch) => {
+export const loginWithGitHub = (data:{role: string}) => async (dispatch: AppDispatch) => {
   dispatch(setLoading(true));
   try {
     const user = await signInWithGitHub();
@@ -16,6 +16,7 @@ export const loginWithGitHub = () => async (dispatch: AppDispatch) => {
             uid: user.uid,
             displayName: user.displayName,
             email: user.email,
+            role: data.role,
             photoURL: user.photoURL,
             username: user.displayName?.replace(/\s+/g, "").toLowerCase() || "anonymous", // Example logic for username
             token: null, // Assuming `user` contains this field

@@ -11,6 +11,7 @@ const initialState: IOnboardUserState = {
   role: "Contributor",
   photoURL: "",
   bio: "",
+  location: "",
   website: "",
   profession: "Tech",
   expertise: "Beginner",
@@ -34,6 +35,7 @@ const userSlice = createSlice({
       state.role = action.payload.role;
       state.photoURL = action.payload.photoURL;
       state.bio = action.payload.bio;
+      state.location = action.payload.location;
       state.website = action.payload.website;
       state.profession = action.payload.profession;
       state.expertise = action.payload.expertise;
@@ -51,6 +53,7 @@ const userSlice = createSlice({
       state.role = "Contributor";
       state.photoURL = "";
       state.bio = "";
+      state.location = "";
       state.website = "";
       state.profession = "Tech";
       state.expertise = "Beginner";

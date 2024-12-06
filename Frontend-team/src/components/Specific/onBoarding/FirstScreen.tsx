@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 // import { OnboardingButton } from "../..";
-import { Button } from "@/components/ui/button";
-import personIcon from "../../../../assets/icons/person.svg"
-import maintainerIcon from "../../../../assets/icons/maintainer.svg"
-import { OnboardingButton } from "../OnboardingCTAButton";
+// import { Button } from "@/components/ui/button";
+import personIcon from "../../../assets/icons/person.svg"
+import maintainerIcon from "../../../assets/icons/maintainer.svg"
+import { OnboardingButton } from "./OnboardingCTAButton";
 import { RootState, useAppDispatch } from "@/store";
-import { useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { loginWithGitHub } from "@/store/actions/auth";
-import { FirstScreenProps } from "../types";
-import formStyles from "./formStyles";
+// import { FirstScreenProps } from "../types";
+import formStyles from "./contributorForm/formStyles";
+import { nextStep } from "@/store/reducers/onboardingIndex";
+import { setUserData } from "@/store/reducers/onboarding";
 
 
 /**
@@ -24,17 +26,17 @@ import formStyles from "./formStyles";
  */
 
 
-export const FirstScreen: React.FC<FirstScreenProps> = ({
-  firstIndex,
-  setFirstIndex,
-}) => {
+export const FirstScreen = () => {
+  // const dispatch = useDispatch();
   const [active, setActive] = useState<string | null>(null);
   const dispatch = useAppDispatch();
+  // const currentIndex = useSelector((state: RootState) => state.onboardingIndex.currentIndex);
   const { user } = useSelector((state: RootState) => state.auth);
-  console.log(user)
+  // const onboardingInfo = useSelector((state: RootState) => state.onboarding);
+  // console.log(user)
   useEffect(() => {
     if (user) {
-      setFirstIndex(firstIndex + 1);
+      dispatch(nextStep());
     }
   }, [user])
 
@@ -53,7 +55,7 @@ export const FirstScreen: React.FC<FirstScreenProps> = ({
           icon={personIcon}
           active={active}
           size="big"
-          onClick={() => {setActive("contributor"); dispatch(loginWithGitHub())}}
+          onClick={() => {setActive("contributor"); dispatch(loginWithGitHub({role:"contributor"})); dispatch(setUserData({role:"contributor"})) }}
           name="contributor"
           title="Sign up as a Contributor"
           desc="Create a portfolio to discover open source projects, join amazing ethereum ecosystems and help them grow."
@@ -62,21 +64,21 @@ export const FirstScreen: React.FC<FirstScreenProps> = ({
           icon={maintainerIcon}
           active={active}
           size="big"
-          onClick={() => {setActive("maintainer"); dispatch(loginWithGitHub())}}
+          onClick={() => {setActive("maintainer"); dispatch(loginWithGitHub({role:"maintainer"})); dispatch(setUserData({role:"maintainer"}))  }}
           name="maintainer"
           title="Sign up as a Maintainer"
           desc="Create and maintain open source ethereum projects and find qualified contributors to join your team."
         />
       </div>
       <div>
-        <Button
+        {/* <Button
           onClick={() => setFirstIndex(firstIndex + 1)}
           variant={"secondary"}
           disabled={user === null}
           className="w-full p-6 rounded-full font-normal text-base"
         >
           Next
-        </Button>
+        </Button> */}
       </div>
     </div>
   );
