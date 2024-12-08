@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom"
 // import LandingPage from "../landingPage"
-import Navigation from "@/components/Navbar"
-import Footer from "@/components/Footer"
+import Navigation from "@/components/Layout/Navbar"
+import Footer from "@/components/Layout/Footer"
 
 const MainApp = () => {
   return (
