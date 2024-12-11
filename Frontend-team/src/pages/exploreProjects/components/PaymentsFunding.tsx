@@ -27,6 +27,7 @@ const Placeholder: React.FC = () => (
  * - hasError: Controls error state in case data fetch fails.
  * - metrics: Contains the data (funds, payments, etc.) retrieved from the context.
  */
+
 const PaymentsFunding: React.FC = () => {
   const context = useContext(MetricsContext);
   const [isLoading, setIsLoading] = useState(true);
