@@ -1,0 +1,68 @@
+import React from "react";
+import fram from "../../../assets/images/Frame (20).png";
+import usdt from "../../../assets/images/usdt.png";
+const Profileoverview = () => {
+  return (
+    <div className="w-[413px] h-[507px] border border-[#293056] rounded-[26px] mt-28 max-sm:mt-12 max-sm:w-[343px] max-sm:h-fit bg-white bg-opacity-5">
+      <div className="border-b border-border p-6">
+        <div className="flex gap-4 items-center">
+          <img src={fram} alt="" className="w-[24px] h-[24px]" />
+          <p className=" text-[24px] font-kern">Profile Overview</p>
+        </div>
+        <div className="gap-4">
+          <p>
+            Get better understanding of what the project entails and if you fit
+            in.
+          </p>
+        </div>
+      </div>
+      <div className="p-6 space-y-4">
+        <div className="">
+          <p className="text-[18px]">Earning</p>
+        </div>
+        <div className="flex gap-3">
+          <img src={usdt} alt="" className="w-[24px] h-[24px]" />
+          <p className="text-[14px]">15,000 USDT</p>
+        </div>
+        <div className=" gap-4 space-y-4 ">
+          <p className="text-[18px] mt-2">Skills</p>
+          <div className="flex flex-wrap gap-2 max-sm:flex-wrap max-sm:gap-3">
+            <button className="text-sm  text-white w-[68px] h-[33px]  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px]">
+              React
+            </button>
+            <button className="text-sm  text-white w-[84px]  h-[33px] rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px]">
+              Security
+            </button>
+            <button className="text-sm   text-white w-[105px] h-[33px] rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px]">
+              Community
+            </button>
+            <button className="text-sm  text-white w-fit h-[33px] rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px]">
+              UX Design
+            </button>
+            <button className="text-sm  text-white w-[77px] h-[33px] rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px]">
+              Solidity
+            </button>
+            <button className="text-sm  text-white w-[95px] h-[33px] rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px]">
+              Marketing
+            </button>
+          </div>
+        </div>
+        <div className="space-y-4 ">
+          <p className="text-[18px] font-kern">Tasks Overview</p>
+          <div className="flex gap-4 max-sm:block max-sm:space-y-2">
+            <p className="w-[170px] h-[70px] border border-[#363F72] rounded-[12px] flex items-center p-4 max-sm:w-[279px] ">
+              5 <br />
+              Ongoing Issues
+            </p>
+            <p className="w-[170px] h-[70px] border border-[#363F72] rounded-[12px] flex items-center p-4 max-sm:w-[279px] ">
+              10 <br />
+              Completed issues
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Profileoverview;
