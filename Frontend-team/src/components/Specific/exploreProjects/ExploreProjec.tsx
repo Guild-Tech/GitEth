@@ -2,6 +2,7 @@ const ExploreProjec = () => {
   return (
     <div className="relative  flex mt-12 max-sm:mr-4 ">
       <div className="absolute gap-2 inset-y-0 start-0  flex items-center  pointer-events-none ps-3  ">
+    
         <svg
           className="w-4 h-4 text-gray-500 dark:text-gray-400 ml-3"
           aria-hidden="true"
@@ -22,6 +23,7 @@ const ExploreProjec = () => {
         type="text"
         placeholder="Search for Projects"
         className="w-full ml-3 pl-10 py-2 px-4 bg-[#0D0F1C] h-12 text-white placeholder-gray-400 rounded-[20px] border border-transparent focus:outline-none   from-[#E8D07A] to-[#5312D6] "
+        
         alt=""
       />
     </div>

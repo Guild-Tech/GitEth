@@ -7,12 +7,12 @@ import fam1 from "../../../assets/images/Frame(5).png";
 import fam2 from "../../../assets/images/Frame(6).png";
 const Profilej = () => {
   return (
-    <div className=" p-6 w-[863px] h-[224px] border border-[#293056] rounded-[26px] mt-28 max-sm:mt-20 max-sm:w-[345px] max-sm:h-[420px] max-sm:p-8  max-sm:block bg-white bg-opacity-5 ">
+    <div className=" p-6 w-full h-[224px] border border-[#293056]  rounded-[26px] mt-28 max-sm:mt-20 max-sm:w-[390px] max-sm:h-[420px] max-sm:p-8  max-sm:block bg-white bg-opacity-5 ">
       <img src={rect} alt="" className="sm:hidden " />
       <div className="flex mt-3   ">
         <img src={rect} alt="" className="max-sm:hidden" />
-        <div className="space-y-2 max-sm:">
-          <div className="flex  justify-between items-center max-sm:block max-sm:gap-5">
+        <div className="space-y-2 ">
+          <div className="flex  justify-between items-center max-sm:block ">
             <p className="font-[Kern] text-[24px] font-medium leading-[28.8px] mr-[420px]   ">
               Adinoyi Ismaila
             </p>
@@ -22,7 +22,7 @@ const Profilej = () => {
             </button>
           </div>
 
-          <div className="flex items-center gap-4 justify-between max-sm:block  ">
+          <div className="flex items-center gap-4 justify-between max-sm:block  max-sm:gap- ">
             <div className="flex gap-4 max-sm:gap-6 max-sm:block">
               <p className="w-[107px] h-[33px] bg-[#0D0F1C] border border-[#363F72] rounded-[20px] justify-center items-center flex">
                 @noyi_24_7
@@ -38,7 +38,7 @@ const Profilej = () => {
               </p>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 ">
               <div className="rounded-[20px] bg-[#0D0F1C] border border-[#363F72] h-[40px] w-[40px] items-center flex justify-center">
                 <img src={fam} alt="" className="" />
               </div>

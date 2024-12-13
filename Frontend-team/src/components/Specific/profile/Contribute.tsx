@@ -19,7 +19,7 @@ const Contribute = () => {
   return (
     <div className="max-sm:mt-12 ">
       <h2 className="font-kern text-[24px]">Contributors</h2>
-      <div className="w-full  border border-[#293056] rounded-[26px] flex items-center justify-center p-8 flex-col max-sm:mt-4 bg-white bg-opacity-5">
+      <div className="w-full max-sm:w-[390px] border border-[#293056] rounded-[26px] flex items-center justify-center p-8 flex-col max-sm:mt-4 bg-white bg-opacity-5">
         <ContributorCard
           logo={logo2}
           title={"DAO Governance Dashboard"}

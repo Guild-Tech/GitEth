@@ -3,6 +3,8 @@ import logo2 from "../../../assets/images/logo2.png";
 import logo3 from "../../../assets/images/logo3.png";
 import Vector from "../../../assets/icons/Vector.png";
 import ProjectCard from "@/components/Common/ProjectCard";
+import dropdown from "./Completesetup";
+import Completesetup from "./Completesetup";
 // import diamond from "../../../assets/icons/diamond.png";
 
 const CardItem = () => {
@@ -72,14 +74,8 @@ const CardItem = () => {
         {projects.map((project, index) => (
           <ProjectCard project={project} key={index} />
         ))}
+        <Completesetup />
       </div>
-
-      {/* <div className="absolute bottom-0 right-0 transform  z-0">
-        <img src={diamond} alt="" className="blur-3xl" />
-      </div>
-      <div className="absolute top-40 left-32 transform -translate-x-1/2 -translate-y-1/2 z-0">
-        <img src={diamond} alt="" className="blur-xl" />
-      </div> */}
     </div>
   );
 };

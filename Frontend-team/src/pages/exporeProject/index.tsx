@@ -4,8 +4,7 @@ import Filter from "../../components/Specific/exploreProjects/Filter";
 import Newest from "../../components/Specific/exploreProjects/Newest";
 
 import Filterbtn from "../../components/Specific/exploreProjects/Filterbtn";
-import Filterbtn2 from "@/components/Specific/exploreProjects/Filtermobile";
-import Filtermobile from "@/components/Specific/exploreProjects/Filtermobile";
+
 
 const ExploreProjecs = () => {
   const [openSide, setOpenSide] = useState(false);
@@ -28,6 +27,7 @@ const ExploreProjecs = () => {
         </main>
       </section>
     </div>
+    
   );
 };
 

@@ -10,6 +10,8 @@ const Filterbtn = ({ setOpenSide }: any) => {
         <img src={vector} alt="" className=" " />
         <p className="text-[#B3B8DB]">Filters</p>
       </div>
+
+
     </div>
   );
 };

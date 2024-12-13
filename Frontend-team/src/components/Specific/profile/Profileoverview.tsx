@@ -1,9 +1,8 @@
-import React from "react";
 import fram from "../../../assets/images/Frame (20).png";
 import usdt from "../../../assets/images/usdt.png";
 const Profileoverview = () => {
   return (
-    <div className="w-[413px] h-[507px] border border-[#293056] rounded-[26px] mt-28 max-sm:mt-12 max-sm:w-[343px] max-sm:h-fit bg-white bg-opacity-5">
+    <div className="w-[413px] h-[507px] border border-[#293056] rounded-[26px] mt-28 max-sm:mt-12 max-sm:w-[390px] max-sm:h-fit bg-white bg-opacity-5">
       <div className="border-b border-border p-6">
         <div className="flex gap-4 items-center">
           <img src={fram} alt="" className="w-[24px] h-[24px]" />
@@ -26,7 +25,7 @@ const Profileoverview = () => {
         </div>
         <div className=" gap-4 space-y-4 ">
           <p className="text-[18px] mt-2">Skills</p>
-          <div className="flex flex-wrap gap-2 max-sm:flex-wrap max-sm:gap-3">
+          <div className="flex flex-wrap gap-2 max-sm:flex-wrap max-sm:gap-">
             <button className="text-sm  text-white w-[68px] h-[33px]  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px]">
               React
             </button>

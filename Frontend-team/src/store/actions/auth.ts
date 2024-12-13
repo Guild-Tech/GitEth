@@ -19,6 +19,7 @@ export const loginWithGitHub = () => async (dispatch: AppDispatch) => {
             photoURL: user.photoURL,
             username: user.displayName?.replace(/\s+/g, "").toLowerCase() || "anonymous", // Example logic for username
             token: null, // Assuming `user` contains this field
+            role: null,
           })
           
     );
