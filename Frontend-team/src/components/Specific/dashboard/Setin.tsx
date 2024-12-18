@@ -1,7 +1,7 @@
 import logo2 from "../../../assets/images/logo2.png";
 import fram1 from "../../../assets/images/Frame (18).png";
 import fram2 from "../../../assets/images/Frame (19).png";
-import data from "../../../utils/dummydat2.json";
+
 const Setin = () => {
   return (
     <div>

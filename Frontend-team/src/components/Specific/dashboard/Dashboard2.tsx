@@ -1,10 +1,5 @@
-import React from "react";
-import logo2 from "../../../assets/images/logo2.png";
-import fram1 from "../../../assets/images/Frame (18).png";
-import fram2 from "../../../assets/images/Frame (19).png";
 import Vector from "../../../assets/icons/Vector.png";
 import data from "../../../utils/dummydat2.json";
-import Setin from "./Setin";
 
 // The Dashboard2 component represents a dashboard section displaying a user's contributor history.
 // It includes a title, a brief overview, and a list of contributions with details like task title, status, and associated icons.
@@ -40,41 +35,42 @@ const Dashboard2 = () => {
             />
           </p>
         </div>
-        <div className="space-y-4 py-8  p-5 ">
+        <div className="space-y-4 py-8  p-5  ">
           {/* Map through the data */}
           {data.map((item) => (
             <div
               key={item.id}
-              className="w-fit h-auto pt-4 gap-4 rounded-[16px] border flex py-3 p-2 max-sm:w-[400px]   "
+              className=" h-auto pt-4 gap-4 rounded-[16px] border flex py-3 p-3 max-sm:w-[400px] justify-between  items-center "
             >
-              <img
-                src={item.logo1}
-                alt=""
-                className="w-[40px] h-[40px] gap-0   mb-2 "
-              />
-              <div className="flex gap-24 mt-2">
-                <p className="text-base font-normal leading-[19.2px] text-left top-8">
+              <div className="flex gap-3  ">
+                <img
+                  src={item.logo1}
+                  alt=""
+                  className="w-[40px] h-[40px] gap-0   mb-2 "
+                />
+
+                <p className="text-base font-normal leading-[19.2px] text-left top-8 mt-2">
                   {item.title}
                 </p>
-                <div className="flex space-x-2 ">
-                  <div className="rounded-[20px] bg-[] border border-[#363F72] w-[92px] h-[30px] flex items-center justify-center">
-                    <p className="text-[12px] font-normal leading-[14.4px]">
-                      {item.status1}
-                    </p>
-                  </div>
-                  {item.icons1?.map((icon) => (
-                    <div
-                      key={icon.id}
-                      className="rounded-[20px] bg-[] border border-[#363F72] w-[48px] h-[32px] flex items-center justify-center"
-                    >
-                      <img
-                        src={icon.src}
-                        alt={icon.alt}
-                        className="w-[16px] h-[16px]"
-                      />
-                    </div>
-                  ))}
+              </div>
+              <div className="flex space-x-2 ">
+                <div className="rounded-[20px] bg-[] border border-[#363F72] w-[92px] h-[30px] flex items-center justify-center">
+                  <p className="text-[12px] font-normal leading-[14.4px]">
+                    {item.status1}
+                  </p>
                 </div>
+                {item.icons1?.map((icon) => (
+                  <div
+                    key={icon.id}
+                    className="rounded-[20px] bg-[] border border-[#363F72] w-[48px] h-[32px] flex items-center justify-center"
+                  >
+                    <img
+                      src={icon.src}
+                      alt={icon.alt}
+                      className="w-[16px] h-[16px]"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           ))}

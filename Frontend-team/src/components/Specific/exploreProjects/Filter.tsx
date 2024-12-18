@@ -2,7 +2,7 @@ import Frame from "../../../assets/icons/Frame (2).png";
 
 const Filter = ({ setOpenSide }: any) => {
   return (
-    <div className="h-[743px]   border border-customBlue gap-24 rounded-[24px] mt-12 w-[513px] container max-sm:hidden  bg-white bg-opacity-5">
+    <div className="h-[743px]   border border-customBlue gap-24 rounded-[24px] mt-20 w-[513px] container max-sm:hidden  bg-white bg-opacity-5">
       <div className="border-b border-border p-2 ">
         <div className="relative">
           <div className="flex items-center justify-between p-4 ">

@@ -7,7 +7,7 @@ import fam1 from "../../../assets/images/Frame(5).png";
 import fam2 from "../../../assets/images/Frame(6).png";
 const Profilej = () => {
   return (
-    <div className=" p-6 w-full h-[224px] border border-[#293056]  rounded-[26px] mt-28 max-sm:mt-20 max-sm:w-[390px] max-sm:h-[420px] max-sm:p-8  max-sm:block bg-white bg-opacity-5 ">
+    <div className=" p-6 w-full  border border-[#293056]  rounded-[26px] mt-28 max-sm:mt-20 max-sm:w-[390px] max-sm:h-[420px] max-sm:p-8  max-sm:block bg-white bg-opacity-5 ">
       <img src={rect} alt="" className="sm:hidden " />
       <div className="flex mt-3   ">
         <img src={rect} alt="" className="max-sm:hidden" />

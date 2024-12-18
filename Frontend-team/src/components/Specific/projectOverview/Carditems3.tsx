@@ -1,4 +1,3 @@
-import React from "react";
 import usdt from "../../../assets/images/usdt.png";
 import image from "../../../assets/images/Ellipse 4 (1).png";
 import image2 from "../../../assets/images/Ellipse 4.png";

@@ -1,18 +1,10 @@
-import React, { useState } from "react";
 import logo2 from "../../../assets/images/logo2.png";
-import eth from "../../../assets/images/ethereum-eth 1.png";
 
 import circle from "../../../assets/icons/ciclle.png";
-import skillIcon from "../../../assets/icons/skill.svg";
-import usdt from "../../../assets/images/usdt.png";
-import data from "../../../utils/dummydat2.json";
-import Nft from "./Nft";
-import Dao from "./Dao";
+
 import logo1 from "../../../assets/images/logo3.png";
 import con from "../../../assets/images/Container (44).png";
-import skillIcon1 from "../../../assets/icons/skill.svg";
-import usdt1 from "../../../assets/images/usdt.png";
-import arrows from "../../../assets/images/arrow6.png";
+
 import ContributorCard from "./ContributorCard";
 
 const Contribute = () => {

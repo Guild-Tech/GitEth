@@ -3,7 +3,7 @@ import logo2 from "../../../assets/images/logo2.png";
 import logo3 from "../../../assets/images/logo3.png";
 import Vector from "../../../assets/icons/Vector.png";
 import ProjectCard from "@/components/Common/ProjectCard";
-import dropdown from "./Completesetup";
+
 import Completesetup from "./Completesetup";
 // import diamond from "../../../assets/icons/diamond.png";
 
@@ -45,7 +45,7 @@ const CardItem = () => {
     /* Top Projects Recommended for You */
   }
   return (
-    <div className="  w-full container mx-auto ">
+    <div className="  w-full container mx-auto relative ">
       <div className="flex  justify-between  max-sm:flex-col ">
         <h2 className="font-kern text-[36px] font-medium leading-[33.6px] max-sm:text-1xl  mb-10 mr-4 max-sm:mb-5 max-sm:ml-2 text-left max-sm:text-[24px]   ">
           Top Projects Recommended for You
@@ -74,7 +74,9 @@ const CardItem = () => {
         {projects.map((project, index) => (
           <ProjectCard project={project} key={index} />
         ))}
-        <Completesetup />
+        <div className="absolute bottom-1 right-2">
+          <Completesetup />
+        </div>
       </div>
     </div>
   );

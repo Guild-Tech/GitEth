@@ -1,5 +1,5 @@
 import vector from "../../../assets/icons/Vector (1).png";
-import fram2 from "../../../assets/images/Frame (7).png";
+
 const Filterbtn = ({ setOpenSide }: any) => {
   return (
     <div>

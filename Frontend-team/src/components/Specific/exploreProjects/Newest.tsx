@@ -1,11 +1,8 @@
 import ProjecCard from "@/components/Common/ProjecCard";
-import vector from "../../../assets/icons/Vector (1).png";
-import fram2 from "../../../assets/images/Frame (7).png";
 
 import data from "../../../utils/dummyData.json";
 import Filtermobile from "./Filtermobile";
 import { useState } from "react";
-import CustomBtn from "@/components/Common/CustomBtn";
 
 const Newest = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
@@ -20,7 +17,7 @@ const Newest = () => {
   }
   // console.log("Found project:", project);
   return (
-    <div className="w-full container max-sm:space-y-6 ">
+    <div className="w-full container max-sm:space-y-6 mt-5">
       {/* <div
         className="flex items-center rounded-[20px] border w-[90px] h-[43]  mt-12 cursor-pointer p-2   text-black sm:hidden"
         onClick={() => setOpenSide(false)}

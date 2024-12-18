@@ -1,5 +1,5 @@
 import vector from "../../../assets/icons/Vector (1).png";
-import fram2 from "../../../assets/images/Frame (7).png";
+
 const Filterbtn = ({ setOpenSide }: any) => {
   return (
     <div>
@@ -10,8 +10,6 @@ const Filterbtn = ({ setOpenSide }: any) => {
         <img src={vector} alt="" className=" " />
         <p className="text-[#B3B8DB]">Filters</p>
       </div>
-
-
     </div>
   );
 };

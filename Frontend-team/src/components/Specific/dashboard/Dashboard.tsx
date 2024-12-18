@@ -1,6 +1,5 @@
 import Vector from "../../../assets/icons/Vector.png";
-import Setup from "./Setup";
-import Setin from "./Setin";
+
 import data from "../../../utils/dummydat2.json";
 const Dashboard = () => {
   return (

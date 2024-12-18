@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import star from "../../../assets/images/Star (1).png";
 import fram from "../../../assets/images/Frame (22).png";
 import { Check } from "lucide-react";
@@ -9,7 +9,7 @@ const Completesetup = () => {
   const [isOpen, setIsOpen] = useState(true);
   return (
     <div className=" ">
-      <div className="w-[449px]  bg-white rounded-[20px] p-5">
+      <div className="w-[395px]  bg-white rounded-[20px] p-5 max-sm:hidden">
         <div className="flex justify-between items-center ">
           <div className="flex gap-2">
             <img src={star} alt="" />

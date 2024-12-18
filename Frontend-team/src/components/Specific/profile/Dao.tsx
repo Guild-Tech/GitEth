@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import data from "../../../utils/dummydat2.json";
 import arrow from "../../../assets/images/arrow6.png";
 import arrows from "../../../assets/images/Frame (8).png";

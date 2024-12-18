@@ -2,7 +2,6 @@ import Pros from "../../components/Specific/projectOverview/Pros";
 
 import Card from "../../components/Specific/projectOverview/Card";
 import Open from "../../components/Specific/projectOverview/Open";
-import Carditem2 from "@/components/Specific/projectOverview/Carditem2";
 
 const Sidebar = () => {
   return (

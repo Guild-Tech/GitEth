@@ -2,7 +2,6 @@ import skillIcon from "../../assets/icons/skill.svg";
 import fram1 from "../../assets/images/Frame (7).png";
 import fram2 from "../../assets/images/Frame (8).png";
 import frams from "../../assets/images/Frame (21).png";
-import arrow from "../../assets/images/arrow5.png";
 import icon2 from "../../assets/icons/icon2.svg";
 import icon3 from "../../assets/icons/icon3.svg";
 import CustomBtn from "./CustomBtn";
@@ -19,7 +18,7 @@ const ProjecCard = ({ project }: any) => {
   return (
     <>
       <div
-        className={` p-6 max-sm:p-6 border border-border backdrop-blur-md  h-fit  bg-white bg-opacity-5 rounded-3xl w-full container `}
+        className={` p-6 max-sm:p-6 border border-border   backdrop-blur-md  h-fit  bg-white bg-opacity-5 rounded-3xl w-full container `}
       >
         <div className="flex items-center justify-between  max-sm:mb-5 max-sm:flex     max-sm:mx-2   ">
           <img

@@ -1,8 +1,7 @@
-import Setin from "@/components/Specific/dashboard/Setin";
 import CardItem from "../../components/Specific/dashboard/CardItem";
 
 import DashboardComponent from "../../components/Specific/dashboard/Dashboard";
-import Setup from "../../components/Specific/dashboard/Setup";
+
 import Dashboard2 from "@/components/Specific/dashboard/Dashboard2";
 
 export default function Dashboard() {
