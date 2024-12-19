@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>React App with Vite and Tailwind CSS</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="react-app-with-vite-and-tailwind-css">React App with Vite and Tailwind CSS</h1>
+<p>This project is a React application built using <a href="https://vitejs.dev/">Vite</a> with <a href="https://www.typescriptlang.org/">TypeScript</a> and <a href="https://tailwindcss.com/">Tailwind CSS</a>. It is organized into reusable components, hooks, and utility functions for scalability.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>⚡ <strong>Vite</strong> for fast development</li>
+<li>⚛️ <strong>React</strong> 18 for building dynamic UIs</li>
+<li>🛠️ <strong>TypeScript</strong> for type-safe development</li>
+<li>💨 <strong>Tailwind CSS</strong> for rapid and modern styling</li>
+<li>♻️ Modular project structure with:
+<ul>
+<li>Reusable <strong>components</strong></li>
+<li>Custom <strong>hooks</strong></li>
+<li>Organized <strong>services</strong> and <strong>utilities</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Ensure the following tools are installed:</p>
+<ul>
+<li><a href="https://nodejs.org/">Node.js</a> (version 16+ recommended)</li>
+<li><a href="https://www.npmjs.com/">npm</a> or <a href="https://yarnpkg.com/">yarn</a></li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="1-clone-the-repository-and-change-directory-to-frontend-team">1. Clone the Repository and change directory to Frontend-team</h3>
+<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/johnsmccain/GitEth.git
+<span class="hljs-built_in">cd</span> GitEth
+<span class="hljs-built_in">cd</span> Frontend-team
+</code></pre>
+<h3 id="2-install-dependencies">2. Install Dependencies</h3>
+<p>Using npm:</p>
+<pre><code class="language-bash">npm install
+</code></pre>
+<p>Or using yarn:</p>
+<pre><code class="language-bash">yarn
+</code></pre>
+<h3 id="3-start-the-development-server">3. Start the Development Server</h3>
+<pre><code class="language-bash">npm run dev
+</code></pre>
+<p>Or:</p>
+<pre><code class="language-bash">yarn dev
+</code></pre>
+<p>Visit <a href="http://localhost:5173/">http://localhost:5173/</a> to preview the app.</p>
+<h3 id="4-build-for-production">4. Build for Production</h3>
+<p>To create an optimized production build:</p>
+<pre><code class="language-bash">npm run build
+</code></pre>
+<p>Or:</p>
+<pre><code class="language-bash">yarn build
+</code></pre>
+<p>The build output is in the <code>dist</code> folder.</p>
+<h3 id="5-preview-the-production-build">5. Preview the Production Build</h3>
+<pre><code class="language-bash">npm run preview
+</code></pre>
+<p>Or:</p>
+<pre><code class="language-bash">yarn preview
+</code></pre>
+<h2 id="project-structure">Project Structure</h2>
+<pre><code class="language-plaintext">src/
+│
+├── assets/
+│   ├── fonts/         # Custom fonts
+│   ├── icons/         # SVG or other icon files
+│   ├── images/        # Static images
+│   └── react.svg      # Any standalone assets
+│
+├── components/        # Reusable UI components
+│   ├── Common/        # Shared, generic components (e.g., buttons, modals, forms)
+│   ├── Layout/        # Layout components (e.g., Header, Footer, Sidebar)
+│   └── Specific/      # Components tightly coupled to certain features/pages
+│
+├── hooks/             # Custom React hooks
+│
+├── lib/               # Utility libraries and helpers (e.g., API clients, configs)
+│
+├── pages/             # Page-specific components and logic
+│   ├── contributors/  # Related components and files
+│   ├── dashboard/     
+│   ├── exploreProject/ 
+│   ├── landingPage/   
+│   ├── mainApp/       
+│   ├── onBoarding/    
+│   ├── profile/       
+│   └── projectOverview/       
+│
+├── services/          # External services (e.g., Firebase, API calls)
+│   ├── firebase.ts    # Firebase configuration and API methods
+│   └── index.ts       # Export aggregated services
+│
+├── store/             # State management (e.g., Redux, Context)
+│   ├── actions/       # Redux action creators
+│   ├── reducers/      # Redux reducers
+│   ├── types/         # Redux-related TypeScript types
+│   └── index.ts       # Combine store logic and export
+│
+├── styles/            # Global and modular styles
+│   ├── App.css        # General app-wide CSS
+│   ├── Fonts.css      # Custom font styles
+│   └── index.css      # Base styles and global resets
+│
+├── utils/             # General utilities and helpers
+│   ├── DomainData.json 
+│   ├── DummyData.ts
+│   └── index.ts       # Entry point for exporting utilities
+│
+├── App.tsx            # Root component
+└── index.tsx          # React entry point
+
+</code></pre>
+<h2 id="scripts">Scripts</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm run dev</code></td>
+<td>Start the development server</td>
+</tr>
+<tr>
+<td><code>npm run build</code></td>
+<td>Build the app for production</td>
+</tr>
+<tr>
+<td><code>npm run preview</code></td>
+<td>Preview the production build</td>
+</tr>
+<tr>
+<td><code>npm run lint</code></td>
+<td>Lint the code (if ESLint is configured)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="styling-with-tailwind-css">Styling with Tailwind CSS</h2>
+<p>This project uses Tailwind CSS for styling. You can customize it via <code>tailwind.config.js</code> and <code>postcss.config.js</code>.</p>
+<h2 id="typescript">TypeScript</h2>
+<p>The project is written in TypeScript, offering enhanced development experience and type safety.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions are welcome! Please follow these steps:</p>
+<ol>
+<li>Fork this repository.</li>
+<li>Create a new branch (<code>git checkout -b feature/your-feature-name</code>).</li>
+<li>Commit your changes (<code>git commit -m 'Add some feature'</code>).</li>
+<li>Push to the branch (<code>git push origin feature/your-feature-name</code>).</li>
+<li>Create a pull request.</li>
+</ol>
+<h2 id="license">License</h2>
+<p>This project is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for details.</p>
+
+            
+            
+        </body>
+        </html>

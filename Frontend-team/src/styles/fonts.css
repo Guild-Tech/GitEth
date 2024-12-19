@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Kern';
+    src: url('/fonts/kern-font/Kern-Bold.otf') format('opentype'),
+         url('/fonts/kern-font/Kern-BoldItalic.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Matter';
+    src: url('/fonts/matter-font/Matter-Bold.ttf') format('truetype'),
+         url('/fonts/matter-font/Matter-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  /* Add more font-face declarations as needed */
