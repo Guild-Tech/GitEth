@@ -3,6 +3,7 @@ import demoReducer from './reducers/demo'
 import onboardingIndexReducer from "./reducers/onboardingIndex"
 import authReducer from "./reducers/auth"
 import onboardingReducer from "./reducers/onboarding"
+import onboardStateReducer from "./actions/onboardState"
 import { useDispatch } from 'react-redux'
 import { AppDispatch } from './types'
 
@@ -12,7 +13,9 @@ export const store = configureStore({
     demo: demoReducer,
     onboardingIndex: onboardingIndexReducer,
     auth: authReducer,
-    onboarding: onboardingReducer
+    onboarding: onboardingReducer,
+    onboardState: onboardStateReducer,
+
     // counter: counterReducer
   },
 })

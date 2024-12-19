@@ -13,34 +13,19 @@ import { Maintainer } from './maintainers';
 
 
 const Onboarding = () => {
-  // const [firstIndex, setfirstIndex] = useState(1);
-  // const [activeIndex, setActiveIndex] = useState("contributor");
-  // const [active, setActive] = useState("contributor");
-  // const dispatch = useDispatch();
-  const {user} = useSelector((state: RootState) => state.auth);
+
   const onboardingInfo = useSelector((state: RootState) => state.onboarding);
   const { currentIndex } = useSelector((state: RootState) => state.onboardingIndex);
+  const { role } = useSelector((state: RootState) => state.onboardState);
   console.log(onboardingInfo)
-  // const [userData, setUserData] = useState({
-  //   name: "",
-  //   email: "",
-  //   bio: "",
-  //   role:"",
-  //   telegram: "",
-  //   github: "",
-  //   linkedin: "",
-  //   twitter: "",
-  //   location: "",
-  //   company: "",
-  // })
 
-  useEffect(() => {
+  // useEffect(() => {
 
 
-    return () => {
+  //   return () => {
 
-    }
-  }, [])
+  //   }
+  // }, [])
 
 
   return (
@@ -56,10 +41,8 @@ const Onboarding = () => {
           <div className=" h-full ">
             <OBNavbar />
             <div className="flex items-center justify-center max-sm:block flex-col h-full">
-
               {
-                currentIndex === 1 ? <FirstScreen /> : user?.role === "contributor" ? <Contributor /> : <Maintainer/>
-
+                currentIndex === 1 ? <FirstScreen /> : role === "contributor" ? <Contributor /> : <Maintainer/>
               }
             </div>
             {/* <Contributor /> */}

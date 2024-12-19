@@ -8,6 +8,7 @@ export default function TextArea(props:any) {
         <textarea
             name={props.placeholder}
             id="" 
+            onChange={props.onChange}
             className='bg-transparent border-none focus:outline-none focus:ring-0 focus-visible:outline-none w-full' 
             placeholder={props.placeholder} 
         ></textarea>

@@ -48,6 +48,7 @@ export interface UserInfo {
     profession: "Tech" | "Non-Tech";
     expertise: "Beginner" | "Intermediate" | "Expert";
     skills: string[]; // New field for skills
+    goals:string[];
   }
   
 export interface IOnboardingIndex {

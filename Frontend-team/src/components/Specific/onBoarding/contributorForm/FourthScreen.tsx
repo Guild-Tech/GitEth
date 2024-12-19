@@ -1,12 +1,10 @@
 import { useState } from "react";
-import  { TagFields } from "../Input";
+import { DropdownFields, TagFields } from "../Input";
 import { Button } from "@/components/ui/button";
 import formStyles from "./formStyles";
 import { useDispatch } from "react-redux";
 import { nextStep, prevStep } from "@/store/reducers/onboardingIndex";
-
-
-
+import { updateField } from "@/store/reducers/onboarding";
 
 /**
  * FourthScreen component.
@@ -19,37 +17,70 @@ import { nextStep, prevStep } from "@/store/reducers/onboardingIndex";
  *
  * @returns {JSX.Element} The component JSX
  */
+
 export const FourthScreen = () => {
-  const [skill, setSkill] = useState<string[]>([]);
+  const [skills, setSkills] = useState<string[]>([]);
   const [goals, setGoals] = useState<string[]>([]);
   const dispatch = useDispatch();
+
+  // Predefined options for skills and goals
+  const skillOptions = [
+    "React.js",
+    "Node.js",
+    "TypeScript",
+    "Solidity",
+    "UI/UX Design",
+    "Python",
+    "Data Analysis",
+    "Blockchain Development",
+  ];
+
+  const goalOptions = [
+    "Build scalable applications",
+    "Contribute to open-source",
+    "Improve coding skills",
+    "Learn new technologies",
+    "Collaborate on projects",
+    "Develop leadership skills",
+  ];
+
+  const handleNext = () => {
+    dispatch(updateField({ field:"skills", value: skills }))
+    dispatch(updateField({ field:"goal", value: goals }))
+    dispatch(nextStep())
+  }
+
 
 
   return (
     <div className={formStyles.container}>
-      <div className={formStyles.headWrapper}> 
-          <h1 className={formStyles.title}>Complete Your Profile 3/4</h1>
+      <div className={formStyles.headWrapper}>
+        <h1 className={formStyles.title}>Complete Your Profile 3/4</h1>
         <div className={formStyles.descWrapper}>
           <p className={formStyles.desc}>
             Provide additional information to help maintainers better match you
             with suitable projects.
           </p>
-          <button className={formStyles.skip} onClick={() => dispatch(nextStep())}>Skip</button>
         </div>
-     
       </div>
 
-      <TagFields
-        skill={skill}
-        setSkill={setSkill} 
+
+            {/* Dropdown for Skills */}
+            <DropdownFields
+        selectedOptions={skills}
+        setSelectedOptions={setSkills}
+        options={skillOptions}
         title="Skills"
       />
-      <TagFields
-        skill={goals}
-        setSkill={setGoals} 
+
+      {/* Dropdown for Goals */}
+      <DropdownFields
+        selectedOptions={goals}
+        setSelectedOptions={setGoals}
+        options={goalOptions}
         title="Goals"
-        
       />
+
       <div className={formStyles.btnGroup}>
         <Button
           onClick={() => dispatch(prevStep())}
@@ -59,9 +90,10 @@ export const FourthScreen = () => {
           Back
         </Button>
         <Button
-          onClick={() => dispatch(nextStep())}
+          onClick={handleNext}
           variant={"secondary"}
           className="w-full p-6 rounded-full font-normal text-base"
+          disabled={skills.length === 0 || goals.length === 0} // Disable if no selections
         >
           Next
         </Button>

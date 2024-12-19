@@ -6,11 +6,13 @@ import maintainerIcon from "../../../assets/icons/maintainer.svg"
 import { OnboardingButton } from "./OnboardingCTAButton";
 import { RootState, useAppDispatch } from "@/store";
 import {  useSelector } from "react-redux";
-import { loginWithGitHub } from "@/store/actions/auth";
+import { loginWithEmailPassword, loginWithGitHub, loginWithGoogle } from "@/store/actions/auth";
 // import { FirstScreenProps } from "../types";
 import formStyles from "./contributorForm/formStyles";
 import { nextStep } from "@/store/reducers/onboardingIndex";
 import { setUserData } from "@/store/reducers/onboarding";
+import { setRole } from "@/store/actions/onboardState";
+import { setOnboardUser } from "@/store/actions/Onboarding";
 
 
 /**
@@ -31,8 +33,7 @@ export const FirstScreen = () => {
   const [active, setActive] = useState<string | null>(null);
   const dispatch = useAppDispatch();
   // const currentIndex = useSelector((state: RootState) => state.onboardingIndex.currentIndex);
-  const { user } = useSelector((state: RootState) => state.auth);
-  // const onboardingInfo = useSelector((state: RootState) => state.onboarding);
+  const {user} = useSelector((state: RootState) => state.auth);
   // console.log(user)
   useEffect(() => {
     if (user) {
@@ -40,6 +41,27 @@ export const FirstScreen = () => {
     }
   }, [user])
 
+  const { loginType:logintype } = useSelector((state: RootState) => state.onboardState);
+     
+  function handleLogin(role:string){
+    if(logintype === "github"){
+      setActive(role); 
+      dispatch(setUserData({role}))
+      dispatch(setRole(role))
+      dispatch(loginWithGitHub()); 
+
+    } else if(logintype === "google"){
+      setActive(role); 
+      dispatch(setUserData({role}))
+      dispatch(setRole(role))
+      dispatch(loginWithGoogle())
+    } else {
+      setActive(role); 
+      dispatch(setUserData({role}))
+      dispatch(setRole(role))
+      dispatch(loginWithEmailPassword({email:"KXjZs@example.com", password:"12345678"}))
+    }
+  }
   
   return (
     <div className={formStyles.container}>
@@ -55,7 +77,7 @@ export const FirstScreen = () => {
           icon={personIcon}
           active={active}
           size="big"
-          onClick={() => {setActive("contributor"); dispatch(loginWithGitHub({role:"contributor"})); dispatch(setUserData({role:"contributor"})) }}
+          onClick={() => {setActive("contributor"); handleLogin("contributor")}}
           name="contributor"
           title="Sign up as a Contributor"
           desc="Create a portfolio to discover open source projects, join amazing ethereum ecosystems and help them grow."
@@ -64,7 +86,7 @@ export const FirstScreen = () => {
           icon={maintainerIcon}
           active={active}
           size="big"
-          onClick={() => {setActive("maintainer"); dispatch(loginWithGitHub({role:"maintainer"})); dispatch(setUserData({role:"maintainer"}))  }}
+          onClick={() => {setActive("maintainer"); handleLogin("maintainer")}}
           name="maintainer"
           title="Sign up as a Maintainer"
           desc="Create and maintain open source ethereum projects and find qualified contributors to join your team."

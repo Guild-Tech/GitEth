@@ -6,7 +6,6 @@ interface AuthState {
     uid: string;
     displayName: string | null;
     email: string | null;
-    role: string | null;
     photoURL: string | null;
     username: string | null;
     token: string | null;
@@ -48,7 +47,6 @@ const authSlice = createSlice({
         uid: string;
         displayName: string | null;
         email: string | null;
-        role: string | null;
         photoURL: string | null;
         username: string | null;
         token: string | null;

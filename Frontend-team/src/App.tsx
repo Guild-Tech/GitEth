@@ -10,7 +10,11 @@ import diamond from "./assets/icons/diamond.png";
 
 import ExploreProjecs from "./pages/exporeProject";
 import Contributor from "./pages/contributors";
-import Profile from "./pages/proflle";
+import Profile from "./pages/Proflle";
+import { useSelector } from "react-redux";
+import { RootState } from "./store";
+import { useEffect, useState } from "react";
+// import Profile from "./pages/proflle";
 
 /**
  * App component renders the main application layout.
@@ -24,11 +28,21 @@ import Profile from "./pages/proflle";
  */
 
 function App() {
+  const {user} = useSelector((state:RootState)=> state.auth) 
+  const [isLogedIn, setIsLogedIn] = useState(false)
+  useEffect(() => {
+    if(user){
+      setIsLogedIn(true)
+    }else{
+      setIsLogedIn(false)
+    }
+  }, [user])
+  
   return (
     <div className="min-h-screen bg-dark-gradient text-white relative overflow-hidden flex flex-col justify-between">
       <Routes>
         <Route path="/" element={<MainApp />}>
-          <Route index element={<LandingPage />} />
+          <Route index element={isLogedIn?<Dashboard />:<LandingPage />} />
           <Route path="/contributors" element={<Contributor/>} />
           <Route path="/projects" element={<ExploreProjecs />} />
           <Route path="/rewards" element={<h1>Rewards</h1>} />

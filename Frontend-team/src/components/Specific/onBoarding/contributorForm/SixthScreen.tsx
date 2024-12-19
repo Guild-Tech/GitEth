@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import formStyles from "./formStyles";
 import { useDispatch } from "react-redux";
 import { nextStep, prevStep } from "@/store/reducers/onboardingIndex";
+import { updateField } from "@/store/reducers/onboarding";
 
 
 /**
@@ -24,6 +25,8 @@ export const SixthScreen = () => {
   const [active, setActive] = useState<string | null>(null);
   const navigate = useNavigate();
  const dispatch = useDispatch();
+
+
   return (
     <div className={formStyles.container}>
       <div className={formStyles.headWrapper}> 
@@ -33,7 +36,6 @@ export const SixthScreen = () => {
             Provide additional information to help maintainers better match you
             with suitable projects.
           </p>
-          <button className={formStyles.skip} onClick={() => navigate("/dashboard")}>Skip</button>
         </div>
 
       </div>
@@ -42,7 +44,7 @@ export const SixthScreen = () => {
           icon={personIcon}
           active={active}
           size="small"
-          onClick={() => setActive("tech")}
+          onClick={() => {setActive("tech"); dispatch(updateField({ field:"experience", value: "beginner" }))}}
           name="tech"
           title="I’m a Beginner"
           desc="Create a portfolio to discover open source projects."
@@ -51,7 +53,7 @@ export const SixthScreen = () => {
           icon={maintainerIcon}
           active={active}
           size="small"
-          onClick={() => setActive("non-tech")}
+          onClick={() => {setActive("non-tech"); dispatch(updateField({ field:"experience", value: "Intermediate" }))}}
           name="non-tech"
           title="I’m an Intermediate"
           desc="Create and maintain open source ethereum projects."
@@ -60,9 +62,9 @@ export const SixthScreen = () => {
           icon={maintainerIcon}
           active={active}
           size="small"
-          onClick={() => setActive("non-teche")}
+          onClick={() => {setActive("non-teche"); dispatch(updateField({ field:"experience", value: "expert" }))}}
           name="non-teche"
-          title="I’m an Intermediate"
+          title="I’m an Expert"
           desc="Create and maintain open source ethereum projects."
         />
       </div>
