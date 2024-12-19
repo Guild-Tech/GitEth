@@ -15,50 +15,29 @@ export default function Footer() {
             style="text-3xl text-[28px] font-medium mb-9"
           />
           <div className="flex gap-5">
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <CustomBtn
-                text=""
-                colored="yes"
-                style="w-fit w-[48px] h-[48px]"
-                iconStyle="w-[20px]"
-                icon={instagramIcon}
-              />
-            </a>
+            <CustomBtn
+              text=""
+              colored="yes"
+              style="w-fit w-[48px] h-[48px]"
+              iconStyle="w-[20px]"
+              icon={instagramIcon}
+            />
 
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-            >
-              <CustomBtn
-                text=""
-                colored="yes"
-                style="w-fit w-[48px] h-[48px]"
-                iconStyle="w-[20px]"
-                icon={xIcon}
-              />
-            </a>
+            <CustomBtn
+              text=""
+              colored="yes"
+              style="w-fit w-[48px] h-[48px]"
+              iconStyle="w-[20px]"
+              icon={xIcon}
+            />
 
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <CustomBtn
-                text=""
-                colored="yes"
-                style="w-fit w-[48px] h-[48px]"
-                iconStyle="w-[20px]"
-                icon={linkedInIcon}
-              />
-            </a>
+            <CustomBtn
+              text=""
+              colored="yes"
+              style="w-fit w-[48px] h-[48px]"
+              iconStyle="w-[20px]"
+              icon={linkedInIcon}
+            />
           </div>
         </div>
         <div className="flex flex-wrap sm:gap-12 ">
