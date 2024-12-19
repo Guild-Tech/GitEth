@@ -15,7 +15,7 @@
  * and other child components within the sidebar.
  */
 
-import React from "react";
+// import React from "react";
 import Navigation from "./components/Navigation";
 import { MetricsProvider } from "@/store/context/MetricsContext"; // Import MetricsProvider
 

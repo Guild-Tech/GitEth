@@ -6,8 +6,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import diamond from "../../../assets/icons/diamond.png";
 import logo from "../../../assets/icons/EthOpenSource.svg";
 import CustomBtn from "@/components/CustomBtn";
-import CustomText from "./CustomText";
+// import CustomText from "./CustomText";
 import { useNavigate } from "react-router-dom";
+import CustomText from "@/components/Specific/landingPage/CustomText";
 
 
 /**

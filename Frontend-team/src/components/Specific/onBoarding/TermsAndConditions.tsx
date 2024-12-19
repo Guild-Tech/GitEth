@@ -23,8 +23,11 @@ import { useNavigate } from "react-router-dom";
 const TermsAndConditions = () => {
   const termsRef = useRef<HTMLDivElement>(null);
   const [isScrolledToEnd, setIsScrolledToEnd] = useState(false);
+  // const [isAgreement, setIsAgreement] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+  console.log(isChecked, isScrolledToEnd)
   const dispatch = useDispatch();
-  const {user} = useSelector((state: RootState) => state.auth);
+  // const {user} = useSelector((state: RootState) => state.auth);
   const onboardingInfo = useSelector((state: RootState) => state.onboarding);
   const navigate = useNavigate();
   const handleScroll = () => {
@@ -34,6 +37,9 @@ const TermsAndConditions = () => {
       const isAtEnd = element.scrollHeight - element.scrollTop === element.clientHeight;
       setIsScrolledToEnd(isAtEnd);
     }
+  };
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked(event.target.checked); // Update state based on checkbox ticked
   };
 
   return (
@@ -75,15 +81,19 @@ const TermsAndConditions = () => {
           </ol>
         </div>
 
-      {!isScrolledToEnd && <div className="h-[30vh] w-full fixed bottom-0 left-0 right-0 bg-white bg-opacity-50"></div>}
+      {!isScrolledToEnd && <div className="h-[30vh] w-full fixed bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-white bg-opacity-50"></div>}
 
         {/* Repeat more content to make it scrollable */}
       </div>
+      <div className="">
+
+      <input className=" mr-3 text-purple-700 border-none " type="checkbox" name="check" id="check" onChange={handleCheckboxChange} /> <label htmlFor="check"> Agreed to terms and conditions</label>
+      </div>
 
       <Button
-        onClick={() => {user?.role || onboardingInfo.role  === "maintainer" ? navigate("/dashboard") : dispatch(nextStep()); }}
+        onClick={() => { onboardingInfo.role  === "maintainer" ? navigate("/dashboard") : dispatch(nextStep()); }}
         variant={"secondary"}
-        disabled={!isScrolledToEnd}
+        disabled={!isChecked}
         className="w-full p-6 rounded-full font-normal text-base mt-4"
       >
         Continue

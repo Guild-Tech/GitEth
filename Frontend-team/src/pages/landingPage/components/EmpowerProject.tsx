@@ -2,11 +2,12 @@ import arrowLeftIcon from "../../../assets/icons/arrowLefttIcon.svg";
 import arrowRightIcon from "../../../assets/icons/arrowRightIcon.svg";
 import image2 from "../../../assets/images/frame1.png";
 import CustomBtn from "@/components/CustomBtn";
-import CustomText from "./CustomText";
+// import CustomText from "./CustomText";
 import diamond from "../../../assets/icons/diamond.png";
 import framem3 from "../../../assets/images/Framem3.svg";
 import fmoile from "../../../assets/icons/mobileicon34.svg";
 import { useState } from "react";
+import CustomText from "@/components/Specific/landingPage/CustomText";
 
 interface Category {
   title: string;

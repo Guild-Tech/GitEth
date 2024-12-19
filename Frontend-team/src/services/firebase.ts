@@ -1,7 +1,15 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth, GithubAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import {
+  getAuth,
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -28,6 +36,9 @@ export const auth = getAuth(app);
 // GitHub Provider
 export const githubProvider = new GithubAuthProvider();
 
+// Google Provider
+export const googleProvider = new GoogleAuthProvider();
+
 // GitHub Sign-In
 export const signInWithGitHub = async () => {
   try {
@@ -35,6 +46,39 @@ export const signInWithGitHub = async () => {
     return result.user; // Returns the authenticated user
   } catch (error) {
     console.error("GitHub Sign-In Error:", error);
+    throw error;
+  }
+};
+
+// Google Sign-In
+export const signInWithGoogle = async () => {
+  try {
+    const result = await signInWithPopup(auth, googleProvider);
+    return result.user; // Returns the authenticated user
+  } catch (error) {
+    console.error("Google Sign-In Error:", error);
+    throw error;
+  }
+};
+
+// Email/Password Sign-Up
+export const signUpWithEmail = async (email:string, password:string) => {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    return userCredential.user; // Returns the authenticated user
+  } catch (error) {
+    console.error("Email Sign-Up Error:", error);
+    throw error;
+  }
+};
+
+// Email/Password Sign-In
+export const signInWithEmail = async (email:string, password:string) => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    return userCredential.user; // Returns the authenticated user
+  } catch (error) {
+    console.error("Email Sign-In Error:", error);
     throw error;
   }
 };

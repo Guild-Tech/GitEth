@@ -2,7 +2,8 @@ import CustomBtn from "@/components/CustomBtn";
 import diamond from "../../../assets/icons/eth.svg";
 import tether from "../../../assets/icons/tether.svg";
 import discordIcon from "../../../assets/icons/discordIcon.svg";
-import CustomText from "./CustomText";
+import CustomText from "@/components/Specific/landingPage/CustomText";
+// import CustomText from "./CustomText";
 
 /**
  * JoinCommunity component.

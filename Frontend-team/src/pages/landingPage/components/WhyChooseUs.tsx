@@ -3,8 +3,9 @@ import diamonIcon from "../../../assets/icons/diamondIcon.svg";
 import fastIcon from "../../../assets/icons/fastIcon.svg";
 import womanLaptop from "../../../assets/images/womanLaptop.png";
 
-import CustomText from "./CustomText";
+// import CustomText from "./CustomText";
 import diamond from "../../../assets/icons/diamond.png"
+import CustomText from "@/components/Specific/landingPage/CustomText";
 
 /**
  * WhyChooseUs component.

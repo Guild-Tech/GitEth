@@ -3,9 +3,10 @@ import logo from "../assets/icons/EthOpenSource.svg";
 import instagramIcon from "../assets/icons/instagram.svg";
 import xIcon from "../assets/icons/xIcon.svg";
 import linkedInIcon from "../assets/icons/indeedIcon.svg";
-import CustomText from "@/pages/landingPage/components/CustomText";
+// import CustomText from "@/pages/landingPage/components/CustomText";
 import CustomBtn from "./CustomBtn";
 import { Link } from "react-router-dom";
+import CustomText from "./Specific/landingPage/CustomText";
 export default function Footer() {
   return (
     <footer className="border-t border-border py-9  max-sm:py-5 max-sm:px-4">

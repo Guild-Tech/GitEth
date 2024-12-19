@@ -1,13 +1,14 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Input, { PhoneNumberInput } from "../Input";
 import TextArea from "../TextArea";
 import { Button } from "@/components/ui/button";
 import { RootState } from "@/store";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import formStyles from "./formStyles";
 import { nextStep, prevStep } from "@/store/reducers/onboardingIndex";
-
+import { updateField } from "@/store/reducers/onboarding";
+import { useState } from "react";
 
 /**
  * ThirdScreen component.
@@ -17,42 +18,36 @@ import { nextStep, prevStep } from "@/store/reducers/onboardingIndex";
  * biography, and website. The component uses the user's existing data from
  * the Redux store to pre-fill some input fields.
  *
- * The component is responsive and adapts to different screen sizes.
- *
- * @returns {JSX.Element} The component JSX
+ * @returns {JSX.Element} The component JSX.
  */
 export const ThirdScreen = () => {
-  const { user } = useSelector((state: RootState) => state.auth);
-  const navigate = useNavigate()
+  // const { user } = useSelector((state: RootState) => state.auth);
+  const [isFormComplete, setIsFormComplete] = useState(false);
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
-  // Local state for inputs
-  const [formData, setFormData] = useState({
-    firstName: user?.displayName?.split(" ")[0] || "",
-    lastName: user?.displayName?.split(" ")[1] || "",
-    phoneNumber: "",
-    location: "",
-    biography: "",
-    website: "",
-  });
-  console.log(formData)
+
+
+
+
+  const onboarding = useSelector((state: RootState) => state.onboarding);
 
   // Handle input changes
-  const handleInputChange = (
-    field: keyof typeof formData,
-    value: string
-  ) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [field]: value,
-    }));
+  const handleInputChange = (field: any, value: string) => {
+    dispatch(updateField({ field, value }))
+    setIsFormComplete(
+      onboarding.firstname.length > 0 && onboarding.lastname.length > 0 && onboarding.phone.length > 0 && onboarding.bio.length > 0 && onboarding.website.length > 0);
+    // setFormData((prevData) => ({
+    //   ...prevData,
+    //   [field]: value,
+    // }));
   };
 
   /**
    * Handle the "Next" button click.
-   * Dispatches the formData to Redux and navigates to the next page.
+   * Dispatches the formData to Redux and navigates to the next step.
    */
   const handleNext = () => {
-    // You can dispatch the formData to Redux if needed or validate it here
+    // Perform validation or dispatch formData to Redux if needed
     dispatch(nextStep());
   };
 
@@ -65,58 +60,83 @@ export const ThirdScreen = () => {
             Provide additional information to help maintainers better match you
             with suitable projects.
           </p>
-          <button className={formStyles.skip} onClick={() => navigate("/dashboard")}>Skip</button>
         </div>
-
       </div>
+
+      {/* Input fields for first name and last name */}
       <div className="flex gap-4 max-sm:flex-col max-sm:gap-7">
         <Input
-          title="First Name" placeholder="Enter your first name" value={user?.displayName?.split(" ")[0]}
-          onChange={(e: any) => handleInputChange("firstName", e.target.value)}
-
+          title="First Name"
+          placeholder="Enter your first name"
+          value={onboarding.firstname}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            handleInputChange("firstname", e.target.value)
+          }
         />
-        <Input title="Last Name" placeholder="Enter your last name" value={user?.displayName?.split(" ")[1]}
-          onChange={(e: any) => handleInputChange("lastName", e.target.value)}
+        <Input
+          title="Last Name"
+          placeholder="Enter your last name"
+          value={onboarding.lastname}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            handleInputChange("lastname", e.target.value)
+          }
         />
       </div>
 
+      {/* Input fields for location and phone number */}
       <div className="flex gap-4 max-sm:flex-col max-sm:gap-7">
-        <Input title="Location" placeholder="Enter your loaction " value={""}
-          onChange={(e: any) => handleInputChange("location", e.target.value)}
+        <Input
+          title="Location"
+          placeholder="Enter your location"
+          value={onboarding.location}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            handleInputChange("location", e.target.value)
+          }
         />
-        <PhoneNumberInput title="Mobile Number" placeholder="Enter your phone number"
-          onChange={(e: any) => handleInputChange("phoneNumber", e.target.value)}
+        <PhoneNumberInput
+          title="Mobile Number"
+          placeholder="Enter your phone number"
+          value={onboarding.phone}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            handleInputChange("phone", e.target.value)
+          }
         />
       </div>
 
-      <TextArea title="Biography" placeholder="Tell us about yourself"
-        onChange={(e: any) => handleInputChange("biography", e.target.value)}
-      />
-      <Input title="Website" placeholder="Add a link to your website"
-        onChange={(e: any) => handleInputChange("website", e.target.value)}
+      {/* Input field for biography */}
+      <TextArea
+        title="Biography"
+        placeholder="Tell us about yourself"
+        value={onboarding.bio}
+        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+          handleInputChange("bio", e.target.value)
+        }
       />
 
+      {/* Input field for website */}
+      <Input
+        title="Website"
+        placeholder="Add a link to your website"
+        value={onboarding.website}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          handleInputChange("website", e.target.value)
+        }
+      />
+
+      {/* Button group for navigation */}
       <div className={formStyles.btnGroup}>
         <Button
           onClick={() => dispatch(prevStep())}
-          variant={"outline"}
+          variant="outline"
           className="w-full p-6 bg-white rounded-full font-normal text-base"
         >
           Back
         </Button>
         <Button
-        onClick={handleNext}
-          // onClick={() => {dispatch(nextStep()); dispatch(setOnboardUser({
-          //   ...onboardingInfo,
-          //   firstName: formData.firstName,
-          //   lastName: formData.lastName,
-          //   email: user?.email as string,
-          //   photoURL: user?.photoURL as string,
-          //   location: formData.location,
-          //   website: formData.website,
-          // })}}
-          variant={"secondary"}
-          className="w-full p-6 rounded-full font-normal text-base"
+          onClick={handleNext}
+          variant="secondary"
+          disabled={!isFormComplete}
+          className={`w-full p-6 rounded-full font-normal text-base `}
         >
           Next
         </Button>

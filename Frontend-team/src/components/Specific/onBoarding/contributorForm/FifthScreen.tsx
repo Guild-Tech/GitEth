@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import personIcon from "../../../../assets/icons/person.svg"
 import { OnboardingButton } from "../OnboardingCTAButton";
 import formStyles from "./formStyles";
-import { AppDispatch } from "@/store";
-import { useDispatch } from "react-redux";
+import { AppDispatch, RootState } from "@/store";
+import { useDispatch, useSelector } from "react-redux";
 import { updateField } from "@/store/reducers/onboarding";
 import { nextStep, prevStep } from "@/store/reducers/onboardingIndex";
 
@@ -24,7 +24,14 @@ import { nextStep, prevStep } from "@/store/reducers/onboardingIndex";
 export const FifthScreen = () => {
   const [active, setActive] = useState<string | null>(null);
   const dispatch = useDispatch<AppDispatch>();
+  const [isFormComplete, setIsFormComplete] = useState(false);
 
+  const onboarding = useSelector((state: RootState) => state.onboarding);
+  const handleInputChange = ()=>{
+  setIsFormComplete(
+   onboarding.profession.length > 0 );
+
+}
   return (
     <div className={formStyles.container}>
 
@@ -35,7 +42,6 @@ export const FifthScreen = () => {
             Provide additional information to help maintainers better match you
             with suitable projects.
           </p>
-          <button className={formStyles.skip} onClick={() => { dispatch(nextStep())}}>Skip</button>
         </div>
       </div>
       <div className="flex flex-col gap-4">
@@ -43,7 +49,7 @@ export const FifthScreen = () => {
           icon={personIcon}
           active={active}
           size="small"
-          onClick={() => {setActive("tech"); dispatch(updateField({ field: "role" , value: "" }))}}
+          onClick={() => {setActive("tech"); dispatch(updateField({ field: "profession" , value: "tech" })); handleInputChange()}}
           name="tech"
           title="I’m a Tech Bro"
           desc="Create a portfolio to discover open source projects."
@@ -53,7 +59,7 @@ export const FifthScreen = () => {
           icon={personIcon}
           active={active}
           size="small"
-          onClick={() => setActive("non-tech")}
+          onClick={() => {setActive("non-tech"); dispatch(updateField({ field: "profession" , value: "non-tech" })); handleInputChange()}}
           name="non-tech"
           title="I’m a Non-Tech Bro"
           desc="Create and maintain open source ethereum projects."
@@ -70,6 +76,7 @@ export const FifthScreen = () => {
         <Button
           onClick={() => dispatch(nextStep())}
           variant={"secondary"}
+          disabled={!isFormComplete}
           className="w-full p-6 rounded-full font-normal text-base"
         >
           Next

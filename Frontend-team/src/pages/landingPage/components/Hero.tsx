@@ -4,8 +4,9 @@ import CustomBtn from "@/components/CustomBtn";
 import githubIcon from "../../../assets/icons/githubIcon.png"
 import ethicon from "../../../assets/icons/ethIcon.svg"
 import heroBg from "../../../assets/images/Background For Hero.png"
-import CustomText from "./CustomText";
+// import CustomText from "./CustomText";
 import { useNavigate } from "react-router-dom";
+import CustomText from "@/components/Specific/landingPage/CustomText";
 
 /**
  * The Hero component is the main section of the landing page. It contains a title, a description, and a call to action button to login with Github.

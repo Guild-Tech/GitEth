@@ -1,13 +1,14 @@
 import featureIcon from "../../../assets/icons/feature.svg";
-import googleIcon from "../../../assets/icons/googleIcon.svg";
-import gitHubIcon from "../../../assets/icons/githubIcon.svg";
-import gmailIcon from "../../../assets/icons/emailIcon.svg";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import diamond from "../../../assets/icons/diamond.png";
-import logo from "../../../assets/icons/EthOpenSource.svg";
-import CustomBtn from "@/components/Common/CustomBtn";
+// import logo from "../../../assets/icons/EthOpenSource.svg";
 import CustomText from "./CustomText";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { CarouselCard } from "./CarouselCard";
+import step1 from "../../../assets/images/step1.png";
+import step2 from "../../../assets/images/step2.png";
+import step3 from "../../../assets/images/step3.png"
+
 
 
 /**
@@ -21,17 +22,17 @@ import { useNavigate } from "react-router-dom";
  * @returns {JSX.Element} The component JSX
  */
 export default function HowItWorks() {
-  const navigate = useNavigate();
-  const h = () => {
-    console.log("object")
-  }
+  // const navigate = useNavigate();
+  // const h = () => {
+  //   console.log("object")
+  // }
   return (
     <section className="mx-auto max-w-7xl px-4 max-sm:px-7">
       <img src={featureIcon} alt="" className="mx-auto max-sm:w-36" />
 
       <div className="py-2">
         <div className="flex justify-center items-center sm:mt-3 ">
-          <CustomText text="How It Works" style="text-center text-5xl max-sm:text-2xl leading-8 font-bold mx-auto max-sm:text-3xl"/>
+          <CustomText text="How It Works" style="text-center text-5xl max-sm:text-2xl leading-8 font-bold mx-auto max-sm:text-3xl" />
         </div>
         <div className="flex justify-center my-12">
           <Tabs defaultValue="account" className="h-full mx-auto relative w-full flex flex-col items-center justify-center" activationMode="automatic">
@@ -40,37 +41,16 @@ export default function HowItWorks() {
               <TabsTrigger value="step2" className="py-3 px-6 rounded-3xl text-xl max-sm:text-lg max-sm:font-normal max-sm:px-6 max-sm:py-3 max-sm:w-full">Step 2</TabsTrigger>
               <TabsTrigger value="step3" className="py-3 px-6 rounded-3xl text-xl max-sm:text-lg max-sm:font-normal max-sm:px-6 max-sm:py-3max-sm:w-full max-sm:w-full">Step 3</TabsTrigger>
             </TabsList>
-            <TabsContent value="account" className="w-full ">
-              <div className="sm:backdrop-blur-md w-full border border-border  overflow-hidden rounded-3xl sm:h-[500px] max-sm:mt-5 flex items-center justify-center gap-3 flex-wrap">
-                <div className="flex p-3 max-sm:flex-col max-sm:my-2 max-sm:mx-4">
-                  <p className="bg-white max-sm:my-3  text-black text-2xl w-10 h-9 max-sm:w-8 max-sm:h-8 rounded-full flex items-center justify-center mr-7 max-sm:mr-3 max-sm:text-base ">1</p>
-                  <div className="">
-                    <h2 className="text-[32px] text-white max-sm:text-2xl max-sm:font-normal max-sm:mb-2">Sign Up and Create Your Profile</h2>
-                    <p className="text-grayBlue text-xl max-w-[536px] max-sm:text-base">Join the platform, create your profile, and highlight your skills.</p>
-                  </div>
-                </div>
-                <div className="border  border-border rounded-3xl p-6 transition-all ease-in-out hover:mb-0 -mb-24 max-sm:-mb-12 bg-[#D0D5DD] bg-opacity-5 backdrop-blur-lg max-w-[480px] max-sm:w-full max-sm:mx-4 w-full flex items-center flex-col">
-                  <img src={logo} alt="" className="max-w-64 my-5 max-sm:w-[137px]" />
-                  <div className="w-fit mb-5">
-                    <h2 className="mb-1 text-[28px] max-sm:text-[17px] max-sm:font-medium">Create your Projecty account</h2>
-                    <p className="text-grayBlue text-lg max-sm:text-lg max">Transform the way you manage projects.</p>
-                  </div>
-                  <div className="w-full flex flex-col items-center  my-5 gap-3">
-                    <CustomBtn onClick={() => {navigate("/onboarding"); h()}} style={"max-w-[416px] h-[48px] w-full"} colored="yes" text="Continue with Github" icon={gitHubIcon} />
-                    <div className="flex justify-between items-center w-full">
-                      <hr className="w-full  "/>
-                      <span className=" text-gray-400 px-4">OR</span>
-                      <hr className="w-full"/>
-                    </div>
-                    <CustomBtn onClick={""} style={"max-w-[416px] h-[48px] w-full mb-2"} colored="yes" text="Continue with Email" icon={gmailIcon}  />
-                    <CustomBtn onClick={""} style={"max-w-[416px] h-[48px] w-full"} colored="yes" text="Continue with Google" icon={googleIcon} />
 
-                  </div>
-                </div>
-              </div>
+            <TabsContent value="account" className="w-full ">
+              <CarouselCard id={1} image={step1} title="Sign Up and Create Your Profile" description="Join the platform, create your profile, and highlight your skills." />
             </TabsContent>
-            <TabsContent value="step2" className="w-full">Step 2</TabsContent>
-            <TabsContent value="step3" className="w-full">Step 3</TabsContent>
+            <TabsContent value="step2" className="w-full">
+              <CarouselCard id={2} image={step2} title="Explore Projects and Apply for Tasks" description="Browse open-source projects, find tasks that match your skills, and apply to contribute." />
+            </TabsContent>
+            <TabsContent value="step3" className="w-full">
+              <CarouselCard id={3} image={step3} title="Contribute, Track, and Get Rewarded" description="Complete tasks, submit your work, and get rewarded directly through the platform." />
+            </TabsContent>
             <div className="absolute top-20  right-[50%] -z-10">
               <img src={diamond} alt="" className=" w-56 blur-sm animate-pulse" />
             </div>

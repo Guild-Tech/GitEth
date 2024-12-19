@@ -93,7 +93,7 @@ interface MetricsProviderProps {
 // Provider component
 export const MetricsProvider: FC<MetricsProviderProps> = ({ children }) => {
   // Initialize metrics state with demo values
-  const [metrics, setMetrics] = useState<Metrics>({
+  const [metrics, setMetrics] = useState<any>({
     tasksCompleted: "45/60",
     pullRequestsApproved: "20/25",
     avgTaskCompletionTime: "4 ",

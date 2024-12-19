@@ -224,7 +224,9 @@ const Analytics: React.FC = () => {
                         <img src={profilePic1}></img>
                         <div>
                           <h3 className="text-white pr-2 font-light">
-                            {contributor.contributor || "Unknown"}
+                            {
+                            // contributor?.contributor || 
+                            "Unknown"}
                           </h3>
                         </div>
                       </div>

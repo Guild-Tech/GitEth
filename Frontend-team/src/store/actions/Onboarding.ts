@@ -16,6 +16,7 @@ const initialState: IOnboardUserState = {
   profession: "Tech",
   expertise: "Beginner",
   skills: [], // Initialize the skills as an empty array
+  goals: [], // Initialize the skills as an empty array
 };
 
 const userSlice = createSlice({

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PaymentsFunding from "./PaymentsFunding";
 import Analytics from "./Analytics";
 import Applications from "./Applications";

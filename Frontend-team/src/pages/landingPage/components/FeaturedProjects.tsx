@@ -7,8 +7,9 @@ import featureIcon from "../../../assets/icons/feature.svg";
 import { ArrowRightIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/ProjectCard";
-import CustomText from "./CustomText";
+// import CustomText from "./CustomText";
 import { useNavigate } from "react-router-dom";
+import CustomText from "@/components/Specific/landingPage/CustomText";
 
 interface Project {
   title: string;

@@ -2,13 +2,14 @@ import CustomBtn from "@/components/CustomBtn";
 import projectHookIcon from "../../../assets/icons/projectHookIcon.svg";
 import ethIcon from "../../../assets/icons/ethIcon.svg";
 import gitHubIcon from "../../../assets/icons/githubIcon.svg";
-import CustomText from "./CustomText";
+// import CustomText from "./CustomText";
 import team from "../../../assets/images/teamx.png";
 import nft from "../../../assets/images/nft.png";
 import glassMan from "../../../assets/images/glassManx.png";
 import coding from "../../../assets/images/codingx.png";
 import defi from "../../../assets/images/defi.png";
 import { useNavigate } from "react-router-dom";
+import CustomText from "@/components/Specific/landingPage/CustomText";
 
 /**
  * ProjectCategories component.

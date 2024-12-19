@@ -1,8 +1,9 @@
 // import React from 'react'
+import CustomText from "@/components/Specific/landingPage/CustomText";
 import diamond from "../../../assets/icons/diamond.png"
 import diamondIcon from "../../../assets/icons/eth.svg"
 import star from "../../../assets/images/rsz_stars.png"
-import CustomText from '@/pages/landingPage/components/CustomText'
+// import CustomText from '@/pages/landingPage/components/CustomText'
 export const ContributorsSideBar = () => {
   return (
     <div className="p-12  h-full ">

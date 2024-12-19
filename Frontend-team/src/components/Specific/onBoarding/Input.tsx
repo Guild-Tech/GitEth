@@ -47,7 +47,7 @@ export const PhoneNumberInput = (props:any) => {
 
         {/* Phone Number Input */}
         <input
-          type="tel"
+          type="number"
           name={props.name}
 
           value={props.value}
@@ -98,3 +98,67 @@ export function TagFields(props: any) {
   </div>
   )
 }
+
+
+interface DropdownFieldsProps {
+  selectedOptions: string[];
+  setSelectedOptions: React.Dispatch<React.SetStateAction<string[]>>;
+  options: string[];
+  title: string;
+}
+
+export const DropdownFields: React.FC<DropdownFieldsProps> = ({
+  selectedOptions,
+  setSelectedOptions,
+  options,
+  title,
+}) => {
+  const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    if (value && !selectedOptions.includes(value)) {
+      setSelectedOptions([...selectedOptions, value]);
+    }
+  };
+
+  const handleRemoveOption = (option: string) => {
+    setSelectedOptions(selectedOptions.filter((opt) => opt !== option));
+  };
+
+  return (
+    <div>
+      <h3 className="mb-2 font-medium">{title}</h3>
+      <div className="flex items-center bg-white border border-gray-300 rounded-3xl p-3 ">
+
+      <div className="flex gap-2 flex-wrap  w-full items-center">
+        {selectedOptions.map((option) => (
+          <span
+            key={option}
+            className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full cursor-pointer"
+            onClick={() => handleRemoveOption(option)}
+          >
+            {option} &times;
+          </span>
+        ))}
+      </div>
+
+      <select
+        className="w-12 p-2 border-none rounded-md  bg-transparent focus:outline-none focus:ring-0 focus-visible:outline-none"
+        onChange={handleSelect}
+        defaultValue=""
+      >
+        <option value="" disabled>
+          {/* {title.toLowerCase()} */}
+        </option>
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+
+
+      </div>
+
+    </div>
+  );
+};
