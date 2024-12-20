@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 // import { OnboardingButton } from "../..";
 // import { Button } from "@/components/ui/button";
-import personIcon from "../../../assets/icons/person.svg"
-import maintainerIcon from "../../../assets/icons/maintainer.svg"
+import personIcon from "../../../assets/icons/person.svg";
+import maintainerIcon from "../../../assets/icons/maintainer.svg";
 import { OnboardingButton } from "./OnboardingCTAButton";
 import { RootState, useAppDispatch } from "@/store";
 import {  useSelector } from "react-redux";
@@ -12,8 +12,7 @@ import formStyles from "./contributorForm/formStyles";
 import { nextStep } from "@/store/reducers/onboardingIndex";
 import { setUserData } from "@/store/reducers/onboarding";
 import { setRole } from "@/store/actions/onboardState";
-import { setOnboardUser } from "@/store/actions/Onboarding";
-
+// import { setOnboardUser } from "@/store/actions/Onboarding";
 
 /**
  * FirstScreen component.
@@ -27,7 +26,6 @@ import { setOnboardUser } from "@/store/actions/Onboarding";
  * @returns {JSX.Element} The component JSX
  */
 
-
 export const FirstScreen = () => {
   // const dispatch = useDispatch();
   const [active, setActive] = useState<string | null>(null);
@@ -39,7 +37,7 @@ export const FirstScreen = () => {
     if (user) {
       dispatch(nextStep());
     }
-  }, [user])
+  }, [user]);
 
   const { loginType:logintype } = useSelector((state: RootState) => state.onboardState);
      

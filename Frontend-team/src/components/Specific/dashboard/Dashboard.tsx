@@ -1,100 +1,84 @@
-import image23 from "../../../assets/images/image21.png";
 import Vector from "../../../assets/icons/Vector.png";
-// import diamond from "../../../assets/icons/diamond.png";
-// import diamondBlur from "../../../assets/icons/diamondBlur.svg";
 
+import data from "../../../utils/dummydat2.json";
 const Dashboard = () => {
   return (
-    <div className=" text-white min-h-screen relative max-sm:py-28 max-sm:px-2  p-28 grid gap6 max-sm:gap-3">
-      <div className="grid gap-6 md:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-3">
-        {/* My Projects Section */}
-        <div className="bg-gray-800 p-1 border border-customBlue  sm:p-4 md:p-8   top-[139px] gap-[24px] rounded-[24px] border-t-[1px]  ">
-          <div className="flex justify-between items-center">
-            <h2 className="sm:text-lg lg:text-xl text-lg  font-semibold ">
+    <div className=" text-white   max-sm:py-4 max-sm:px-2     container w-full   ">
+      {/* My Projects Section */}
+      <div className="bg-white bg-opacity-5  border border-customBlue     top-[139px] gap-[24px] rounded-[24px] border-t-[1px]    h-[540px]   ">
+        <div className="border-b border-border p-8">
+          <div className=" flex justify-between ">
+            <h2 className="sm:text-lg lg:text-xl text-lg font-kern text-[24px] ">
               My Projects
             </h2>
-            <p className="  flex gap-2">
+            <p className="  flex gap-2  max-sm:hidden text-[16px]">
               View all project
               <img
                 src={Vector}
                 alt=""
-                className="w-[16px] h-[16px] p-[2.5px] pr-[4.5px] pl-[5.5px] mt-1   "
+                className="w-[16px] h-[16px] p-[2.5px] pr-[4.5px] pl-[5.5px] mt-1  "
               />
             </p>
           </div>
-          <p className="mt-4 text-sm sm:text-base lg:text-lg font-matter text-[18px] font-normal color-gray-400 text-left ">
+
+          <p className="mt-4 text-sm sm:text-base   text-[18px] font-normal color-gray-400 text-left text-[#B3B8DB]  ">
             Here's an overview of your active, pending and completed projects.
           </p>
-          <div className="p-8 sm:p-6">
-            <hr className="border-t-[1px] border-[#293056] w-full" />
-          </div>
-
-          <div className=" mt-6 flex flex-col   items-center justify-center  h-40">
+          <p className="   gap-2 hidden max-sm:flex  max-sm:mt-5">
+            View all project
             <img
-              src={image23}
-              alt="No projects"
-              className="  mt-32 max-sm:mt-0"
+              src={Vector}
+              alt=""
+              className="w-[16px] h-[16px] p-[2.5px] pr-[4.5px] pl-[5.5px] mt-1   "
             />
-
-            <p className="text-[18px] font-medium text-center mt-8 p-2  max-sm:mt-0">
-              Nothing to see...
-            </p>
-            <p className="text-gray-500 text-sm p-2">
-              No contributions have been made yet.
-            </p>
-          </div>
-        </div>
-
-        {/* Contribution History Section */}
-        <div className=" bg-gray-800  p-1 border border-customBlue sm:p-6 md:p-8  top-[139px]  gap-[24px] rounded-[24px]">
-          <div className="flex justify-between items-center">
-            <h2 className=" sm:text-lg lg:text-xl text-lg font-semibold">
-              Contributor History
-            </h2>
-            <p className=" text-sm sm:text-base flex gap-2">
-              View all Contributors{" "}
-              <img
-                src={Vector}
-                alt=""
-                className="w-[16px] h-[16px] p-[2.5px] pr-[4.5px] pl-[5.5px] mt-1"
-              />
-            </p>
-          </div>
-          <p className="mt-4 font-matter text-[18px] font-normal color-gray-400 text-left text-sm sm:text-base lg:text-lg">
-            Here's an overview of your completed tasks, pull requests & commits.
           </p>
-          <div className="p-8 sm:p-6">
-            <hr className="border-t-[1px] border-[#293056] w-full" />
-          </div>
-          <div className="mt-6 flex flex-col items-center justify-center h-40">
-            <img
-              src={image23}
-              alt="No projects"
-              className="  mt-32 max-sm:mt-0"
-            />
-
-            <p className="text-[18px] font-medium text-center mt-8 p-2  max-sm:mt-0">
-              Nothing to see...
-            </p>
-            <p className="text-gray-500 text-sm p-2">
-              No contributions have been made yet.
-            </p>
-          </div>
         </div>
+        <div className="space-y-4 py-8  p-6 ">
+          {data.map((item) => (
+            <div
+              key={item.id}
+              className="w-full h-fit pt-4 gap-4 rounded-[16px] border flex flex-wrap max-sm:h-20 "
+            >
+              <img
+                src={item.logo}
+                alt="Logo"
+                className="w-10 h-10 gap-0 rounded-[10px] border mb-3 ml-2"
+              />
 
-        {/* <div className="absolute bottom-0 right-0 transform  z-0">
-          <img src={diamond} alt="" className="blur-3xl" />
-        </div> */}
-        {/* <div className="absolute top-40 left-32 z-index-0">
-          <img src={diamond} alt="" className="blur-xl" />
-        </div> */}
-        {/* <div className="absolute top-10 left-10 -z-10 hidden md:block">
-          <img
-            src={diamondBlur}
-            alt="Decorative diamond blur"
-            className="rotate-45 w-56"
-          />
-        </div> */}
+              <div className="text-base font-normal leading-[19.2px] text-left top-8  ">
+                <div>{item.title}</div>
+                <div className="w-[331px] bg-gray-200 rounded h-1 dark:bg-black mt-4 max-sm:hidden">
+                  <div
+                    className="bg-gray-100 h-1 rounded"
+                    style={{
+                      width: `${
+                        item.progress?.completed && item.progress?.total
+                          ? (item.progress.completed / item.progress.total) *
+                            100
+                          : 0
+                      }%`,
+                    }}
+                  ></div>
+                </div>
+              </div>
+
+              <div className="space-x-4 ml-auto mb-1 max-sm:hidden ">
+                <div className="text-gray-400 text-sm p-2 max-sm:mb-12">
+                  <span className="flex gap-2">
+                    <img
+                      src={item.icons?.[0]?.src}
+                      alt={item.icons?.[0]?.alt || "Default Alt Text"}
+                    />
+                    Due by {item.dueDate}
+                  </span>
+                  <span>{`${item.progress?.completed || 0}/${
+                    item.progress?.total || 0
+                  } Tasks Completed`}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
