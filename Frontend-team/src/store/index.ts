@@ -6,7 +6,7 @@ import onboardingReducer from "./reducers/onboarding"
 import onboardStateReducer from "./actions/onboardState"
 import { useDispatch } from 'react-redux'
 import { AppDispatch } from './types'
-
+import projectsReducer from "./reducers/projectsSlice"
 
 export const store = configureStore({
   reducer: {
@@ -15,8 +15,7 @@ export const store = configureStore({
     auth: authReducer,
     onboarding: onboardingReducer,
     onboardState: onboardStateReducer,
-
-    // counter: counterReducer
+    projects: projectsReducer,
   },
 })
 

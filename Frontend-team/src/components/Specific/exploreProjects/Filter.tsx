@@ -1,5 +1,8 @@
 import { useState } from "react";
 import Frame from "../../../assets/icons/Frame (2).png";
+import { AppDispatch } from "@/store";
+import { useDispatch } from "react-redux";
+import { setFilters } from "@/store/reducers/projectsSlice";
 
 // Define the shape of the active state
 interface ActiveBtnState {
@@ -16,6 +19,7 @@ interface FilterProps {
 }
 
 const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
+  const dispatch = useDispatch<AppDispatch>();
   const [activeBtn, setActiveBtn] = useState<ActiveBtnState>({
     trending: "",
     experience: "",
@@ -24,9 +28,12 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
     date: "",
     skills: "",
   });
-
   const handleActive = (group: keyof ActiveBtnState, value: string) => {
-    setActiveBtn((prev) => ({ ...prev, [group]: value }));
+    if(activeBtn[group] === value){
+      setActiveBtn((prev) => ({ ...prev, [group]: "" }));
+    } else{
+      setActiveBtn((prev) => ({ ...prev, [group]: value }));
+    }
   };
 
   const getButtonClass = (group: keyof ActiveBtnState, value: string) =>
@@ -55,7 +62,7 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
         {["Trending", "Most Active"].map((btn) => (
           <button
             key={btn}
-            onClick={() => handleActive("trending", btn)}
+            onClick={() => {handleActive("trending", btn); activeBtn.trending === btn ? dispatch(setFilters({ difficulty: "" as any})) : dispatch(setFilters({ difficulty: btn as any }))}}
             className={`text-sm text-white p-[8px_16px] rounded-[8px] border hover:opacity-80 ${getButtonClass(
               "trending",
               btn
@@ -86,7 +93,7 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
           {["Beginner", "Intermediate", "Expert"].map((level) => (
             <button
               key={level}
-              onClick={() => handleActive("experience", level)}
+              onClick={() => {handleActive("experience", level); activeBtn.experience === level ? dispatch(setFilters({ difficulty: "" as any})) : dispatch(setFilters({ difficulty: level as any }))}}
               className={`text-sm text-white rounded-[8px] border hover:opacity-80 p-[8px_16px] ${getButtonClass(
                 "experience",
                 level
@@ -105,7 +112,7 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
           {["Lowest", "Highest"].map((reward) => (
             <button
               key={reward}
-              onClick={() => handleActive("rewards", reward)}
+              onClick={() => {handleActive("rewards", reward); activeBtn.rewards === reward ? dispatch(setFilters({ rewards: "" as any})) : dispatch(setFilters({ rewards: reward as any }))}}
               className={`text-sm text-white rounded-[8px] border hover:opacity-80 p-[8px_16px] ${getButtonClass(
                 "rewards",
                 reward
@@ -124,7 +131,7 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
           {["Volunteer", "Funded"].map((type) => (
             <button
               key={type}
-              onClick={() => handleActive("projects", type)}
+              onClick={() => {handleActive("projects", type); activeBtn.projects === type ? dispatch(setFilters({ status: "" as any})) : dispatch(setFilters({ status: type as any }))}}
               className={`text-sm text-white rounded-[8px] border hover:opacity-80 p-[8px_16px] ${getButtonClass(
                 "projects",
                 type
@@ -143,7 +150,7 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
           {["Newest first", "Oldest First"].map((date) => (
             <button
               key={date}
-              onClick={() => handleActive("date", date)}
+              onClick={() => {handleActive("date", date); activeBtn.date === date ? dispatch(setFilters({ status: "" as any})) : dispatch(setFilters({ status: date as any }))}}
               className={`text-sm text-white rounded-[8px] border hover:opacity-80 p-[8px_16px] ${getButtonClass(
                 "date",
                 date
@@ -162,7 +169,7 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
           {["React", "Security", "Community", "UX Design", "Solidity", "Marketing"].map((skill) => (
             <button
               key={skill}
-              onClick={() => handleActive("skills", skill)}
+              onClick={() => {handleActive("skills", skill); activeBtn.skills === skill ? dispatch(setFilters({ skills: [] })) :  dispatch(setFilters({ skills: [skill.toLowerCase()]  }))}}
               className={`text-sm text-white rounded-[8px] border hover:opacity-80 p-[8px_16px] ${getButtonClass(
                 "skills",
                 skill

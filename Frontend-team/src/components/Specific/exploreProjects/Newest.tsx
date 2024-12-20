@@ -6,6 +6,9 @@ import frame from "../../../assets/images/Frame (7).png";
 import icon2 from "../../../assets/icons/icon2.svg";
 import icon3 from "../../../assets/icons/icon3.svg";
 import Frame2 from "../../../assets/icons/Frame (2).svg";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
+import { selectFilteredProjects } from "@/store/reducers/projectsSlice";
 
 const Newest = () => {
   interface Project {
@@ -81,7 +84,10 @@ const Newest = () => {
       Frame2: Frame2,
     },
   ];
+  const filteredProjects = useSelector((state: RootState) => selectFilteredProjects(state));
+  // console.log(filteredProjects)
   return (
+
     <div>
       <div className="flex items-center justify-between  mt-12 p-2">
         <select className="bg-gray-100 text-black  rounded-[20px]  ">
@@ -96,10 +102,7 @@ const Newest = () => {
         </p>
       </div>
       <div className="grid gap-6 md:grid-cols-1 p-4">
-        {projects.map((project, index) => (
-          <ProjecCard project={project} key={index} />
-        ))}
-        {projects.map((project, index) => (
+        {filteredProjects.map((project, index) => (
           <ProjecCard project={project} key={index} />
         ))}
       </div>
