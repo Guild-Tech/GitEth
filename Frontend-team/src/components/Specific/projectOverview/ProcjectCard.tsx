@@ -10,56 +10,67 @@ import clock from "../../../assets/images/Frame (17).png";
 import eth from "../../../assets/images/ethereum-eth 1.png";
 
 import arrows from "../../../assets/images/Frame (8).png";
+import Open from "./Open";
 
 const ProcjectCard = () => {
   const [expand, setExpand] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
-    <div className="w-full  border border-[#293056]  rounded-[16px] p-5 max-sm:w-full mt-5">
+    <div className="w-full  border border-[#293056]  rounded-[16px] p-5 max-sm:w-full mt-5 bg-white bg-opacity-5">
       <div className="flex items-center justify-between">
         <h2 className="w-[682px] h-[29px] font-sans text-[24px] font-medium leading-[28.8px] ">
           DeFi Protocol Enhancement
         </h2>
-        <button className="bg-slate-100  rounded-[20px] p-2">
+        <button
+          className="bg-slate-100  rounded-[20px] p-2"
+          onClick={toggleModal}
+        >
           <p className="font-sans text-[16px] font-normal leading-[19.2px] text-black">
             Contribute
           </p>
         </button>
       </div>
 
-      <div className="flex gap-4 mt-4">
-        <img src={logo1} alt="" className="w-[80px] h-[80px]" />
+      <div className="flex gap-4 mt-4 max-sm:grid max-sm:grid-cols-1">
+        <img src={logo1} alt="" className="w-[80px] h-[80px] max-sm:mt-4" />
         <div className="flex flex-col gap-2">
           <h2 className="font-kern text-[24px] font-medium leading-[28.8px]">
             Create a Voting Smart Contract
           </h2>
 
-          <div className="flex gap-2  ">
-            <span className="w-[81px] h-[33px] rounded-[20px] bg-[#0D0F1C] border border-[#363F72] flex gap-2 ">
-              <img src={elis2} alt="" className="mt-2 ml-2 w-[16px] h-[16px]" />
-              <p className="font-matter text-[14px] font-normal leading-[16.8px] w-[33px] h-[17px] flex items-center justify-center mt-1">
-                {" "}
-                Vhee
-              </p>
-            </span>
-            <div className="flex gap-2">
-              <img src={frame1} alt="" className="w-[16px] h-[16px] mt-1" />{" "}
-              <p>Bug</p>
+          <div className="flex gap-2 max-sm:flex-wrap items-center ">
+            <div className="flex gap-2 items-center ">
+              <span className="w-[81px] h-[33px] rounded-[20px] bg-black border border-[#363F72] flex gap-2 max-sm:w-[81px] p-2">
+                <img src={elis2} alt="" className=" w-[16px] h-[16px]" />
+                <p className="text-[14px] font-normal leading-[16.8px] w-[33px] h-[17px]  ">
+                  {" "}
+                  Vhee
+                </p>
+              </span>
+
+              <div className="flex gap-2  ">
+                <img src={frame1} alt="" className="w-[16px] h-[16px] mt-1" />{" "}
+                <p>Bug</p>
+              </div>
+              <div className="flex gap-2  ">
+                <img src={frame2} alt="" className="w-[16px] h-[16px] mt-1" />
+                <p>5 months ago</p>
+              </div>
             </div>
-            <div className="flex gap-2">
-              <img src={frame2} alt="" className="w-[16px] h-[16px] mt-1" />
-              <p>5 months ago</p>
-            </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2  ">
               <img src={frame3} alt="" className="w-[16px] h-[16px] mt-1" />
               <p>17 Applicants</p>
             </div>
             <div>
-              <button className="w-[112px] h-[33px] border border-customBlue rounded-[20px]">
+              <button className="w-[112px] h-[33px] border border-customBlue rounded-[20px] bg-white bg-opacity-5">
                 Intermediate
               </button>
             </div>
-            <div className="">
-              <button className="w-[112px] h-[33px] border border-customBlue rounded-[20px]">
+            <div className=" ">
+              <button className="w-[112px] h-[33px] border border-customBlue rounded-[20px] bg-white bg-opacity-5">
                 In-Progress
               </button>
             </div>
@@ -125,7 +136,7 @@ const ProcjectCard = () => {
                 </ol>
               </div>
               <hr className="mt-3" />
-              <div className="flex gap-2 mt-4">
+              <div className="flex gap-2 mt-4 max-sm:flex-wrap">
                 <img src={clock} alt="" className="w-[18px] h-[18px] mt-1" />
                 <p>12-15</p>
                 <div className="flex gap-2">
@@ -134,13 +145,14 @@ const ProcjectCard = () => {
                 <div className="flex gap-2">
                   <img src={eth} alt="" className="w-[18px] h-[20px] mt-1" />
                   <p>0.2 ETH</p>
+                  <p className="text-[#B3B8DB]">Reward</p>
                 </div>
-                <p className="text-[#B3B8DB]">Reward</p>
               </div>
             </div>
           </div>
         )}
       </div>
+      <Open isOpen={isModalOpen} onClose={toggleModal} />
     </div>
   );
 };

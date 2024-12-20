@@ -146,6 +146,9 @@ src/
 | Command         | Description                               |
 | --------------- | ----------------------------------------- |
 | `npm run dev`   | Start the development server              |
+| `npm run build` | Build the app for production              |
+| `npm run preview` | Preview the production build            |
+| `npm run lint`  | Lint the code (if ESLint is configured)   |
 | `npm run build` | Build the app for production              |  |
 
 ## Styling with Tailwind CSS

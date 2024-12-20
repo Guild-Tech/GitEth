@@ -10,7 +10,6 @@ import { loginWithGitHub } from "@/store/actions/auth";
 import { FirstScreenProps } from "../types";
 import formStyles from "./formStyles";
 
-
 /**
  * FirstScreen component.
  *
