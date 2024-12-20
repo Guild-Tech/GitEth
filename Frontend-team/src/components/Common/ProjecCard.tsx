@@ -1,14 +1,12 @@
 import skillIcon from "../../assets/icons/skill.svg";
-import { ArrowRightIcon } from "lucide-react";
-import frame1 from "../../assets/icons/Frame.svg";
+
 import fram1 from "../../assets/images/Frame (7).png";
 import fram2 from "../../assets/images/Frame (8).png";
 import frams from "../../assets/images/Frame (21).png";
 import icon2 from "../../assets/icons/icon2.svg";
 import icon3 from "../../assets/icons/icon3.svg";
 import CustomBtn from "./CustomBtn";
-import frame from "../../assets/images/Frame (7).png";
-import Frame2 from "../../assets/icons/Frame (2).svg";
+
 import usdt from "../../assets/images/usdt.png";
 import circle from "../../assets/icons/ciclle.png";
 import { useState } from "react";

@@ -47,7 +47,6 @@ function App() {
           <Route path="/contributors" element={<Contributor/>} />
           <Route index element={<LandingPage />} />
           <Route path="/contributors" element={<Contributor />} />
-          
           <Route path="/projects" element={<ExploreProjecs />} />
           <Route path="/rewards" element={<h1>Rewards</h1>} />
           <Route path="/community" element={<h1>Community</h1>} />

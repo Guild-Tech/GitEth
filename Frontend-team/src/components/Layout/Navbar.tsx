@@ -7,8 +7,8 @@ import { RootState } from '@/store';
 // import { DarkThemeToggle } from 'flowbite-react';
 import notificationIcon from "../../assets/icons/notificationIcon.svg"
 import { 
-  loginWithGitHub,
-  loginWithGoogle,
+  // loginWithGitHub,
+  // loginWithGoogle,
   // loginWithEmailPassword, loginWithGitHub, loginWithGoogle, 
   logout } from '@/store/actions/auth';
 import git from "../../assets/icons/gith.svg";
@@ -19,7 +19,7 @@ import { setLoginType } from '@/store/actions/onboardState';
 export default function Navigation() {
   const [activeLink, setActiveLink] = useState('Home'); // Initial active link
   const { user } = useSelector((state: RootState) => state.auth);
-  const { loginType:isLogin } = useSelector((state: RootState) => state.onboardState);
+  // const { loginType:isLogin } = useSelector((state: RootState) => state.onboardState);
   const [isProfile, setIsProfile] = useState(false);
   const [isDroped, setIsDroped] = useState(false);
   const dispatch = useDispatch();

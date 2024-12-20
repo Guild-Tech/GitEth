@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { ContributorsSideBar } from "../../components/Specific/onBoarding/ContributorsSideBar";
 import { OBNavbar } from "../../components/Specific/onBoarding/OBNavbar";
 

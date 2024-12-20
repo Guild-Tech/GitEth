@@ -42,7 +42,7 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
       : "bg-[#101323] border-[#363F72]";
 
   return (
-    <div className="h-[743px]   border border-customBlue gap-24 rounded-[24px] mt-20 w-[513px] container max-sm:hidden  bg-white bg-opacity-5">
+    <div className="h-fit  border border-customBlue gap-24 rounded-[24px] mt-20 pb-5 mb-5 w-[513px] container max-sm:hidden  bg-white bg-opacity-5">
       <div className="border-b border-border p-2 ">
         <div className="relative">
           <div className="flex items-center justify-between p-4 ">
@@ -173,7 +173,7 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
             <button
               key={skill}
               onClick={() => {handleActive("skills", skill); activeBtn.skills === skill ? dispatch(setFilters({ skills: [] })) :  dispatch(setFilters({ skills: [skill.toLowerCase()]  }))}}
-              className={`text-sm  text-white w-[68px] h-[33px]  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px] ${getButtonClass(
+              className={`text-sm  text-white w-fit h-[33px]  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px] ${getButtonClass(
                 "skills",
                 skill
               )}`}
