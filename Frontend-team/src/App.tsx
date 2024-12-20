@@ -5,7 +5,8 @@ import MainApp from "./pages/mainApp";
 
 import Onboarding from "./pages/onBoarding";
 import Dashboard from "./pages/dashboard";
-import Sidebar from "./pages/exploreProjects";
+import Sidebar from "./pages/projectOverview";
+
 import diamond from "./assets/icons/diamond.png";
 
 import ExploreProjecs from "./pages/exporeProject";
@@ -44,6 +45,8 @@ function App() {
         <Route path="/" element={<MainApp />}>
           <Route index element={isLogedIn?<Dashboard />:<LandingPage />} />
           <Route path="/contributors" element={<Contributor/>} />
+          <Route index element={<LandingPage />} />
+          <Route path="/contributors" element={<Contributor />} />
           <Route path="/projects" element={<ExploreProjecs />} />
           <Route path="/rewards" element={<h1>Rewards</h1>} />
           <Route path="/community" element={<h1>Community</h1>} />
@@ -56,6 +59,22 @@ function App() {
         <Route element={<Onboarding />} path="/onboarding" />
       </Routes>
 
+      <div className="container mx-auto relative">
+        <div className="fixed top-10 left-20 -z-10 hidden md:block">
+          <img
+            src={diamond}
+            alt="Decorative diamond blur"
+            className="rotate-45 w-56 blur-lg animate-float-slow"
+          />
+        </div>
+        <div className="fixed bottom-10 right-20 -z-10 hidden md:block animate-float-slow">
+          <img
+            src={diamond}
+            alt="Decorative diamond "
+            className="w-56 blur-lg"
+          />
+        </div>
+      </div>
          <div className="container mx-auto relative">
 
          <div className="fixed top-10 left-20 -z-10 hidden md:block">

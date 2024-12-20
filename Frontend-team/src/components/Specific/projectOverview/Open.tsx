@@ -4,13 +4,13 @@ const Open = ({ isOpen, onClose }: any) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 mt-24">
       <div className="bg-white text-black p-6 rounded-[20px] shadow-lg w-full max-w-md">
         <div className="flex justify-between items-center">
           <h2 className="text-[28px] font-medium leading-[33.6px]">Proposal</h2>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-black h-[28px] w-[28px] border border-[#E8D07A,#5312D6] rounded-[20px] flex items-center justify-center"
+            className="text-gray-500 hover:text-black h-[48px] w-[48px] border-l border-r border-l-[#E8D07A] border-r-[#5312D6]   rounded-[26px] flex items-center justify-center"
           >
             <img
               src={right}
@@ -29,18 +29,18 @@ const Open = ({ isOpen, onClose }: any) => {
               How Would You Approach the Project
             </label>
             <textarea
-              className="w-full border border-gray-300 rounded-[20px] p-2 mt-1 text-black"
+              className="w-full border border-gray-300 rounded-[20px] p-3 mt-1 text-black h-[120px]"
               placeholder="Tell us something..."
-            ></textarea>
+            />
           </div>
           <div>
             <label className="block text-sm font-medium text-[#9DA4AE]">
               Relevant Experience or Background
             </label>
             <textarea
-              className="w-full border border-gray-300 rounded-[20px]  p-2 mt-1 text-black"
+              className="w-full h-[120px] border border-gray-300 rounded-[20px] align-text-top p-3 mt-1  text-black"
               placeholder="Tell us about what you've done..."
-            ></textarea>
+            />
           </div>
           <div>
             <label className="block text-sm font-medium text-[#9DA4AE]">

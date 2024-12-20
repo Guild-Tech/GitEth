@@ -18,14 +18,15 @@ import Open from "./Open";
 
 const Carditem = () => {
   const [expand, setExpand] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
-  };
+  }; // Toggle modal visibility
 
   return (
     <div className="w-full ">
-      <div className="w-full h-[204px] rounded-[16px] border border-[#293056] mt-8 p-5 flex   gap-2 max-sm:p-4 max-sm:w-[500px]">
+      <div className="w-full h-[204px] rounded-[16px] border border-[#293056] mt-8 p-5  flex  gap-2  max-sm:w-[500px] max-sm:hidden bg-white bg-opacity-5">
         <img src={logo1} alt="" className="w-[80px] h-[80px] " />
 
         <div className="flex  flex-col  ">
@@ -33,8 +34,8 @@ const Carditem = () => {
             DeFi Protocol Enhancement
           </p>
           <div className="flex gap-4 mt-4">
-            <div className="flex  items-center gap-1 rounded-[16px] border border-[#363F72] w-36 ">
-              <img src={circle} alt="" className="w-4 h-4 mt-1" />
+            <div className="flex  items-center gap-1 rounded-[16px] border border-[#363F72] w-fit h-[33px] p-1 bg-black ">
+              <img src={circle} alt="" className="w-4 h-4 " />
               <p>Eth Open Source</p>
             </div>
             <div className="flex items-center gap-2 ">
@@ -45,7 +46,7 @@ const Carditem = () => {
             </div>
           </div>
 
-          <div className="w-[700px] h-[44px] text-left max-sm:w-[600px]">
+          <div className="w-[700px] h-[44px]  max-sm:w-[600px]">
             <p className="mt-4 text-[#B3B8DB]">
               Help improve the security and scalability of a cutting-edge
               decentralized finance protocol. Collaborate with experienced
@@ -55,14 +56,15 @@ const Carditem = () => {
           </div>
         </div>
       </div>
-      <div className="mt-6 max-sm:w-full max-sm:p-4">
+
+      <div className="mt-6 max-sm:w-full ">
         <h2
           className="font-
-Kern font-[24px]"
+Kern font-[24px] text-[24px]"
         >
           Available Tasks
         </h2>
-        <div className="w-full border border-[#293056] mt-5 rounded-[16px] p-5 max-sm:w-full">
+        <div className="w-full border border-[#293056] mt-5 rounded-[16px] p-5 max-sm:w-full bg-white bg-opacity-5">
           <div className="flex items-center justify-between">
             <h2 className="w-[682px] h-[29px] font-sans text-[24px] font-medium leading-[28.8px] ">
               DeFi Protocol Enhancement
@@ -71,27 +73,23 @@ Kern font-[24px]"
               className="bg-slate-100  rounded-[20px] p-2"
               onClick={toggleModal}
             >
-              <p className="font-sans text-[16px] font-normal leading-[19.2px] text-black">
+              <p className=" text-[16px] font-normal leading-[19.2px] text-black">
                 Contribute
               </p>
             </button>
           </div>
 
-          <div className="flex gap-4 mt-4">
-            <img src={logo1} alt="" className="w-[80px] h-[80px]" />
-            <div className="flex flex-col gap-2">
+          <div className="flex gap-4 mt-4 max-sm:grid max-sm:grid-cols-1">
+            <img src={logo1} alt="" className="w-[80px] h-[80px] max-sm:mt-4" />
+            <div className="flex flex-col gap-2 ">
               <h2 className="font-kern text-[24px] font-medium leading-[28.8px]">
                 Create a Voting Smart Contract
               </h2>
 
-              <div className="flex gap-2  ">
-                <span className="w-[81px] h-[33px] rounded-[20px] bg-[#0D0F1C] border border-[#363F72] flex gap-2 ">
-                  <img
-                    src={elis2}
-                    alt=""
-                    className="mt-2 ml-2 w-[16px] h-[16px]"
-                  />
-                  <p className="font-matter text-[14px] font-normal leading-[16.8px] w-[33px] h-[17px] flex items-center justify-center mt-1">
+              <div className="flex gap-2 max-sm:flex-wrap items-center">
+                <span className="w-[81px] h-[33px] rounded-[20px] bg-black border border-[#363F72] flex gap-2 items-center p-2 ">
+                  <img src={elis2} alt="" className=" w-[16px] h-[16px]" />
+                  <p className=" text-[14px] font-normal leading-[16.8px] w-[33px] h-[17px] ">
                     {" "}
                     Vhee
                   </p>
@@ -109,12 +107,12 @@ Kern font-[24px]"
                   <p>17 Applicants</p>
                 </div>
                 <div>
-                  <button className="w-[112px] h-[33px] border border-customBlue rounded-[20px]">
+                  <button className="w-[112px] h-[33px] border border-customBlue rounded-[20px] bg-white bg-opacity-5">
                     Intermediate
                   </button>
                 </div>
                 <div className="">
-                  <button className="w-[112px] h-[33px] border border-customBlue rounded-[20px]">
+                  <button className="w-[112px] h-[33px] border border-customBlue rounded-[20px] bg-white bg-opacity-5">
                     In-Progress
                   </button>
                 </div>
@@ -180,7 +178,7 @@ Kern font-[24px]"
                     </ol>
                   </div>
                   <hr className="mt-3" />
-                  <div className="flex gap-2 mt-4">
+                  <div className="flex gap-2 mt-4 max-sm:flex-wrap">
                     <img
                       src={clock}
                       alt=""
@@ -190,15 +188,15 @@ Kern font-[24px]"
                     <div className="flex gap-2">
                       <p className="text-[#B3B8DB]">Hours to complete</p>
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 ">
                       <img
                         src={eth}
                         alt=""
                         className="w-[18px] h-[20px] mt-1"
                       />
                       <p>0.2 ETH</p>
+                      <p className="text-[#B3B8DB]">Reward</p>
                     </div>
-                    <p className="text-[#B3B8DB]">Reward</p>
                   </div>
                 </div>
               </div>

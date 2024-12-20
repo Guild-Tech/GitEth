@@ -1,5 +1,8 @@
 import { useState } from "react";
 import Frame from "../../../assets/icons/Frame (2).png";
+import { AppDispatch } from "@/store";
+import { useDispatch } from "react-redux";
+import { setFilters } from "@/store/reducers/projectsSlice";
 
 // Define the shape of the active state
 interface ActiveBtnState {
@@ -16,6 +19,7 @@ interface FilterProps {
 }
 
 const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
+  const dispatch = useDispatch<AppDispatch>();
   const [activeBtn, setActiveBtn] = useState<ActiveBtnState>({
     trending: "",
     experience: "",
@@ -24,9 +28,12 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
     date: "",
     skills: "",
   });
-
   const handleActive = (group: keyof ActiveBtnState, value: string) => {
-    setActiveBtn((prev) => ({ ...prev, [group]: value }));
+    if(activeBtn[group] === value){
+      setActiveBtn((prev) => ({ ...prev, [group]: "" }));
+    } else{
+      setActiveBtn((prev) => ({ ...prev, [group]: value }));
+    }
   };
 
   const getButtonClass = (group: keyof ActiveBtnState, value: string) =>
@@ -35,28 +42,31 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
       : "bg-[#101323] border-[#363F72]";
 
   return (
-    <div className="min-h-screen w-auto h-[900px] border border-customBlue gap-24 rounded-[16px] mt-12 p-5">
-      <div className="relative">
-        <div className="flex items-center justify-between p-4">
-          <p className="font-bold">Filters</p>
-          <img
-            src={Frame}
-            alt="Filter Icon"
-            onClick={() => setOpenSide(true)}
-            className="cursor-pointer"
-          />
+    <div className="h-fit  border border-customBlue gap-24 rounded-[24px] mt-20 pb-5 mb-5 w-[513px] container max-sm:hidden  bg-white bg-opacity-5">
+      <div className="border-b border-border p-2 ">
+        <div className="relative">
+          <div className="flex items-center justify-between p-4 ">
+            <p className="font-bold ">Filters</p>
+            <img
+              src={Frame}
+              alt=""
+              onClick={() => setOpenSide(true)}
+              className="cursor-pointer"
+            />
+          </div>
+          <p className="ml-4">
+            Find projects tailored to your skills and goals.
+          </p>
         </div>
-        <p className="ml-4">Find projects tailored to your skills and goals.</p>
-        <hr className="mt-6" />
       </div>
 
       {/* Trending and Most Active */}
-      <div className="flex items-center justify-start mt-4 p-6 gap-2">
+      <div className="flex items-center justify-start mt-4 p-6 gap-1">
         {["Trending", "Most Active"].map((btn) => (
           <button
             key={btn}
-            onClick={() => handleActive("trending", btn)}
-            className={`text-sm text-white p-[8px_16px] rounded-[8px] border hover:opacity-80 ${getButtonClass(
+            onClick={() => {handleActive("trending", btn); activeBtn.trending === btn ? dispatch(setFilters({ difficulty: "" as any})) : dispatch(setFilters({ difficulty: btn as any }))}}
+            className={`text-sm  text-white  p-[8px_16px] rounded-[8px]  border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5 ${getButtonClass(
               "trending",
               btn
             )}`}
@@ -67,10 +77,10 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
       </div>
 
       {/* Active Issues */}
-      <div className="p-5">
+      <div className="p-5 ml-4">
         <button
           onClick={() => handleActive("trending", "Active Issues")}
-          className={`text-sm text-white rounded-[8px] border hover:opacity-80 p-[8px_16px] ${getButtonClass(
+          className={`text-sm  text-white  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px] ${getButtonClass(
             "trending",
             "Active Issues"
           )}`}
@@ -78,16 +88,15 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
           Active Issues
         </button>
       </div>
-
       {/* Experience Level */}
-      <div className="flex flex-col space-y-2 p-5">
+      <div className="flex flex-col space-y-2 p-2 ml-4">
         <h1 className="text-white text-base font-semibold">Experience Level</h1>
         <div className="flex space-x-2">
           {["Beginner", "Intermediate", "Expert"].map((level) => (
             <button
               key={level}
-              onClick={() => handleActive("experience", level)}
-              className={`text-sm text-white rounded-[8px] border hover:opacity-80 p-[8px_16px] ${getButtonClass(
+              onClick={() => {handleActive("experience", level); activeBtn.experience === level ? dispatch(setFilters({ difficulty: "" as any})) : dispatch(setFilters({ difficulty: level as any }))}}
+              className={`text-sm  text-white  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px] ${getButtonClass(
                 "experience",
                 level
               )}`}
@@ -99,14 +108,14 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
       </div>
 
       {/* Rewards */}
-      <div className="flex flex-col space-y-2 p-5">
+      <div className="flex flex-col space-y-2 p-2 ml-4">
         <h3 className="text-white text-base font-semibold">Rewards</h3>
         <div className="flex space-x-2">
           {["Lowest", "Highest"].map((reward) => (
             <button
               key={reward}
-              onClick={() => handleActive("rewards", reward)}
-              className={`text-sm text-white rounded-[8px] border hover:opacity-80 p-[8px_16px] ${getButtonClass(
+              onClick={() => {handleActive("rewards", reward); activeBtn.rewards === reward ? dispatch(setFilters({ rewards: "" as any})) : dispatch(setFilters({ rewards: reward as any }))}}
+              className={`text-sm  text-white  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px] ${getButtonClass(
                 "rewards",
                 reward
               )}`}
@@ -117,15 +126,16 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
         </div>
       </div>
 
+
       {/* Projects Types */}
-      <div className="flex flex-col space-y-2 p-5">
+      <div className="flex flex-col space-y-2 p-2 ml-4">
         <h3 className="text-white text-base font-semibold">Projects Types</h3>
         <div className="flex space-x-2">
           {["Volunteer", "Funded"].map((type) => (
             <button
               key={type}
-              onClick={() => handleActive("projects", type)}
-              className={`text-sm text-white rounded-[8px] border hover:opacity-80 p-[8px_16px] ${getButtonClass(
+              onClick={() => {handleActive("projects", type); activeBtn.projects === type ? dispatch(setFilters({ status: "" as any})) : dispatch(setFilters({ status: type as any }))}}
+              className={`text-sm  text-white  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px] ${getButtonClass(
                 "projects",
                 type
               )}`}
@@ -137,14 +147,14 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
       </div>
 
       {/* Date */}
-      <div className="flex flex-col space-y-2 p-5">
+      <div className="flex flex-col space-y-2 p-2 ml-4">
         <h3 className="text-white text-base font-semibold">Date</h3>
         <div className="flex space-x-2">
           {["Newest first", "Oldest First"].map((date) => (
             <button
               key={date}
-              onClick={() => handleActive("date", date)}
-              className={`text-sm text-white rounded-[8px] border hover:opacity-80 p-[8px_16px] ${getButtonClass(
+              onClick={() => {handleActive("date", date); activeBtn.date === date ? dispatch(setFilters({ status: "" as any})) : dispatch(setFilters({ status: date as any }))}}
+              className={`text-sm  text-white  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5 p-[8px_16px] ${getButtonClass(
                 "date",
                 date
               )}`}
@@ -156,14 +166,14 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
       </div>
 
       {/* Skills */}
-      <div className="flex flex-col space-y-3 p-4">
+      <div className="flex flex-col space-y-3 p-2 ml-4">
         <h3 className="text-white text-base font-semibold">Skills</h3>
         <div className="grid grid-cols-3 gap-2">
           {["React", "Security", "Community", "UX Design", "Solidity", "Marketing"].map((skill) => (
             <button
               key={skill}
-              onClick={() => handleActive("skills", skill)}
-              className={`text-sm text-white rounded-[8px] border hover:opacity-80 p-[8px_16px] ${getButtonClass(
+              onClick={() => {handleActive("skills", skill); activeBtn.skills === skill ? dispatch(setFilters({ skills: [] })) :  dispatch(setFilters({ skills: [skill.toLowerCase()]  }))}}
+              className={`text-sm  text-white w-fit h-[33px]  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px] ${getButtonClass(
                 "skills",
                 skill
               )}`}

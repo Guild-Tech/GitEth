@@ -2,13 +2,13 @@ import { Navbar } from 'flowbite-react';
 import { useState } from 'react';
 import CustomBtn from '../Common/CustomBtn';
 import { Link, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { RootState, useAppDispatch } from '@/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/store';
 // import { DarkThemeToggle } from 'flowbite-react';
 import notificationIcon from "../../assets/icons/notificationIcon.svg"
 import { 
-  loginWithGitHub,
-  loginWithGoogle,
+  // loginWithGitHub,
+  // loginWithGoogle,
   // loginWithEmailPassword, loginWithGitHub, loginWithGoogle, 
   logout } from '@/store/actions/auth';
 import git from "../../assets/icons/gith.svg";
@@ -19,13 +19,12 @@ import { setLoginType } from '@/store/actions/onboardState';
 export default function Navigation() {
   const [activeLink, setActiveLink] = useState('Home'); // Initial active link
   const { user } = useSelector((state: RootState) => state.auth);
-  const { loginType:isLogin } = useSelector((state: RootState) => state.onboardState);
+  // const { loginType:isLogin } = useSelector((state: RootState) => state.onboardState);
   const [isProfile, setIsProfile] = useState(false);
   const [isDroped, setIsDroped] = useState(false);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // const { role, loginType } = useSelector((state: RootState) => state.onboardState);
 
-  const dispatch = useAppDispatch()
 
   const navigate = useNavigate();
   const loginsTypes = [
@@ -37,8 +36,6 @@ export default function Navigation() {
   const handleLogin = (logintype:string,) => {
     dispatch(setLoginType(logintype))
     if(logintype === "github"){
-
- 
         navigate("/onboarding")
 
     } else if(logintype === "google"){
@@ -77,14 +74,14 @@ export default function Navigation() {
       </Navbar.Brand>
       <div className="flex md:order-2 gap-2">
 
-        {user ? <div className="flex gap-5 relative">
+        {user ? <div className="flex gap-5">
           <CustomBtn text={``} colored="yes" icon={notificationIcon} btnstyle="p-0" iconStyle="w-3 h-3  rounded-full" style="flex w-[48px] h-[48px] max-sm:w-[32px] max-sm:h-[32px]" onClick={() => { navigate("/notifications") }} />
           <CustomBtn text={`${user?.username?.slice(0, 9)}...`} icon={user.photoURL} iconStyle="w-8 h-8 rounded-full" colored="yes" style="hidden md:flex w-[137px] text-[16px]" onClick={() => setIsProfile(!isProfile)} />
           <CustomBtn text={``} icon={user.photoURL} btnstyle="p-0" iconStyle="w-8 h-8 rounded-full" colored="yes" style="md:hidden flex max-sm:w-fit max-sm:h-fit text-[16px]" onClick={() => setIsProfile(!isProfile)} />
           {isProfile && <div className="absolute top-12 right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex={-1}>
             <Link to="/profile" onClick={() => setIsProfile(false)} className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-0">Your Profile</Link>
             <a href="#" onClick={() => setIsProfile(false)} className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-1">Settings</a>
-            <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-2" onClick={() => { dispatch(logout()); setIsProfile(false) }}>Sign out</a>
+            <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex={-1} id="user-menu-item-2" onClick={() => { dispatch(logout() as any); setIsProfile(false) }}>Sign out</a>
           </div>}
         </div> :
           <div className="relative">

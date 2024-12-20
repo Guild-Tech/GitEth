@@ -3,6 +3,8 @@ import logo2 from "../../../assets/images/logo2.png";
 import logo3 from "../../../assets/images/logo3.png";
 import Vector from "../../../assets/icons/Vector.png";
 import ProjectCard from "@/components/Common/ProjectCard";
+
+import Completesetup from "./Completesetup";
 // import diamond from "../../../assets/icons/diamond.png";
 
 const CardItem = () => {
@@ -43,12 +45,20 @@ const CardItem = () => {
     /* Top Projects Recommended for You */
   }
   return (
-    <div className=" p-6  ">
-      <div className="flex  justify-between items-center">
-        <h2 className="text-4xl font-semibold  mb-10 mr-4 ">
+    <div className="  w-full container mx-auto relative ">
+      <div className="flex  justify-between  max-sm:flex-col ">
+        <h2 className="font-kern text-[36px] font-medium leading-[33.6px] max-sm:text-1xl  mb-10 mr-4 max-sm:mb-5 max-sm:ml-2 text-left max-sm:text-[24px]   ">
           Top Projects Recommended for You
         </h2>
-        <p className="font-bold mb-10 ml-4 flex gap-2">
+        <p className=" mb-10  ml-4 flex gap-2 max-sm:hidden">
+          View all projects{" "}
+          <img
+            src={Vector}
+            alt=""
+            className="w-[16px] h-[16px] p-[2.5px] pr-[4.5px] pl-[5.5px] mt-1"
+          />
+        </p>
+        <p className=" mb-5 ml-2  gap-2 hidden max-sm:flex">
           View all projects{" "}
           <img
             src={Vector}
@@ -57,21 +67,17 @@ const CardItem = () => {
           />
         </p>
       </div>
-      <div className="grid gap-6 md:grid-cols-3 max-sm:grid-cols-2 max-sm:gap-3">
+      <div className="grid gap-6 md:grid-cols-3 max-sm:grid-cols-1 max-sm:gap-3 max-sm:py-4 max-sm:px-2  py-2 ">
         {projects.map((project, index) => (
           <ProjectCard project={project} key={index} />
         ))}
         {projects.map((project, index) => (
           <ProjectCard project={project} key={index} />
         ))}
+        <div className="absolute bottom-1 right-2">
+          <Completesetup />
+        </div>
       </div>
-
-      {/* <div className="absolute bottom-0 right-0 transform  z-0">
-        <img src={diamond} alt="" className="blur-3xl" />
-      </div>
-      <div className="absolute top-40 left-32 transform -translate-x-1/2 -translate-y-1/2 z-0">
-        <img src={diamond} alt="" className="blur-xl" />
-      </div> */}
     </div>
   );
 };
