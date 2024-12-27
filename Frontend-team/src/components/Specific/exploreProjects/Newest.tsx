@@ -83,5 +83,4 @@ const Newest = () => {
     </div>
   );
 };
-
 export default Newest;

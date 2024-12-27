@@ -62,16 +62,16 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
 
       {/* Trending and Most Active */}
       <div className="flex items-center justify-start mt-4 p-6 gap-1">
-        {[{title:"Trending", name: "trending"}, {title: "Most Active", name: "mostActive"}].map((item, id) => (
+        {["Trending", "Most Active"].map((btn) => (
           <button
-            key={id}
-            onClick={() => {handleActive("trending", item.title); activeBtn.trending === item.title ? dispatch(setFilters({ sortBy: "" as any})) : dispatch(setFilters({ sortBy: item.title as any }))}}
+            key={btn}
+            onClick={() => {handleActive("trending", btn)}}
             className={`text-sm  text-white  p-[8px_16px] rounded-[8px]  border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5 ${getButtonClass(
               "trending",
-              item.title
+              btn
             )}`}
           >
-            {item.title}
+            {btn}
           </button>
         ))}
       </div>
@@ -95,7 +95,7 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
           {["Beginner", "Intermediate", "Expert"].map((level) => (
             <button
               key={level}
-              onClick={() => {handleActive("experience", level); activeBtn.experience === level ? dispatch(setFilters({ difficulty: "" as any})) : dispatch(setFilters({ difficulty: level as any }))}}
+              onClick={() => {handleActive("experience", level)}}
               className={`text-sm  text-white  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px] ${getButtonClass(
                 "experience",
                 level
@@ -106,20 +106,21 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
           ))}
         </div>
       </div>
+
       {/* Rewards */}
       <div className="flex flex-col space-y-2 p-2 ml-4">
         <h3 className="text-white text-base font-semibold">Rewards</h3>
         <div className="flex space-x-2">
-          {[{title: "Lowest", amt: 5 }, {title: "Highest", amt: 1000000000 }].map((reward, id) => (
+          {["Lowest", "Highest"].map((reward) => (
             <button
-              key={id}
-              onClick={() => {handleActive("rewards", reward.title); activeBtn.rewards === reward.title ? dispatch(setFilters({ rewards: "" as any})) : dispatch(setFilters({ rewards: reward.amt }))}}
+              key={reward}
+              onClick={() => {handleActive("rewards", reward)}}
               className={`text-sm  text-white  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px] ${getButtonClass(
                 "rewards",
-                reward.title
+                reward
               )}`}
             >
-              {reward.title}
+              {reward}
             </button>
           ))}
         </div>
@@ -133,7 +134,7 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
           {["Volunteer", "Funded"].map((type) => (
             <button
               key={type}
-              onClick={() => {handleActive("projects", type); activeBtn.projects === type ? dispatch(setFilters({ status: "" as any})) : dispatch(setFilters({ status: type as any }))}}
+              onClick={() => {handleActive("projects", type)}}
               className={`text-sm  text-white  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px] ${getButtonClass(
                 "projects",
                 type
@@ -152,7 +153,7 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
           {["Newest first", "Oldest First"].map((date) => (
             <button
               key={date}
-              onClick={() => {handleActive("date", date); activeBtn.date === date ? dispatch(setFilters({ status: "" as any})) : dispatch(setFilters({ sortBy: "mostRecent"}))}}
+              onClick={() => {handleActive("date", date)}}
               className={`text-sm  text-white  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5 p-[8px_16px] ${getButtonClass(
                 "date",
                 date
@@ -171,7 +172,7 @@ const Filter: React.FC<FilterProps> = ({ setOpenSide }) => {
           {["React", "Security", "Community", "UX Design", "Solidity", "Marketing"].map((skill) => (
             <button
               key={skill}
-              onClick={() => {handleActive("skills", skill); activeBtn.skills === skill ? dispatch(setFilters({ skills: [] })) :  dispatch(setFilters({ skills: [skill.toLowerCase()]  }))}}
+              onClick={() => {handleActive("skills", skill)}}
               className={`text-sm  text-white w-fit h-[33px]  rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5  p-[8px_16px] ${getButtonClass(
                 "skills",
                 skill

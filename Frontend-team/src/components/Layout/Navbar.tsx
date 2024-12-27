@@ -13,7 +13,6 @@ import {
   logout } from '@/store/actions/auth';
 import git from "../../assets/icons/gith.svg";
 import google from "../../assets/icons/google.svg";
-import email from "../../assets/icons/email.svg";
 import { Button } from '../ui/button';
 import { setLoginType } from '@/store/actions/onboardState';
 export default function Navigation() {
@@ -30,7 +29,6 @@ export default function Navigation() {
   const loginsTypes = [
     { title: "Login with GitHub", icon: git, type:"github" },
     { title: "Login with Google", icon: google, type:"google" },
-    { title: "Login with Email", icon: email, type:"email" },
   ]
 
   const handleLogin = (logintype:string,) => {
@@ -41,10 +39,6 @@ export default function Navigation() {
     } else if(logintype === "google"){
       // dispatch(loginWithGoogle())
         navigate("/onboarding")
-    } else{
-
-        navigate("/onboardingWithEmail")
- 
     }
   }
   const DropdownLogin = () => {

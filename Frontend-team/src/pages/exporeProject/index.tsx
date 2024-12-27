@@ -4,13 +4,16 @@ import Filter from "../../components/Specific/exploreProjects/Filter";
 import Newest from "../../components/Specific/exploreProjects/Newest";
 
 import Filterbtn from "../../components/Specific/exploreProjects/Filterbtn";
+import Maintainer from "@/components/Specific/maintainers";
 
 
 const ExploreProjecs = () => {
   const [openSide, setOpenSide] = useState(false);
+  const [isMaintainer, setIsMaintainer] = useState(true);
   return (
     <div className="container max-sm:mx-auto max-sm:gap-0 w-full min-h-[100vh] max-sm:p-0 mx-auto relative z-30 mt-12 ">
-      <section className="      ">
+      {isMaintainer?
+      <section className="  ">
         <ExploreProjec />
         <main className=" flex gap-4 justify-between">
           {!openSide ? (
@@ -18,14 +21,13 @@ const ExploreProjecs = () => {
           ) : (
             <Filterbtn setOpenSide={setOpenSide} />
           )}
-          {/* {!openSide ? (
-          <Filtermobile setOpenSide={setOpenSide} />
-        ) : (
-          <Filterbtn2 setOpenSide={setOpenSide} />
-        )} */}
+
           <Newest />
         </main>
-      </section>
+      </section>:
+      <section className="max-sm:mx-auto max-sm:gap-0 w-full min-h-[100vh] max-sm:p-0 mx-auto relative z-30 mt-15 pt-9">
+        <Maintainer />
+      </section>}
     </div>
     
   );
