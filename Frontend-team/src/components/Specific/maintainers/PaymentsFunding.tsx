@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
-import { MetricsContext } from "../../../store/context/MetricsContext";
+// import { MetricsContext } from "../../../store/context/MetricsContext";
 import USDT from "@/assets/images/usdt.png";
 import profilePic from "@/assets/images/Ellipse 5 (3).png";
+import { MetricsContext } from "@/store/context/MetricsContext";
 
 // Placeholder component for loading state
 const Placeholder: React.FC = () => (

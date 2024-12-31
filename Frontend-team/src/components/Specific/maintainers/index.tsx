@@ -1,43 +1,33 @@
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import Sidebar from "./Sidebar"
-import { useState } from "react"
-import Sidebarbtn from "./Sidebarbtn"
-import { links } from "./links";
-import Tasks from "./Tasks";
-import Team from "./Team";
-import Payments from "./Payments";
-import Analytics from "./Analytics";
-import Applications from "./Applications";
-const Maintainer = () => {
-  const [openSide, setOpenSide] = useState(false)
-  const [route, setLink] = useState(links[0].link);
+/**
+ * Sidebar Component with MetricsProvider
+ *
+ * This file defines the `Sidebar` component, which serves as a container for the 
+ * navigation and layout of the application's sidebar. The `MetricsProvider` context 
+ * is used to wrap the `Navigation` component, allowing the sidebar and its child 
+ * components to access metrics-related data seamlessly.
+ *
+ * Key Features:
+ * - The `MetricsProvider` wraps the `Navigation` component, enabling metrics data sharing.
+ * - Responsive design: The layout adapts for smaller screens with padding adjustments.
+ * - The structure ensures the sidebar is positioned correctly with a gap between components.
+ *
+ * This component ensures consistency in providing metrics-related context to the navigation 
+ * and other child components within the sidebar.
+ */
 
+import { MetricsProvider } from "@/store/context/MetricsContext"; // Import MetricsProvider
+import Navigation from "./Navigation";
+
+const Metrics = () => {
   return (
-    <main className="mt-10">
-      <div className="flex justify-between">
-        <div className="flex items-center gap-2 text-grayBlue">
-          <ChevronLeft size={16} /> Projects
+    <MetricsProvider>
+      <section className="container mx-auto min-h-screen relative max-sm:p-5 mt-24">
+        <div className="min-h-[100vh] relative z-10 sm:flex lg:flex gap-6">
+          <Navigation />
         </div>
-        <div className="flex items-center gap-5">
-          <div className="flex items-center gap-2 text-grayBlue">Projects <ChevronRight size={16} /></div>
-          <select name="" id="" className=" bg-opacity-10 bg-transparent rounded-md p-2 outline-none focus:outline-none focus:border-none optional:bg-opacity-20 optional:bg-grayBlue">
-            <option value="" className="text-black">All</option>
-            <option value="" className="text-black">Decentralized Voting Platform</option>
-            <option value="">All</option>
-          </select>
-        </div>
-      </div>
-      <div className="flex mt-20 gap-5">
-        <div className="min-w-80">
-          {!openSide ? <Sidebar setOpenSide={setOpenSide} setLink={setLink} /> : <Sidebarbtn setOpenSide={setOpenSide} />}
-        </div>
-        <div className="">
-          {route === "tasks"? <Tasks/>: route === "team"? <Team/>: route === "payments"? <Payments/>: route === "analytics"? <Analytics/>: <Applications/>}
-        </div>
-      </div>
+      </section>
+    </MetricsProvider>
+  );
+};
 
-    </main>
-  )
-}
-
-export default Maintainer
+export default Metrics;
