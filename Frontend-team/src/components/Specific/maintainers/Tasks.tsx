@@ -1,4 +1,3 @@
-import React from 'react'
 import SmallWidget from './SmallWidget'
 import NewTaskBtn from './NewTaskBtn'
 import TaskCard from './TaskCard'

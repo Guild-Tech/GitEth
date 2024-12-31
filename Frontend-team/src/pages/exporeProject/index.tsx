@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ExploreProjec from "../../components/Specific/exploreProjects/ExploreProjec";
 import Filter from "../../components/Specific/exploreProjects/Filter";
 import Newest from "../../components/Specific/exploreProjects/Newest";
@@ -10,6 +10,10 @@ import Maintainer from "@/components/Specific/maintainers";
 const ExploreProjecs = () => {
   const [openSide, setOpenSide] = useState(false);
   const [isMaintainer, setIsMaintainer] = useState(true);
+  useEffect(() => {
+    setIsMaintainer(true);
+  }, [])
+  
   return (
     <div className="container max-sm:mx-auto max-sm:gap-0 w-full min-h-[100vh] max-sm:p-0 mx-auto relative z-30 mt-12 ">
       {isMaintainer?

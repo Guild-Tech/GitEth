@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Frame from "../../../assets/icons/Frame (2).png";
-import { AppDispatch } from "@/store";
-import { useDispatch } from "react-redux";
+// import { AppDispatch } from "@/store";
+// import { useDispatch } from "react-redux";
 import { links } from "./links";
 
 
@@ -11,7 +11,7 @@ interface FilterProps {
 }
 
 const Sidebar: React.FC<FilterProps> = ({ setOpenSide, setLink }) => {
-  const dispatch = useDispatch<AppDispatch>();
+  // const dispatch = useDispatch<AppDispatch>();
   const [activeBtn, setActiveBtn] = useState<string>("tasks");
   const handleClick = ( value: string) => {
     setActiveBtn(value);
