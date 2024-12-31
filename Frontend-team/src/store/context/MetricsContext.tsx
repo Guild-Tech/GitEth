@@ -3,13 +3,14 @@
  *
  * This file defines the MetricsContext and the MetricsProvider, which are used to manage 
  * and provide the metrics data throughout the application. Metrics include performance 
- * data, contributor details, financial information, and application statistics.
+ * data, contributor details, financial information, and application statistics, with 
+ * enhanced details to support team collaboration.
  *
  * Key Features:
  * - `MetricsContext`: A React Context that provides access to metrics data and its setter.
  * - `MetricsProvider`: A Context Provider that wraps components, allowing them to access 
  *   and update metrics data.
- * - Predefined demo values for metrics to simulate realistic data.
+ * - Predefined demo values for metrics to simulate realistic team collaboration data.
  *
  * Components using this context can access or modify metrics data seamlessly.
  */
@@ -18,9 +19,9 @@ import React, { createContext, useState, ReactNode, FC } from "react";
 import img1 from "@/assets/images/Ellipse 5 (1).png";
 import img2 from "@/assets/images/Ellipse 4.png";
 
+
 // Define the types for each metric data structure
 
-// Payment information for contributors
 interface Payment {
   image: string; // Contributor profile image
   contributor: string; // Contributor name
@@ -29,55 +30,94 @@ interface Payment {
   date: string; // Date of payment
 }
 
-// Detailed contributor information
 interface Contributor {
-  id: string; // Unique identifier for the contributor
-  name: string; // Contributor name
-  tasksCompleted: number; // Number of tasks completed
-  joinedDate: string; // Join date of the contributor
-  status: "active" | "churned" | "new" | "struggling"; // Contributor status
-  repository: string; // Repository assigned to the contributor
-  strugglingOn: string; // Task or issue the contributor is struggling with
-  reason: string; // Reason for struggling or churned status
-  currentTask: string; // Current task assigned to the contributor
+  id: string;
+  name: string;
+  tasksCompleted: number;
+  joinedDate: string;
+  status: "active" | "churned" | "new" | "struggling";
+  repository: string;
+  strugglingOn: string;
+  reason: string;
+  currentTask: string;
 }
 
-// Active contributor metrics
 interface ActiveContributor {
-  contributor: string; // Name of the contributor
-  closedPRs: string; // Number of closed pull requests
-  completedIssues: string; // Number of completed issues
-  codeReviews: string; // Number of code reviews completed
+  contributor: string;
+  closedPRs: string;
+  completedIssues: string;
+  codeReviews: string;
+}
+
+interface RepositoryCollaboration {
+  repository: string;
+  activeContributors: number;
+  issuesResolved: number;
+  pullRequestsMerged: number;
+}
+
+interface Task {
+  id: string;
+  title: string;
+  category: "to-do" | "in-progress" | "review" | "done";
+  dueDate: string;
+  tags: string[];
+  description: string;
+  assignees: {
+    name: string;
+    avatar: string;
+  }[];
+  skillLevel: "Beginner" | "Intermediate" | "Advanced";
+  skills: string[];
+}
+
+interface Comment {
+  author: string;
+  text: string;
+  timestamp: Date;
 }
 
 // Define the overall Metrics type
 interface Metrics {
-  tasksCompleted: string; // Ratio of tasks completed
-  pullRequestsApproved: string; // Ratio of approved pull requests
-  avgTaskCompletionTime: string; // Average time to complete tasks
-  availableFunds: string; // Available funds
-  pendingPayments: string; // Pending payment details
-  payments: Payment[]; // List of payments
-  newContributors: Contributor[]; // List of new contributors
-  churnedContributors: Contributor[]; // List of churned contributors
-  activeContributors: ActiveContributor[]; // List of active contributors
-  strugglingContributors: Contributor[]; // List of struggling contributors
-  pendingApplications: number; // Count of pending applications
-  approvedApplications: number; // Count of approved applications
-  rejectedApplications: number; // Count of rejected applications
+  tasksCompleted: string;
+  pullRequestsApproved: string;
+  avgTaskCompletionTime: string;
+  availableFunds: string;
+  pendingPayments: string;
+  payments: Payment[];
+  newContributors: Contributor[];
+  churnedContributors: Contributor[];
+  activeContributors: ActiveContributor[];
+  strugglingContributors: Contributor[];
+  repositoryCollaborations: RepositoryCollaboration[];
+  pendingApplications: number;
+  approvedApplications: number;
+  rejectedApplications: number;
   applications: {
-    contributor: string; // Contributor name
-    task: string; // Task name
-    date: string; // Application date
-    status: string; // Application status (e.g., "Pending", "Complete", "Rejected")
-    actions: string; // Available actions for the application
-  }[]; // List of applications
+    contributor: string;
+    task: string;
+    date: string;
+    status: string;
+    actions: string;
+  }[];
+  projectLeads: {
+    name: string;
+    index: number;
+  }[];
+  contributors: {
+    name: string;
+    role: string;
+    tasksAssigned: number;
+    progress: string;
+  }[];
+  tasks: Task[];
+  comments: Comment[];
 }
 
 // Define the context type with metrics and its setter
 interface MetricsContextType {
-  metrics: Metrics; // Metrics data
-  setMetrics: React.Dispatch<React.SetStateAction<Metrics>>; // Setter for metrics
+  metrics: Metrics;
+  setMetrics: React.Dispatch<React.SetStateAction<Metrics>>;
 }
 
 // Create the context
@@ -87,18 +127,18 @@ export const MetricsContext = createContext<MetricsContextType | undefined>(
 
 // Props type for the provider
 interface MetricsProviderProps {
-  children: ReactNode; // Components wrapped by the provider
+  children: ReactNode;
 }
 
 // Provider component
 export const MetricsProvider: FC<MetricsProviderProps> = ({ children }) => {
   // Initialize metrics state with demo values
-  const [metrics, setMetrics] = useState<any>({
+  const [metrics, setMetrics] = useState<Metrics>({
     tasksCompleted: "45/60",
     pullRequestsApproved: "20/25",
-    avgTaskCompletionTime: "4 ",
-    availableFunds: "30000 ",
-    pendingPayments: "2000 USDT 2 5 Contributors",
+    avgTaskCompletionTime: "4 days",
+    availableFunds: "$30,000",
+    pendingPayments: "$2,000 (5 Contributors)",
     payments: [
       {
         image: img1,
@@ -120,31 +160,20 @@ export const MetricsProvider: FC<MetricsProviderProps> = ({ children }) => {
         id: "1",
         name: "Noyi_24_7",
         tasksCompleted: 5,
-        joinedDate: "Nov 15",
+        joinedDate: "2024-11-15",
         status: "new",
         repository: "Repo1",
         strugglingOn: "",
         reason: "",
         currentTask: "UI testing",
       },
-      {
-        id: "2",
-        name: "Noyi_24_7",
-        tasksCompleted: 3,
-        joinedDate: "Nov 15",
-        status: "new",
-        repository: "Repo2",
-        strugglingOn: "",
-        reason: "",
-        currentTask: "DAO Voting Contract",
-      },
     ],
     churnedContributors: [
       {
-        id: "3",
+        id: "2",
         name: "Aj",
         tasksCompleted: 2,
-        joinedDate: "Nov 15",
+        joinedDate: "2024-11-15",
         status: "churned",
         repository: "Repo3",
         strugglingOn: "Issue #10",
@@ -159,33 +188,26 @@ export const MetricsProvider: FC<MetricsProviderProps> = ({ children }) => {
         completedIssues: "4",
         codeReviews: "0",
       },
-      {
-        contributor: "Jane Doe",
-        closedPRs: "2",
-        completedIssues: "2",
-        codeReviews: "1",
-      },
     ],
     strugglingContributors: [
       {
-        id: "4",
-        contributor: "John_Smith",
-        tasksCompleted: 1,
-        joinedDate: "2024-09-01",
-        status: "struggling",
-        repository: "Repo",
-        strugglingOn: "Wireshape Platform dApp Section",
-        reason: "0",
-      },
-      {
-        id: "5",
-        contributor: "Jane Doe",
+        id: "3",
+        name: "Jane Doe",
         tasksCompleted: 2,
         joinedDate: "2024-08-20",
         status: "struggling",
-        repository: "2",
-        strugglingOn: "2",
-        reason: "1",
+        repository: "Repo2",
+        strugglingOn: "Task #5",
+        reason: "Lack of mentorship",
+        currentTask: "Write Unit Tests",
+      },
+    ],
+    repositoryCollaborations: [
+      {
+        repository: "Repo1",
+        activeContributors: 5,
+        issuesResolved: 10,
+        pullRequestsMerged: 8,
       },
     ],
     pendingApplications: 12,
@@ -195,30 +217,80 @@ export const MetricsProvider: FC<MetricsProviderProps> = ({ children }) => {
       {
         contributor: "Noyi_24_7",
         task: "Write Unit Tests",
-        date: "Nov 18",
+        date: "2024-11-18",
         status: "Pending",
         actions: "Review",
       },
+    ],
+    projectLeads: [
+      { name: "Noyi24_7", index: 1 },
+      { name: "Vhee", index: 2 },
+    ],
+    contributors: [
       {
-        contributor: "Vhee",
-        task: "Create UI Components",
-        date: "Nov 17",
-        status: "Complete",
-        actions: "View Details",
+        name: "Noyi24_7",
+        role: "Developer",
+        tasksAssigned: 3,
+        progress: "1 In Progress | 2 Completed",
       },
       {
-        contributor: "Aj",
-        task: "Fix API Integration",
-        date: "Nov 18",
-        status: "Rejected",
-        actions: "View Feedback",
+        name: "Vhee",
+        role: "Developer",
+        tasksAssigned: 1,
+        progress: "0 In Progress | 1 Completed",
       },
       {
-        contributor: "Fufu",
-        task: "Write Unit Tests",
-        date: "Nov 15",
-        status: "Pending",
-        actions: "Review",
+        name: "Aj",
+        role: "Designer",
+        tasksAssigned: 2,
+        progress: "0 In Progress | 1 Completed",
+      },
+    ],
+    tasks: [
+      {
+        id: "1",
+        title: "Wireshape Platform dApp Section",
+        category: "to-do",
+        dueDate: "8th Nov",
+        tags: ["Design", "UX"],
+        assignees: [
+          { name: "John Doe", avatar: img1 },
+          { name: "Jane Smith", avatar: img2 },
+        ],
+        skillLevel: "Intermediate",
+        skills: ["React", "Security", "Community", "UX Design", "Solidity", "Marketing"],
+        description: "Help improve the security and scalability of a cutting-edge decentralized finance protocol.",
+      },
+      {
+        id: "2",
+        title: "Wireshape Platform dApp Section",
+        category: "in-progress",
+        dueDate: "8th Nov",
+        tags: ["Development", "Backend"],
+        assignees: [
+          { name: "John Doe", avatar: img1 },
+          { name: "Jane Smith", avatar: img2 },
+        ],
+        skillLevel: "Intermediate",
+        skills: ["Backend", "API", "Node.js"],
+        description: "Backend work to integrate the decentralized protocol with our platform.",
+      },
+    ],
+    comments: [
+      {
+        author: "Alice",
+        text: "Let's Wire and Shape our Community!",
+        timestamp: new Date(),
+      },
+      {
+        author: "Bob",
+        text: "Let's Wire and Shape our Community!",
+        timestamp: new Date(),
+      },
+      {
+        author: "Charlie",
+        text: "Let's Wire and Shape our Community!",
+        timestamp: new Date(),
       },
     ],
   });

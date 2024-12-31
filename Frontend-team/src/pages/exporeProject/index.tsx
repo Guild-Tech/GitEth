@@ -5,6 +5,9 @@ import Newest from "../../components/Specific/exploreProjects/Newest";
 
 import Filterbtn from "../../components/Specific/exploreProjects/Filterbtn";
 import Maintainer from "@/components/Specific/maintainers";
+// import Metrics from "@/components/Specific/maintainers";
+// import Metrics from "@/components/Specific/maintainers";
+// import Metrics from "@/components/Specific/maintainers";
 
 
 const ExploreProjecs = () => {
@@ -16,7 +19,7 @@ const ExploreProjecs = () => {
   
   return (
     <div className="container max-sm:mx-auto max-sm:gap-0 w-full min-h-[100vh] max-sm:p-0 mx-auto relative z-30 mt-12 ">
-      {isMaintainer?
+      {!isMaintainer?
       <section className="  ">
         <ExploreProjec />
         <main className=" flex gap-4 justify-between">
