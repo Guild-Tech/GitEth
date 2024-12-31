@@ -16,21 +16,21 @@
  */
 
 // import React from "react";
-import Card from "../contributions/components/Card";
-import Open from "../Sidebar/component/Open";
-import Pros from "../Sidebar/component/Pros";
-// import Navigation from "./components/Navigation";
-// import { MetricsProvider } from "@/store/context/MetricsContext"; // Import MetricsProvider
+// import Card from "../contributions/components/Card"; // Uncommented imports
+// import Open from "../Sidebar/component/Open";
+// import Pros from "../Sidebar/component/Pros";
+import Navigation from "./components/Navigation";
+import { MetricsProvider } from "@/store/context/MetricsContext"; // Import MetricsProvider
 
 const Sidebar = () => {
   return (
-    <section className=" container mx-auto min-h-screen  relative     max-sm:p-5  mt-24">
-      <div className=" min-h-[100vh] relative z-10 sm:flex lg:flex  gap-6">
-        <Pros />
-        <Card />
-      </div>
-      <Open />
-    </section>
+    <MetricsProvider>
+      <section className="container mx-auto min-h-screen relative max-sm:p-5 mt-24">
+        <div className="min-h-[100vh] relative z-10 sm:flex lg:flex gap-6">
+          <Navigation />
+        </div>
+      </section>
+    </MetricsProvider>
   );
 };
 

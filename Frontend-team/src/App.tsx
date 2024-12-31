@@ -5,13 +5,13 @@ import MainApp from "./pages/mainApp";
 
 import Onboarding from "./pages/onBoarding";
 import Dashboard from "./pages/dashboard";
-import Sidebar from "./pages/projectOverview";
+import Sidebar from "./pages/exploreProjects/index";
 
 import diamond from "./assets/icons/diamond.png";
 
 import ExploreProjecs from "./pages/exporeProject";
 import Contributor from "./pages/contributors";
-import Profile from "./pages/Proflle";
+import Profile from "./pages/proflle";
 import { useSelector } from "react-redux";
 import { RootState } from "./store";
 import { useEffect, useState } from "react";
