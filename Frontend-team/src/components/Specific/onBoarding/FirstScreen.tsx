@@ -12,6 +12,7 @@ import formStyles from "./contributorForm/formStyles";
 import { nextStep } from "@/store/reducers/onboardingIndex";
 import { setUserData } from "@/store/reducers/onboarding";
 import { setRole } from "@/store/actions/onboardState";
+import { handleGitHubCallback, redirectToGitHubAuth } from "@/services/api";
 // import { setOnboardUser } from "@/store/actions/Onboarding";
 
 /**
@@ -32,6 +33,28 @@ export const FirstScreen = () => {
   const dispatch = useAppDispatch();
   // const currentIndex = useSelector((state: RootState) => state.onboardingIndex.currentIndex);
   const {user} = useSelector((state: RootState) => state.auth);
+  const [userx, setUser] = useState<{ id: string; name: string; email: string } | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+      // Check if the `code` parameter exists in the URL
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get("code");
+
+      if (code) {
+          // Exchange the code for a token and user details
+          handleGitHubCallback(code)
+              .then((response) => {
+                  setUser(response.user);
+                  localStorage.setItem("token", response.token); // Store the token
+                  window.history.replaceState({}, document.title, "/"); // Clean the URL
+              })
+              .catch((err) => {
+                  console.error("Authentication error:", err);
+                  setError("Failed to authenticate with GitHub.");
+              });
+      }
+  }, []);
   // console.log(user)
   useEffect(() => {
     if (user) {
@@ -41,7 +64,7 @@ export const FirstScreen = () => {
 
   const { loginType:logintype } = useSelector((state: RootState) => state.onboardState);
      
-  function handleLogin(role:string){
+  function handleLoginx(role:string){
     if(logintype === "github"){
       setActive(role); 
       dispatch(setUserData({role}))
@@ -55,6 +78,11 @@ export const FirstScreen = () => {
       dispatch(loginWithGoogle())
     }
   }
+
+  const handleLogin = (role:string) => {
+    console.log(role)
+    redirectToGitHubAuth(); // Redirect to the backend to start GitHub OAuth
+};
   
   return (
     <div className={formStyles.container}>

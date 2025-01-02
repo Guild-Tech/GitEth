@@ -79,7 +79,7 @@ const PaymentsFunding: React.FC = () => {
           <>
             {/* Available Funds Card */}
             <div
-              className="bg-[#293056] backdrop-blur-3xl md:p-6 rounded-xl border border-customBorder flex flex-col items-start space-y-2"
+              className="border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5  p-6 rounded-3xl flex flex-col items-start space-y-2"
               title="Total available funds"
             >
               <p className="text-3xl md:text-4xl font-light font-kern">
@@ -95,7 +95,7 @@ const PaymentsFunding: React.FC = () => {
 
             {/* Pending Payments Card */}
             <div
-              className="bg-[#293056] font-thin p-4 md:p-6 rounded-xl border border-customBorder flex flex-col items-start space-y-2"
+              className="border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5  p-6 rounded-3xl flex flex-col items-start space-y-2"
               title="Pending payments details"
             >
               <p className="text-3xl md:text-4xl font-light font-kern">
@@ -123,7 +123,9 @@ const PaymentsFunding: React.FC = () => {
 
       {/* Payments Table */}
       <div className="overflow-x-auto">
-        <div className="bg-gray-800 p-4 md:p-6 rounded-xl border border-customBorder">
+
+        <div className="border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 p-4 md:p-6 rounded-xl ">
+          <div className="border-border border-opacity-50 backdrop-blur-md border-[1px] bg-white bg-opacity-5 rounded-xl overflow-auto">
           <table className="w-full border-collapse">
             <thead>
               <tr className="text-left font-light font-kern text-white bg-[#0D0F1C]">
@@ -198,6 +200,7 @@ const PaymentsFunding: React.FC = () => {
               )}
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     </div>

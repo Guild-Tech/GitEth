@@ -21,7 +21,7 @@ const TeamCollaboration: React.FC = () => {
   return (
     <div className="text-white font-kern space-y-10">
       {/* Project Leads Section */}
-      <div>
+      <div className="border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 p-6 rounded-3xl">
         <h2 className="text-xl font-light mb-4">Project Leads</h2>
         <div className="flex space-x-4">
           {projectLeads.length > 0 ? (
@@ -33,9 +33,9 @@ const TeamCollaboration: React.FC = () => {
                 <img
                   src={profilePic}
                   alt={lead.name || "Lead"}
-                  className="w-10 h-10 rounded-full"
+                  className="w-4 h-4 rounded-full"
                 />
-                <h3 className="text-white font-light">{lead.name || "Unknown Lead"}</h3>
+                <h3 className="text-white font-light text-xs">{lead.name || "Unknown Lead"}</h3>
               </div>
             ))
           ) : (
@@ -49,8 +49,9 @@ const TeamCollaboration: React.FC = () => {
       {/* Contributors Section */}
       <div>
         <h2 className="text-xl font-light mb-4">Contributors</h2>
-        <div className="bg-[#293056] p-6 rounded-xl border border-customBorder overflow-x-auto">
-          <table className="w-full rounded-lg border border-customBorder text-sm">
+        <div className="border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5  p-6 rounded-2xl border-customBorder overflow-x-auto">
+          <div className="border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5  overflow-auto rounded-2xl">
+          <table className="w-full  text-sm">
             <thead>
               <tr className="text-left font-thin text-white bg-[#0D0F1C]">
                 <th className="py-4 px-4">Contributor</th>
@@ -94,6 +95,7 @@ const TeamCollaboration: React.FC = () => {
               )}
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     </div>
