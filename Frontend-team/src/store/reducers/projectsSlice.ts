@@ -1,15 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { FilterState, Project, ProjectsState } from "../types";
-// import { ProjectsState, FilterState, Project } from "./types";
-import projectdummy from "../../utils/dummyProject.json"
+import projectdummy from "../../utils/dummyProject.json";
+
 const initialState: ProjectsState = {
   projects: projectdummy as any,
   filters: {
     skills: [],
     difficulty: null,
-    rewards: null,
+    rewards: null, // Rewards filter: "Lowest" or "Highest"
     tags: [],
     status: null,
+    fundingType: null,
+    sortBy: null, // Sorting filter: "mostActive", "trending", "mostRecent", "reward"
   },
 };
 
@@ -31,17 +33,39 @@ export const { setFilters, resetFilters } = projectsSlice.actions;
 export const selectFilteredProjects = (state: { projects: ProjectsState }): Project[] => {
   const { projects, filters } = state.projects;
 
-  return projects.filter((project) => {
-    const { skills, difficulty, rewards, tags, status } = filters;
+  // Apply all the filters
+  const filteredProjects = projects.filter((project) => {
+    const { skills, difficulty, rewards, tags, status, fundingType } = filters;
 
     return (
       (!skills.length || skills.every((skill) => project.skills.includes(skill))) &&
       (!difficulty || project.difficulty === difficulty) &&
-      (!rewards || project.reward >= rewards) &&
+      (!rewards || (rewards == 500 ? project.reward <= 500 : project.reward >= 500)) && // Apply reward filter
       (!tags.length || tags.every((tag) => project.tags.includes(tag))) &&
-      (!status || project.status === status)
+      (!status || project.status === status) &&
+      (!fundingType || project.fundingType === fundingType)  // Apply fundingType filter
     );
   });
+
+  // Apply sorting if any filter is selected
+  if (filters.sortBy) {
+    switch (filters.sortBy) {
+      case "mostActive":
+        return filteredProjects.sort((a, b) => b.activeIssues - a.activeIssues);
+      case "trending":
+        return filteredProjects.sort((a, b) => (b.trend ? 1 : 0) - (a.trend ? 1 : 0));
+      case "mostRecent":
+        return filteredProjects.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      case "reward":
+        return filteredProjects.sort((a, b) => b.reward - a.reward);  // Highest rewards first
+      case "rewardLowToHigh":
+        return filteredProjects.sort((a, b) => a.reward - b.reward);  // Lowest rewards first
+      default:
+        return filteredProjects;
+    }
+  }
+
+  return filteredProjects;
 };
 
 export default projectsSlice.reducer;

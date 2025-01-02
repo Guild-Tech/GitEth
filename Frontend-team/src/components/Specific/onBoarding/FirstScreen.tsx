@@ -6,7 +6,7 @@ import maintainerIcon from "../../../assets/icons/maintainer.svg";
 import { OnboardingButton } from "./OnboardingCTAButton";
 import { RootState, useAppDispatch } from "@/store";
 import {  useSelector } from "react-redux";
-import { loginWithEmailPassword, loginWithGitHub, loginWithGoogle } from "@/store/actions/auth";
+import { loginWithGitHub, loginWithGoogle } from "@/store/actions/auth";
 // import { FirstScreenProps } from "../types";
 import formStyles from "./contributorForm/formStyles";
 import { nextStep } from "@/store/reducers/onboardingIndex";
@@ -53,11 +53,6 @@ export const FirstScreen = () => {
       dispatch(setUserData({role}))
       dispatch(setRole(role))
       dispatch(loginWithGoogle())
-    } else {
-      setActive(role); 
-      dispatch(setUserData({role}))
-      dispatch(setRole(role))
-      dispatch(loginWithEmailPassword({email:"KXjZs@example.com", password:"12345678"}))
     }
   }
   

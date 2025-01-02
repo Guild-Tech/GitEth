@@ -139,7 +139,7 @@ export const DropdownFields: React.FC<DropdownFieldsProps> = ({
       </div>
 
       <select
-        className="w-12 p-2 border-none rounded-md  bg-transparent focus:outline-none focus:ring-0 focus-visible:outline-none"
+        className="w-12 p-2 border-none rounded-md  bg-transparent focus:outline-none focus:ring-0 focus-visible:outline-none appearance-none cursor-pointer"
         onChange={handleSelect}
         defaultValue=""
       >

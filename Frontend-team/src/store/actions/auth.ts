@@ -2,8 +2,6 @@ import { AppDispatch } from "../";
 import {
   signInWithGitHub,
   signInWithGoogle,
-  signInWithEmail,
-  signUpWithEmail,
   signOutUser,
 } from "../../services/firebase";
 import { setUser, setLoading, setError } from "../reducers/auth";
@@ -60,59 +58,6 @@ export const loginWithGoogle = () => async (dispatch: AppDispatch) => {
   }
 };
 
-/**
- * Signs up a user with email and password. If successful, sets the user state with the user's data.
- * @returns {Promise<void>}
- */
-export const signUpWithEmailPassword = (data: { email: string; password: string}) => 
-  async (dispatch: AppDispatch) => {
-    dispatch(setLoading(true));
-    try {
-      const user = await signUpWithEmail(data.email, data.password);
-      dispatch(
-        setUser({
-          uid: user.uid,
-          displayName: user.displayName || "Anonymous",
-          email: user.email,
-          photoURL: user.photoURL || null,
-          username: user?.email?.split("@")[0] as string, // Example logic for username
-          token: null,
-        })
-      );
-      dispatch(setError(null));
-    } catch (error: any) {
-      dispatch(setError(error.message));
-    } finally {
-      dispatch(setLoading(false));
-    }
-  };
-
-/**
- * Signs in a user with email and password. If successful, sets the user state with the user's data.
- * @returns {Promise<void>}
- */
-export const loginWithEmailPassword = (data: { email: string; password: string}) => 
-  async (dispatch: AppDispatch) => {
-    dispatch(setLoading(true));
-    try {
-      const user = await signInWithEmail(data.email, data.password);
-      dispatch(
-        setUser({
-          uid: user.uid,
-          displayName: user.displayName || "Anonymous",
-          email: user.email,
-          photoURL: user.photoURL || null,
-          username: user?.email?.split("@")[0] as string,
-          token: null,
-        })
-      );
-      dispatch(setError(null));
-    } catch (error: any) {
-      dispatch(setError(error.message));
-    } finally {
-      dispatch(setLoading(false));
-    }
-  };
 
 /**
  * Logs out the current user by calling the signOutUser service.

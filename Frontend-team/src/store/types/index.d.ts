@@ -73,7 +73,7 @@ export interface Project {
   companyName: string;
   tags: string[];
   productLogo: string;
-  reward: number;
+  reward?: any;
   status: "in-progress" | "completed" | "pending";
   applicants: number;
   duration: string;
@@ -93,6 +93,52 @@ export interface FilterState {
   rewards: number | null;
   tags: string[];
   status: "in-progress" | "completed" | "pending" | null;
+}
+
+export interface ProjectsState {
+  projects: Project[];
+  filters: FilterState;
+}
+
+export interface FilterState {
+  skills: string[];
+  difficulty: string | null;
+  rewards: number | null;
+  tags: string[];
+  status: string | null;
+  fundingType: "funded" | "volunteer" | null;  // New filter for funding type
+  sortBy: "mostActive" | "trending" | "mostRecent" | "reward" | "rewardLowToHigh" | null;  // New sorting filter
+}
+
+export interface Project {
+  logo: string;
+  title: string;
+  description: string;
+  skills: string[];
+  difficulty: string;
+  contributors: string[];
+  companyName: string;
+  tags: string[];
+  productLogo: string;
+  reward: number;
+  status: string;
+  numberOfApplicants: number;
+  duration: string;
+  bugs: number;
+  taskDetail: {
+    description: string;
+    requirements: string[];
+    tasks: string[];
+  };
+  timeLeftToComplete: string;
+  maintainer: string;
+  experienceLevel: string;
+  projectType: string;
+  date: string;
+  trend: boolean;
+  mostActive: boolean;
+  activeIssues: number;
+  fundingType: "funded" | "volunteer";  // New field for project funding type
 }
 
 export interface ProjectsState {
