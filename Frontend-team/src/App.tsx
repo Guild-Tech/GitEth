@@ -15,6 +15,7 @@ import Profile from "./pages/Proflle";
 import { useSelector } from "react-redux";
 import { RootState } from "./store";
 import { useEffect, useState } from "react";
+import GitHubAuth from "./components/Github";
 // import Profile from "./pages/proflle";
 
 /**
@@ -49,6 +50,7 @@ function App() {
           <Route path="/contributors" element={<Contributor />} />
           <Route path="/projects" element={<ExploreProjecs />} />
           <Route path="/rewards" element={<h1>Rewards</h1>} />
+          <Route path="/github" element={<GitHubAuth/>} />
           <Route path="/community" element={<h1>Community</h1>} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sidebar" element={<Sidebar />} />

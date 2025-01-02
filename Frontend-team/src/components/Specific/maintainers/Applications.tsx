@@ -33,7 +33,7 @@ const Applications: React.FC = () => {
       {/* Stats Overview */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
         {/* Card: Pending Applications */}
-        <div className="bg-[#293056] p-4 md:p-6 rounded-xl border border-customBorder flex flex-col items-start space-y-2">
+        <div className=" p-4 md:p-6 rounded-xl border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 flex flex-col items-start space-y-2">
           <p className="text-3xl md:text-4xl font-light">
             {metrics.pendingApplications || 0} {/* Number of pending applications */}
           </p>
@@ -41,7 +41,7 @@ const Applications: React.FC = () => {
         </div>
 
         {/* Card: Approved Applications */}
-        <div className="bg-[#293056] p-4 md:p-6 rounded-xl border border-customBorder flex flex-col items-start space-y-2">
+        <div className=" p-4 md:p-6 rounded-xl border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 flex flex-col items-start space-y-2">
           <p className="text-3xl md:text-4xl font-light">
             {metrics.approvedApplications || 0} {/* Number of approved applications */}
           </p>
@@ -49,7 +49,7 @@ const Applications: React.FC = () => {
         </div>
 
         {/* Card: Rejected Applications */}
-        <div className="bg-[#293056] p-4 md:p-6 rounded-xl border border-customBorder flex flex-col items-start space-y-2">
+        <div className=" p-4 md:p-6 rounded-xl border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 flex flex-col items-start space-y-2">
           <p className="text-3xl md:text-4xl font-light">
             {metrics.rejectedApplications || 0} {/* Number of rejected applications */}
           </p>
@@ -59,7 +59,9 @@ const Applications: React.FC = () => {
 
       {/* Applications Table */}
       <div className="overflow-x-auto">
-        <div className="bg-gray-800 p-4 md:p-6 rounded-xl border border-customBorder">
+        <div className="border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 p-4 md:p-6 rounded-3xl ">
+          <div className="border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 rounded-3xl overflow-auto">
+
           <table className="w-full rounded-lg border font-thin border-customBorder">
             <thead>
               <tr className="text-left font-thin text-white bg-[#0D0F1C]">
@@ -120,6 +122,7 @@ const Applications: React.FC = () => {
               )}
             </tbody>
           </table>
+                </div>
         </div>
       </div>
     </div>

@@ -61,7 +61,7 @@ const Tasks = () => {
    */
   const getTasksByCategory = (category: string) => {
     if (!metrics.tasks || !Array.isArray(metrics.tasks)) return [];
-    return metrics.tasks.filter((task:any) => task.status === category);
+    return metrics.tasks.filter((task: any) => task.status === category);
   };
 
   // Placeholder component shown when data is loading
@@ -132,24 +132,24 @@ const Tasks = () => {
   };
 
   return (
-    <div className="font-sans text-white p-6 rounded-lg">
+    <div className="font-sans text-white px-3 rounded-lg">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         {/* Displaying performance metrics with loading state */}
         {isLoading ? <Placeholder /> : (
-          <div className="bg-[#293056] h-44 p-4 border border-gray-600 rounded-lg text-left">
-            <p className="text-3xl font-kern font-medium">{metrics.tasksCompleted || "0/0"}</p>
+          <div className=" h-44 p-4 border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 rounded-lg text-left">
+            <p className="text-[40px] font-kern font-medium">{metrics.tasksCompleted || "0/0"}</p>
             <p className="text-white font-thin font-kern">Tasks Completed</p>
           </div>
         )}
         {isLoading ? <Placeholder /> : (
-          <div className="bg-[#293056] h-44 p-4 border border-gray-600 rounded-lg text-left">
-            <p className="text-3xl font-kern font-medium">{metrics.pullRequestsApproved || "0/0"}</p>
+          <div className=" h-44 p-4 border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 rounded-lg text-left">
+            <p className="text-[40px] font-kern font-medium">{metrics.pullRequestsApproved || "0/0"}</p>
             <p className="text-white font-thin font-kern">Pull Requests Approved</p>
           </div>
         )}
         {isLoading ? <Placeholder /> : (
-          <div className="bg-[#293056] h-44 p-4 border border-gray-600 rounded-lg text-left">
-            <p className="text-3xl font-kern font-medium">{metrics.avgTaskCompletionTime || "0"} Days</p>
+          <div className=" h-44 p-4 border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 rounded-lg text-left">
+            <p className="text-[40px] font-kern font-medium">{metrics.avgTaskCompletionTime || "0"} Days</p>
             <p className="text-white font-thin font-kern">Avg Task Completion Time</p>
           </div>
         )}
@@ -161,16 +161,18 @@ const Tasks = () => {
         New Task
       </button>
 
-      <div className="w-full overflow-x-auto">
+      <div className="w-full overflow-x-auto scrollbar-none rounded-xl">
         {/* Task categories and their corresponding tasks */}
         <div className="flex w-screen gap-5 h-auto">
           {categories.map((category) => (
-            <div key={category.id} className="bg-[#161B22] rounded-lg p-5">
-              <div className="flex justify-between items-center mb-2">
+            <div key={category.id} className="w-[413px] h-[543px] border-border backdrop-blur-md  bg-white bg-opacity-5  py-6 px-4 rounded-[24px] border-[1px] border-opacity-50">
+              <div className="flex justify-between items-center mb-2 bg-[#0D0F1C] border-border border backdrop-blur-sm p-4 rounded-xl">
                 <h3 className="text-xl text-[#C9D1D9]">{category.title}</h3>
-                <span className="bg-[#30363D] text-white rounded-full py-1 px-3 text-xs">
+                <div className=""><span className=" bg-blue-950 rounded-full py-[6px] px-3 text-xs font-matter p-1">
                   {getTasksByCategory(category.id).length}
-                </span>
+                </span></div>
+
+
               </div>
               <div className="mt-2">
                 {getTasksByCategory(category.id).length === 0 ? (
