@@ -15,6 +15,7 @@ import Profile from "./pages/Proflle";
 import { useSelector } from "react-redux";
 import { RootState } from "./store";
 import { useEffect, useState } from "react";
+import Menu from "./pages/setings";
 // import Profile from "./pages/proflle";
 
 /**
@@ -29,22 +30,22 @@ import { useEffect, useState } from "react";
  */
 
 function App() {
-  const {user} = useSelector((state:RootState)=> state.auth) 
-  const [isLogedIn, setIsLogedIn] = useState(false)
+  const { user } = useSelector((state: RootState) => state.auth);
+  const [isLogedIn, setIsLogedIn] = useState(false);
   useEffect(() => {
-    if(user){
-      setIsLogedIn(true)
-    }else{
-      setIsLogedIn(false)
+    if (user) {
+      setIsLogedIn(true);
+    } else {
+      setIsLogedIn(false);
     }
-  }, [user])
-  
+  }, [user]);
+
   return (
     <div className="min-h-screen bg-dark-gradient text-white relative overflow-hidden flex flex-col justify-between">
       <Routes>
         <Route path="/" element={<MainApp />}>
-          <Route index element={isLogedIn?<Dashboard />:<LandingPage />} />
-          <Route path="/contributors" element={<Contributor/>} />
+          <Route index element={isLogedIn ? <Dashboard /> : <LandingPage />} />
+          <Route path="/contributors" element={<Contributor />} />
           <Route index element={<LandingPage />} />
           <Route path="/contributors" element={<Contributor />} />
           <Route path="/projects" element={<ExploreProjecs />} />
@@ -53,6 +54,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sidebar" element={<Sidebar />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/menu" element={<Menu />} />
         </Route>
 
         {/* <Route element={<MainApp/>} path="/app" /> */}
@@ -75,15 +77,22 @@ function App() {
           />
         </div>
       </div>
-         <div className="container mx-auto relative">
-
-         <div className="fixed top-10 left-20 -z-10 hidden md:block">
-        <img src={diamond} alt="Decorative diamond blur" className="rotate-45 w-56 blur-lg animate-float-slow" />
+      <div className="container mx-auto relative">
+        <div className="fixed top-10 left-20 -z-10 hidden md:block">
+          <img
+            src={diamond}
+            alt="Decorative diamond blur"
+            className="rotate-45 w-56 blur-lg animate-float-slow"
+          />
+        </div>
+        <div className="fixed bottom-10 right-20 -z-10 hidden md:block animate-float-slow">
+          <img
+            src={diamond}
+            alt="Decorative diamond "
+            className="w-56 blur-lg"
+          />
+        </div>
       </div>
-      <div className="fixed bottom-10 right-20 -z-10 hidden md:block animate-float-slow">
-        <img src={diamond} alt="Decorative diamond " className="w-56 blur-lg" />
-      </div>
-         </div>
     </div>
   );
 }
