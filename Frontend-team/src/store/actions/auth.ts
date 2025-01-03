@@ -1,5 +1,5 @@
 // import { githubAuth } from "@/services/api";
-import { AppDispatch } from "../";
+import { AppDispatch } from "..";
 import {
   signInWithGoogle,
   signOutUser,
