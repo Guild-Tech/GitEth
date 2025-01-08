@@ -78,19 +78,27 @@ const ProjecCard = ({ project }: any) => {
                 {/* <span className="border-border border w-fit h-[33px] py-2 px-4 rounded-3xl bg-white bg-opacity-5 mb-4 mt-2 flex items-center cursor-pointer">
                   <p className="overflow-hidden">{project?.letter}</p>
                 </span> */}
-                {project.tags?.map((item: string, id: number) => (  
-                <span  key={id} className="border-border border w-fit h-[33px] py-2 px-4 rounded-3xl bg-white bg-opacity-5 mb-4 mt-2 flex items-center cursor-pointer">
-                <p className="overflow-hidden">{item}</p>
-                </span>
-              ))}
-
-                <span className="flex gap-2 items-center">
-                  <img src={usdt} alt="" className="w-8 h-8 mb-2" />
-                  <p className="mb-2">{`${project?.reward > 999? (project?.reward / 1000) + "k+ USDT" : project?.reward  + "USDT"}`}</p>
-                </span>
+                {project.tags?.map((item: string, id: number) => (
+                  <span
+                    key={id}
+                    className="border-border border w-fit h-[33px] py-2 px-4 rounded-3xl bg-white bg-opacity-5 mb-4 mt-2 flex items-center cursor-pointer"
+                  >
+                    <p className="overflow-hidden">{item}</p>
+                  </span>
+                ))}
+                <div className="">
+                  <span className="flex gap-2 items-center">
+                    <img src={usdt} alt="" className="w-8 h-8 mb-2" />
+                    <p className="mb-2">{`${
+                      project?.reward > 999
+                        ? project?.reward / 1000 + "k+ USDT"
+                        : project?.reward + "USDT"
+                    }`}</p>
+                  </span>
+                </div>
               </div>
 
-              <div className="">
+              <div className=" max-sm:flex max-sm:justify-end">
                 <CustomBtn
                   text="View Project"
                   colored="yes"

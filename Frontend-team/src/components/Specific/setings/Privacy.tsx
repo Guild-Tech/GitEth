@@ -5,7 +5,7 @@ const Privacy = () => {
   return (
     <div>
       <div className="bg-white bg-opacity-5 w-full p-5 gap-4 space-y-2 rounded-[24px] container mx-auto">
-        <div className="space-y-2">
+        <div className="space-y-2 ">
           <p className="text-[18px]">Privacy & Security</p>
           <p className="text-[#B3B8DB] text-[16px]">
             Customise your notification settings to stay informed about
@@ -13,20 +13,21 @@ const Privacy = () => {
           </p>
         </div>
         <div className="bg-[#101323] w-full rounded-[20px] p-5 space-y-7">
-          <div className="flex justify-between">
-            <div>
+          <div className="flex justify-between max-sm:block max-sm:space-y-4">
+            <div className="">
               <p className="text-[16px]">Profile Visibility</p>
               <p className="text-[14px] text-[#B3B8DB]">
                 Choose whether you want to be visible online
               </p>
             </div>
+
             <div className="flex gap-2">
               <Checkbox /> Public
               <Checkbox /> Private
               <Checkbox /> Limited
             </div>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between max-sm:block max-sm:space-y-4">
             <div>
               <p className="text-[16px]">Display Github Contributions</p>
               <p className="text-[14px] text-[#B3B8DB]">

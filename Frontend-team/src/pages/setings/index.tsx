@@ -7,7 +7,7 @@ import Reward from "@/components/Specific/setings/Reward";
 
 const Menu = () => {
   return (
-    <div className="p-12 space-y-3">
+    <div className="p-12 max-sm:p-4 space-y-3">
       <Header />
       <Notification />
       <Privacy />

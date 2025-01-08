@@ -9,7 +9,9 @@ import { useState } from "react";
 
 const Newest = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
-  const filteredProjects = useSelector((state: RootState) => selectFilteredProjects(state));
+  const filteredProjects = useSelector((state: RootState) =>
+    selectFilteredProjects(state)
+  );
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   }; // Toggle modal visibility

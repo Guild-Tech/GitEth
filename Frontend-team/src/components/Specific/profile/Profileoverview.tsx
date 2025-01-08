@@ -2,7 +2,7 @@ import fram from "../../../assets/images/Frame (20).png";
 import usdt from "../../../assets/images/usdt.png";
 const Profileoverview = () => {
   return (
-    <div className="w-[413px] h-[507px] border border-[#293056] rounded-[26px] mt-28 max-sm:mt-12 max-sm:w-[390px] max-sm:h-fit bg-white bg-opacity-5">
+    <div className="w-[413px] h-[507px] border border-[#293056] max-sm:w-full rounded-[26px] mt-28 max-sm:mt-12  max-sm:h-fit bg-white bg-opacity-5">
       <div className="border-b border-border p-6">
         <div className="flex gap-4 items-center">
           <img src={fram} alt="" className="w-[24px] h-[24px]" />
@@ -49,14 +49,15 @@ const Profileoverview = () => {
         <div className="space-y-4 ">
           <p className="text-[18px] font-kern">Tasks Overview</p>
           <div className="flex gap-4 max-sm:block max-sm:space-y-2">
-            <p className="w-[170px] h-[70px] border border-[#363F72] rounded-[12px] flex items-center p-4 max-sm:w-[279px] ">
-              5 <br />
-              Ongoing Issues
-            </p>
-            <p className="w-[170px] h-[70px] border border-[#363F72] rounded-[12px] flex items-center p-4 max-sm:w-[279px] ">
-              10 <br />
-              Completed issues
-            </p>
+            <button className="text-sm  text-white w-[170.5px] h-[70px] rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5 max-sm:w-full flex flex-col p-3 space-y-2 ">
+              <p className="font-kern text-[24px]">5</p>
+              <p className=" ">Ongoing Issues</p>
+            </button>
+
+            <button className="text-sm  text-white w-[170.5px] h-[70px] rounded-[8px] border border-[#363F72] hover:opacity-80 bg-white bg-opacity-5 max-sm:w-full flex flex-col p-3 space-y-2 ">
+              <p className="font-kern text-[24px]">10</p>
+              <p className=" ">Completed issues</p>
+            </button>
           </div>
         </div>
       </div>
