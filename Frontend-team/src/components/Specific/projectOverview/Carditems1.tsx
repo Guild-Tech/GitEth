@@ -11,7 +11,7 @@ const Carditems1 = () => {
   const navigate = useNavigate();
   return (
     <div className="">
-      <div className="w-full h-[140px] rounded-[16px] border border-[#293056] mt-8 p-8  bg-white bg-opacity-5  gap-2 max-sm:p-4 max-sm:w-[390px] ">
+      <div className="w-full h-[140px] rounded-[16px] border border-[#293056] mt-8 p-8  bg-white bg-opacity-5  gap-2 max-sm:p-4 max-sm:w-full ">
         <h3 className="w-fit h-[29px] font-kern text-[24px] font-medium leading-[28.8px] ml-1">
           Project Leads
         </h3>

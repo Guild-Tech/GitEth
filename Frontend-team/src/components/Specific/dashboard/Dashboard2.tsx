@@ -8,39 +8,41 @@ import data from "../../../utils/dummydat2.json";
 const Dashboard2 = () => {
   return (
     <div className="text-white   max-sm:py-4 max-sm:px-2    gap6 max-sm:gap-3  container w-full  ">
-      <div className=" bg-white bg-opacity-5   border border-customBlue container    top-[139px]  gap-[24px] rounded-[24px]  h-[540px]  max-sm:h-[552px] ">
-        <div className="border-b border-border p-8">
-          <div className="flex justify-between items-center">
+      <div className=" bg-white bg-opacity-5   border border-customBlue container  mx-auto  top-[139px]  gap-[24px] rounded-[24px]  h-[540px]  max-sm:h-[690px] ">
+        <div className="border-b border-border p-8 max-sm:p-6">
+          <div className="flex justify-between items-center ">
             <h2 className=" sm:text-lg lg:text-xl text-lg font-kern text-[24px] ">
               Contributor History
             </h2>
-            <p className=" text-sm sm:text-base flex gap-2 max-sm:hidden text-[16px]">
-              View all Contributors{" "}
+            <div className="flex gap-2 sm-hidden items-center">
+              <p className=" text-sm sm:text-base     text-[16px] max-sm:truncate ">
+                View all Contributors{" "}
+              </p>
               <img
                 src={Vector}
                 alt=""
                 className="w-[16px] h-[16px] p-[2.5px] pr-[4.5px] pl-[5.5px] mt-1"
               />
-            </p>
+            </div>
           </div>
           <p className="mt-4  text-[18px] font-normal color-gray-400 text-left text-sm sm:text-base text-[#B3B8DB]">
             Here's an overview of your completed tasks, pull requests & commits.
           </p>
-          <p className=" text-sm sm:text-base gap-2 hidden max-sm:flex  max-sm:mt-5">
+          {/* <p className=" text-sm sm:text-base gap-2  max-sm:flex  max-sm:mt-5">
             View all Contributors{" "}
             <img
               src={Vector}
               alt=""
               className="w-[16px] h-[16px] p-[2.5px] pr-[4.5px] pl-[5.5px] mt-1"
             />
-          </p>
+          </p> */}
         </div>
-        <div className="space-y-4 py-8  p-5  ">
+        <div className="space-y-4 py-8  p-6  ">
           {/* Map through the data */}
           {data.map((item) => (
             <div
               key={item.id}
-              className=" h-auto pt-4 gap-4 rounded-[16px] border flex py-3 p-3 max-sm:w-[400px] justify-between  items-center "
+              className=" max-sm:h-[153px] pt-4 gap-4 rounded-[16px]  border flex py-3  max-sm:p-3  p-3 w-full justify-between  items-center max-sm:block max-sm:space-y-4 h-fit "
             >
               <div className="flex gap-3  ">
                 <img
@@ -53,24 +55,26 @@ const Dashboard2 = () => {
                   {item.title}
                 </p>
               </div>
-              <div className="flex space-x-2 ">
-                <div className="rounded-[20px] bg-[] border border-[#363F72] w-[92px] h-[30px] flex items-center justify-center">
-                  <p className="text-[12px] font-normal leading-[14.4px]">
-                    {item.status1}
-                  </p>
-                </div>
-                {item.icons1?.map((icon) => (
-                  <div
-                    key={icon.id}
-                    className="rounded-[20px] bg-[] border border-[#363F72] w-[48px] h-[32px] flex items-center justify-center"
-                  >
-                    <img
-                      src={icon.src}
-                      alt={icon.alt}
-                      className="w-[16px] h-[16px]"
-                    />
+              <div className="">
+                <div className="flex space-x-2 max-sm:mt-7 max-sm:ml-12 ">
+                  <div className="rounded-[20px] bg-[] border border-[#363F72] w-[92px] h-[30px] flex items-center justify-center  ">
+                    <p className="text-[12px] font-normal leading-[14.4px]">
+                      {item.status1}
+                    </p>
                   </div>
-                ))}
+                  {item.icons1?.map((icon) => (
+                    <div
+                      key={icon.id}
+                      className="rounded-[20px] bg-[] border border-[#363F72] w-[48px] h-[32px] flex items-center justify-center"
+                    >
+                      <img
+                        src={icon.src}
+                        alt={icon.alt}
+                        className="w-[16px] h-[16px]"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

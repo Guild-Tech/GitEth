@@ -18,7 +18,7 @@ const ContributorCard = ({
   skills,
 }: IContributorsCard) => {
   return (
-    <div className=" w-full border border-[#293056] rounded-[26px] mb-3 p-4 max-sm:w-[343px] max-sm:p-6 ">
+    <div className=" w-full border border-[#293056] rounded-[26px] mb-3 p-4  max-sm:p-6 ">
       <div className="flex  gap-2 max-sm:block">
         <img src={logo} alt="" />
         <div>

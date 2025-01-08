@@ -4,7 +4,7 @@ import Contribute from "@/components/Specific/profile/Contribute";
 
 const Profile = () => {
   return (
-    <div className=" min-h-screen p-5 mx-auto  max-sm:block">
+    <div className=" min-h-screen p-5  mx-auto   max-sm:block">
       <div className="flex gap-6 ">
         <div className=" gap-4 max-sm:gap-0 ">
           <Profilej />

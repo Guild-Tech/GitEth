@@ -46,7 +46,7 @@ const CardItem = () => {
   }
   return (
     <div className="  w-full container mx-auto relative ">
-      <div className="flex  justify-between  max-sm:flex-col ">
+      <div className="flex  justify-between  max-sm:flex-col  container mx-auto ">
         <h2 className="font-kern text-[36px] font-medium leading-[33.6px] max-sm:text-1xl  mb-10 mr-4 max-sm:mb-5 max-sm:ml-2 text-left max-sm:text-[24px]   ">
           Top Projects Recommended for You
         </h2>
@@ -67,7 +67,7 @@ const CardItem = () => {
           />
         </p>
       </div>
-      <div className="grid gap-6 md:grid-cols-3 max-sm:grid-cols-1 max-sm:gap-3 max-sm:py-4 max-sm:px-2  py-2 ">
+      <div className="grid gap-6 md:grid-cols-3 max-sm:grid-cols-1 max-sm:gap-3 max-sm:py-4 max-sm:px-2  py-2 container mx-auto">
         {projects.map((project, index) => (
           <ProjectCard project={project} key={index} />
         ))}

@@ -20,19 +20,19 @@ const Integration = () => {
               Choose whether you want to be visible online
             </p>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between max-sm:block max-sm:space-y-4">
             <div className=" ">
               <input
                 type="text"
-                className="w-[800px] h-[76px] bg-[#0D0F1C] rounded-[20px] border border-[#293056]"
+                className="w-[800px] h-[76px] bg-[#0D0F1C] rounded-[20px] border border-[#293056] max-sm:w-full"
               />
             </div>
-            <div className="flex gap-2 items-center">
-              <div className="w-[157px] h-[40px] bg-[#FFFFFF] rounded-[26px] flex items-center justify-center gap-1 cursor-pointer">
+            <div className="flex gap-2 items-center max-sm:block max-sm:space-y-3">
+              <div className="w-[157px] h-[40px] bg-[#FFFFFF] rounded-[26px] flex items-center justify-center gap-1 cursor-pointer max-sm:w-full">
                 <img src={frame} alt="" />
                 <p className="text-black text-[16px] f">Edit on Github</p>
               </div>
-              <div className="w-[157px] h-[40px] bg-[#FFFFFF] rounded-[26px] flex items-center justify-center gap-1 cursor-pointer">
+              <div className="w-[157px] h-[40px] bg-[#FFFFFF] rounded-[26px] flex items-center justify-center gap-1 cursor-pointer max-sm:w-full">
                 <img src={fram} alt="" />
                 <p className="text-black text-[16px] f">Disconnect</p>
               </div>
@@ -47,15 +47,15 @@ const Integration = () => {
               Choose whether you want to be visible online
             </p>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between max-sm:block max-sm:space-y-4">
             <div className=" ">
               <input
                 type="text"
-                className="w-[800px] h-[76px] bg-[#0D0F1C] rounded-[20px] border border-[#293056]"
+                className="w-[800px] h-[76px] bg-[#0D0F1C] rounded-[20px] border border-[#293056] max-sm:w-full"
               />
             </div>
             <div className="flex gap-2 items-center cursor-pointer">
-              <div className="w-[157px] h-[40px] bg-[#FFFFFF] rounded-[26px] flex items-center justify-center gap-1">
+              <div className="w-[157px] h-[40px] bg-[#FFFFFF] rounded-[26px] flex items-center justify-center gap-1 max-sm:w-full">
                 <img src={frams} alt="" />
                 <p className="text-black text-[16px] f">Connect</p>
               </div>
