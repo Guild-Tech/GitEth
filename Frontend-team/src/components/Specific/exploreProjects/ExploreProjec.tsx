@@ -1,6 +1,6 @@
 const ExploreProjec = () => {
   return (
-    <div className="relative  flex mt-16 max-sm:mr-4 ">
+    <div className="relative  flex w-full ">
       <div className="absolute gap-2 inset-y-0 start-0  flex items-center  pointer-events-none ps-3  ">
         <svg
           className="w-4 h-4 text-gray-500 dark:text-gray-400 ml-3"

@@ -22,8 +22,8 @@ const Navigation = () => {
   const [activeComponent, setActiveComponent] = useState("Tasks");
   const [isActive, setIsActive] = useState("Tasks");
   const [repos, setRepos] = useState<any[]>();
-  const [selectedRepoName, setSelectedRepoName] = useState<string>("");
-  const [selectedRepo, setSelectedRepo] = useState<any>();
+  const [_, setSelectedRepoName] = useState<string>("");
+  // const [selectedRepo, setSelectedRepo] = useState<any>();
 
 
   
@@ -35,13 +35,13 @@ const Navigation = () => {
     const response = await octokit.request("GET /user/repos")
     setRepos(response.data) 
   }
-  const handleSelectRepo = async(repo:string) => {
-    const response = await octokit.request("GET /repos/{owner}/{repo}", {
-      owner: "ethopensource",
-      repo: selectedRepoName,
-    })
-    setSelectedRepo(response.data)
-  }
+  // const handleSelectRepo = async(repo:string) => {
+  //   const response = await octokit.request("GET /repos/{owner}/{repo}", {
+  //     owner: "ethopensource",
+  //     repo: selectedRepoName,
+  //   })
+  //   setSelectedRepo(response.data)
+  // }
 useEffect(() => {
   handleButtonClick()
 }, [])

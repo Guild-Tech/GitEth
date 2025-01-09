@@ -17,7 +17,7 @@ export const SecondScreen: React.FC<SecondScreenProps> = ({
 //   gitHubIcon,
 }) => {
 //   const [active, setActive] = useState<string | null>(null);
-const { user} = useSelector((state: RootState) => state.auth);
+const {user} = useSelector((state: RootState) => state.auth);
 
   // const [userInfo, setuserInfo] = useState(user)
   // console.log(userInfo)
@@ -37,7 +37,7 @@ const { user} = useSelector((state: RootState) => state.auth);
       </div>
       <hr className="border-border border border-opacity-35" />
       <Input title="Personal Email" placeholder="noyinoyi@gmail.com" value={user?.email}/>
-      <Input title="Telegram" placeholder="Enter your Telegram username" />
+      <Input title="Telegram" placeholder="Enter your Telegram username" value={user?.email}/>
 
       <div className={formStyles.btnGroup}>
         <Button

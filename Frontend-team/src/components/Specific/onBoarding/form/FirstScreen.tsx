@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import personIcon from "../../../../assets/icons/person.svg"
 import maintainerIcon from "../../../../assets/icons/maintainer.svg"
 import { OnboardingButton } from "../OnboardingCTAButton";
-import { RootState, useAppDispatch } from "@/store";
+import { RootState } from "@/store";
 import { useSelector } from "react-redux";
-import { loginWithGitHub } from "@/store/actions/auth";
+// import { loginWithGitHub } from "@/store/actions/auth";
 import { FirstScreenProps } from "../types";
 import formStyles from "./formStyles";
 
@@ -28,7 +28,7 @@ export const FirstScreen: React.FC<FirstScreenProps> = ({
   setFirstIndex,
 }) => {
   const [active, setActive] = useState<string | null>(null);
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const { user } = useSelector((state: RootState) => state.auth);
   console.log(user)
   useEffect(() => {
@@ -52,7 +52,7 @@ export const FirstScreen: React.FC<FirstScreenProps> = ({
           icon={personIcon}
           active={active}
           size="big"
-          onClick={() => {setActive("contributor"); dispatch(loginWithGitHub())}}
+          onClick={() => {setActive("contributor")}}
           name="contributor"
           title="Sign up as a Contributor"
           desc="Create a portfolio to discover open source projects, join amazing ethereum ecosystems and help them grow."
@@ -61,7 +61,7 @@ export const FirstScreen: React.FC<FirstScreenProps> = ({
           icon={maintainerIcon}
           active={active}
           size="big"
-          onClick={() => {setActive("maintainer"); dispatch(loginWithGitHub())}}
+          onClick={() => {setActive("maintainer")}}
           name="maintainer"
           title="Sign up as a Maintainer"
           desc="Create and maintain open source ethereum projects and find qualified contributors to join your team."

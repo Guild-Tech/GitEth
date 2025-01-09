@@ -33,3 +33,4 @@ export const handleGitHubCallback = async (code: string): Promise<AuthResponse> 
         throw new Error(error.response?.data?.error || "Authentication failed");
     }
 };
+

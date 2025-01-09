@@ -6,13 +6,18 @@ import maintainerIcon from "../../../assets/icons/maintainer.svg";
 import { OnboardingButton } from "./OnboardingCTAButton";
 import { RootState, useAppDispatch } from "@/store";
 import {  useSelector } from "react-redux";
-import { loginWithGitHub, loginWithGoogle } from "@/store/actions/auth";
+// import { loginWithGitHub, loginWithGoogle } from "@/store/actions/auth";
 // import { FirstScreenProps } from "../types";
 import formStyles from "./contributorForm/formStyles";
 import { nextStep } from "@/store/reducers/onboardingIndex";
 import { setUserData } from "@/store/reducers/onboarding";
 import { setRole } from "@/store/actions/onboardState";
-import { handleGitHubCallback, redirectToGitHubAuth } from "@/services/api";
+// import { handleGitHubCallback, redirectToGitHubAuth } from "@/services/api";
+import { Octokit } from "octokit";
+import { setUserAndToken } from "@/store/reducers/auth";
+import axios from "axios";
+// import axios from "axios";
+// import { setUserAndToken } from "@/store/reducers/auth";
 // import { setOnboardUser } from "@/store/actions/Onboarding";
 
 /**
@@ -33,26 +38,24 @@ export const FirstScreen = () => {
   const dispatch = useAppDispatch();
   // const currentIndex = useSelector((state: RootState) => state.onboardingIndex.currentIndex);
   const {user} = useSelector((state: RootState) => state.auth);
-  const [userx, setUser] = useState<{ id: string; name: string; email: string } | null>(null);
-  const [error, setError] = useState<string | null>(null);
+
 
   useEffect(() => {
-      // Check if the `code` parameter exists in the URL
-      const params = new URLSearchParams(window.location.search);
-      const code = params.get("code");
 
-      if (code) {
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token');
+    // Check if the `code` parameter exists in the URL
+      if (token) {
           // Exchange the code for a token and user details
-          handleGitHubCallback(code)
-              .then((response) => {
-                  setUser(response.user);
-                  localStorage.setItem("token", response.token); // Store the token
-                  window.history.replaceState({}, document.title, "/"); // Clean the URL
-              })
-              .catch((err) => {
-                  console.error("Authentication error:", err);
-                  setError("Failed to authenticate with GitHub.");
-              });
+          axios.get(`https://ethopensource.onrender.com/auth/github/user-info?token=${token}`).then((response) => {
+            const userData = response.data as any;
+            console.log(userData)
+            dispatch(setUserAndToken({ user: userData, token }));
+            dispatch(setUserData({ email: userData.email, firstname: userData.displayName[0], role: 'contributor' }));
+          }).catch((error) => {
+            console.error(error);
+          })
+          // // localStorage.setItem("token", token); // Store the token
       }
   }, []);
   // console.log(user)
@@ -62,27 +65,37 @@ export const FirstScreen = () => {
     }
   }, [user]);
 
-  const { loginType:logintype } = useSelector((state: RootState) => state.onboardState);
+  // const { loginType:logintype } = useSelector((state: RootState) => state.onboardState);
      
-  function handleLoginx(role:string){
-    if(logintype === "github"){
+  async function handleLogin(role:string){
+   
       setActive(role); 
       dispatch(setUserData({role}))
       dispatch(setRole(role))
-      dispatch(loginWithGitHub()); 
+      dispatch(nextStep());
 
-    } else if(logintype === "google"){
-      setActive(role); 
-      dispatch(setUserData({role}))
-      dispatch(setRole(role))
-      dispatch(loginWithGoogle())
-    }
+      const params = new URLSearchParams(window.location.search);
+      const token = params.get('token');
+    console.log(localStorage.getItem('token'))
+      // dispatch(loginWithGoogle())
+      const octokit = new Octokit({
+        auth: token
+      })
+      
+      const x = await octokit.request('GET /orgs/{org}/repos', {
+        org: 'ORG',
+        headers: {
+          'X-GitHub-Api-Version': '2022-11-28'
+        }
+      })
+      console.log(x)
+
   }
 
-  const handleLogin = (role:string) => {
-    console.log(role)
-    redirectToGitHubAuth(); // Redirect to the backend to start GitHub OAuth
-};
+//   const handleLogin = (role:string) => {
+//     console.log(role)
+//     redirectToGitHubAuth(); // Redirect to the backend to start GitHub OAuth
+// };
   
   return (
     <div className={formStyles.container}>

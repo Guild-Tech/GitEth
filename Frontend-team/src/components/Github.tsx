@@ -54,9 +54,9 @@ const GitHubAuth: React.FC = () => {
         }
     }, []);
 
-    const handleLogin = () => {
-        window.location.href = "https://ethopensource.onrender.com/auth/github";
-    };
+    // const handleLogin = () => {
+    //     window.location.href = "https://ethopensource.onrender.com/auth/github";
+    // };
 
     return (
         <div style={{ textAlign: "center", marginTop: "500px" }} className="">

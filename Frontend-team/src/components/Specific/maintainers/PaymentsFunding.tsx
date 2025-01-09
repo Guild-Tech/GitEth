@@ -107,7 +107,7 @@ const PaymentsFunding: React.FC = () => {
                   to
                 </span>{" "}
                 <span className="text-white text-lg md:text-xl font-bold">
-                  {metrics.pendingPayments.split(" ")[2] || "N/A"}
+                  {/* {metrics.pendingPayments.split(" ")[2] || "N/A"} */}
                 </span>{" "}
                 <span className="text-gray-400 text-lg md:text-xl font-light">
                   Contributors

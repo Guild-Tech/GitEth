@@ -1,6 +1,6 @@
 import {store} from ".."
 // import {store} from ".."
-import {store} from ".."
+import {store} from "../"
 export interface ICounter {
     value: number;
 }
@@ -51,6 +51,8 @@ export interface UserInfo {
     skills: string[]; // New field for skills
     goals:string[];
   }
+
+  export interface IMainteiner {  termsAccepted: boolean, firstName:string, lastName:string, phoneNumber:string, location:string, biography:string, portfolioLink:[string], typeOfContributor:string}
   
 export interface IOnboardingIndex {
   currentIndex: number;

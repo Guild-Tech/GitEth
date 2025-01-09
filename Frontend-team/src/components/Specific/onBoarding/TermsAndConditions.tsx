@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import  { useRef, useState } from "react";
 import formStyles from "./contributorForm/formStyles";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { nextStep } from "@/store/reducers/onboardingIndex";
-import { RootState } from "@/store";
-import { useNavigate } from "react-router-dom";
+// import { RootState } from "@/store";
+// import { useNavigate } from "react-router-dom";
 
 
 
@@ -28,8 +28,8 @@ const TermsAndConditions = () => {
   console.log(isChecked, isScrolledToEnd)
   const dispatch = useDispatch();
   // const {user} = useSelector((state: RootState) => state.auth);
-  const onboardingInfo = useSelector((state: RootState) => state.onboarding);
-  const navigate = useNavigate();
+  // const onboardingInfo = useSelector((state: RootState) => state.onboarding);
+  // const navigate = useNavigate();
   const handleScroll = () => {
     const element = termsRef.current;
     if (element) {
@@ -91,7 +91,7 @@ const TermsAndConditions = () => {
       </div>
 
       <Button
-        onClick={() => { onboardingInfo.role  === "maintainer" ? navigate("/dashboard") : dispatch(nextStep()); }}
+        onClick={() => {  dispatch(nextStep()); }}
         variant={"secondary"}
         disabled={!isChecked}
         className="w-full p-6 rounded-full font-normal text-base mt-4"

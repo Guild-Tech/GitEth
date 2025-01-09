@@ -5,6 +5,7 @@ import { RootState } from "@/store";
 import { useDispatch, useSelector } from "react-redux";
 import formStyles from "./formStyles";
 import { nextStep, prevStep } from "@/store/reducers/onboardingIndex";
+import { updateField } from "@/store/reducers/onboarding";
 
 
 /**
@@ -23,6 +24,8 @@ export const SecondScreen = () => {
 const { user} = useSelector((state: RootState) => state.auth);
 
 const dispatch = useDispatch();
+// const onboarding = useSelector((state: RootState) => state.onboarding);
+ 
 
   return (
     <div className={formStyles.container}>
@@ -36,10 +39,10 @@ const dispatch = useDispatch();
         <div className="flex justify-center items-center rounded-sm w-20 h-20 overflow-hidden">
           <img src={user?.photoURL || gitHubIcon} alt="GitHub Icon" className="object-cover rounded-2xl" />
         </div>
-        <Input title="GitHub Account" placeholder="surname" value={user?.displayName}  onChange={(e:any) => {console.log(e.target.value)}}/>
+        <Input title="GitHub Account" placeholder="surname" value={user?.displayName}  onChange={(e:any) => dispatch(updateField({ field: "firstname", value: e.target.value }))}/>
       </div>
       <hr className="border-border border  border-opacity-5" />
-      <Input title="Personal Email" placeholder="noyinoyi@gmail.com" value={user?.email} onChange={(e:any) => {console.log(e.target.value)}}/>
+      <Input title="Personal Email" placeholder="noyinoyi@gmail.com" value={user?.email} onChange={(e:any) => dispatch(updateField({ field: "email", value: e.target.value }))}/>
 
       <div className={formStyles.btnGroup}>
         <Button
