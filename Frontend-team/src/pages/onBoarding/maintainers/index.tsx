@@ -1,5 +1,6 @@
 import { SecondScreen } from '@/components/Specific/onBoarding/contributorForm/SecondScreen'
 import { DiscordScreen } from '@/components/Specific/onBoarding/maintainerform/DiscordScreen'
+import { ThirdScreen } from '@/components/Specific/onBoarding/maintainerform/ThirdScreen'
 import TermsAndConditions from '@/components/Specific/onBoarding/TermsAndConditions'
 import { RootState } from '@/store'
 // import React from 'react'
@@ -15,8 +16,9 @@ export const Maintainer = () => {
       <SecondScreen />
       : currentIndex === 3 ?
       <DiscordScreen/>
-      :  
-      <TermsAndConditions />
+      :  currentIndex === 4 ?
+      <TermsAndConditions /> 
+      : <ThirdScreen/>
     }
   </div>
   )

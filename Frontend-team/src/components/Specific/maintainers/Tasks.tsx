@@ -149,7 +149,7 @@ const Tasks = () => {
         )}
         {isLoading ? <Placeholder /> : (
           <div className=" h-44 p-4 border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 rounded-lg text-left">
-            <p className="text-[40px] font-kern font-medium">{metrics.avgTaskCompletionTime || "0"} Days</p>
+            <p className="text-[40px] font-kern font-medium">{metrics.avgTaskCompletionTime.slice(0, 2) || "0"} <span className="text-sm">Days</span></p>
             <p className="text-white font-thin font-kern">Avg Task Completion Time</p>
           </div>
         )}

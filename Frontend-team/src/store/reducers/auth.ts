@@ -1,33 +1,42 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // Define the structure of the authentication state
+interface User {
+  uid: string;
+  displayName: string | null;
+  email: string | null;
+  photoURL: string | null;
+  username: string | null;
+}
+
 interface AuthState {
-  user: {
-    uid: string;
-    displayName: string | null;
-    email: string | null;
-    photoURL: string | null;
-    username: string | null;
-    token: string | null;
-  } | null;
+  user: User | null;
+  token: string | null;
   isLoading: boolean;
   error: string | null;
 }
 
-// Helper function to load user data from localStorage
-const loadUserFromLocalStorage = (): AuthState["user"] => {
+// Helper function to load user and token from localStorage
+const loadAuthFromLocalStorage = (): { user: User | null; token: string | null } => {
   try {
     const storedUser = localStorage.getItem("authUser");
-    return storedUser ? JSON.parse(storedUser) : null;
+    const storedToken = localStorage.getItem("authToken");
+    return {
+      user: storedUser ? JSON.parse(storedUser) : null,
+      token: storedToken || null,
+    };
   } catch (error) {
-    console.error("Failed to parse user data from localStorage:", error);
-    return null;
+    console.error("Failed to parse auth data from localStorage:", error);
+    return { user: null, token: null };
   }
 };
 
 // Initialize state with localStorage data if available
+const { user, token } = loadAuthFromLocalStorage();
+
 const initialState: AuthState = {
-  user: loadUserFromLocalStorage(),
+  user,
+  token,
   isLoading: false,
   error: null,
 };
@@ -37,48 +46,47 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     /**
-     * Set the user state with the provided user data and persist to localStorage.
-     * @param state - The current state of the reducer
-     * @param action - The action to set the user state
+     * Set the user state and token with the provided data, and persist to localStorage.
      */
-    setUser(
+    setUserAndToken(
       state,
-      action: PayloadAction<{
-        uid: string;
-        displayName: string | null;
-        email: string | null;
-        photoURL: string | null;
-        username: string | null;
-        token: string | null;
-      } | null>
+      action: PayloadAction<{ user: User | null; token: string | null }>
     ) {
-      state.user = action.payload;
+      state.user = action.payload.user;
+      state.token = action.payload.token;
 
-      // Persist user to localStorage
-      if (action.payload) {
-        localStorage.setItem("authUser", JSON.stringify(action.payload));
+      // Persist user and token to localStorage
+      if (action.payload.user && action.payload.token) {
+        localStorage.setItem("authUser", JSON.stringify(action.payload.user));
+        localStorage.setItem("authToken", action.payload.token);
       } else {
         localStorage.removeItem("authUser");
+        localStorage.removeItem("authToken");
       }
     },
     /**
      * Set the isLoading state of the reducer with the provided boolean value.
-     * @param state - The current state of the reducer
-     * @param action - The action to set the isLoading state
      */
     setLoading(state, action: PayloadAction<boolean>) {
       state.isLoading = action.payload;
     },
     /**
      * Set the error state with the provided error message.
-     * @param state - The current state of the reducer
-     * @param action - The action to set the error state
      */
     setError(state, action: PayloadAction<string | null>) {
       state.error = action.payload;
     },
+    /**
+     * Clear the authentication state and remove data from localStorage.
+     */
+    clearAuth(state) {
+      state.user = null;
+      state.token = null;
+      localStorage.removeItem("authUser");
+      localStorage.removeItem("authToken");
+    },
   },
 });
 
-export const { setUser, setLoading, setError } = authSlice.actions;
+export const { setUserAndToken, setLoading, setError, clearAuth } = authSlice.actions;
 export default authSlice.reducer;

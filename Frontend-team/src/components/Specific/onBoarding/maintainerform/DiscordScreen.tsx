@@ -1,6 +1,6 @@
 
-import { RootState, useAppDispatch } from "@/store";
-import { useSelector } from "react-redux";
+import {  useAppDispatch } from "@/store";
+// import { useSelector } from "react-redux";
 import formStyles from "../contributorForm/formStyles";
 import { nextStep } from "@/store/reducers/onboardingIndex";
 import { Button } from "@/components/ui/button";
@@ -26,7 +26,7 @@ import discordDark from "../../../../assets/icons/discordDark.svg";
 
 export const DiscordScreen = () => {
   const dispatch = useAppDispatch();
-  const { user } = useSelector((state: RootState) => state.auth);
+  // const { user } = useSelector((state: RootState) => state.auth);
 
 
   return (
@@ -51,7 +51,7 @@ export const DiscordScreen = () => {
         <Button
           onClick={() => dispatch(nextStep())}
           variant={"secondary"}
-          disabled={user === null}
+          disabled={false}
           // onClickCapture={()=> dispatch(nextStep())}
           className="w-full p-6 rounded-full font-normal text-base"
         >
