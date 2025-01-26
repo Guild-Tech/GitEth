@@ -24,8 +24,8 @@ Ensure the following tools are installed:
 
 ### 1. Clone the Repository and change directory to Frontend-team
 ```bash
-git clone https://github.com/johnsmccain/GitEth.git
-cd GitEth
+git clone https://github.com/Guild-Tech/GitEth.git
+cd Guild-Tech
 cd Frontend-team
 ```
 
