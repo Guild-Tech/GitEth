@@ -44,16 +44,16 @@ const Analytics: React.FC = () => {
             metrics.newContributors.map((contributor, index) => (
               <div
                 key={index}
-                className="w-full sm:w-2/4 sm:max-w-full sm:flex flex-col justify-start items-start flex-wrap backdrop-blur border border-customBorder bg-[#293056] shadow-md rounded-lg p-4 mb-4"
+                className="w-full sm:w-2/4 sm:max-w-full sm:flex flex-col justify-start items-start flex-wrap border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 shadow-md rounded-3xl p-4 mb-4"
               >
                 {/* Contributor Info */}
                 <div className="flex items-center justify-start space-x-3 sm:mr-4 font-kern rounded-full border border-customBorder w-fit p-1 bg-[#0D0F1C]">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-white">
+                  <div className="w-5 h-5 rounded-full flex items-center justify-center text-white">
                     {/* Profile Picture */}
                     <img src={profilePic}></img>
                   </div>
                   <div>
-                    <h3 className="text-white pr-2 font-light">
+                    <h3 className="text-white pr-2 font-light text-xs">
                       {contributor.name || "Unknown"} {/* Contributor name */}
                     </h3>
                   </div>
@@ -61,14 +61,14 @@ const Analytics: React.FC = () => {
                 <div className="mt-3 sm:mt-0 sm:flex-grow space-y-4 pt-4">
                   {/* Current Task */}
                   <p className="text-white flex text-sm">
-                    <span className="font-semibold flex text-gray-400 pr-2">
+                    <span className="font-semibold flex text-grayBlue pr-2">
                       <img src={task} className="pr-1"></img>Current Task:
                     </span>
                     {contributor.currentTask || "No task assigned"}
                   </p>
                   {/* Join Date */}
                   <p className="text-white flex text-sm">
-                    <span className="font-semibold flex text-gray-400 pr-2">
+                    <span className="font-semibold flex text-grayBlue pr-2">
                       <img src={date} className="pr-1"></img>Join Date:
                     </span>
                     {contributor.joinedDate || "Unknown"}
@@ -102,28 +102,28 @@ const Analytics: React.FC = () => {
             metrics.churnedContributors.map((contributor, index) => (
               <div
                 key={index}
-                className="w-full sm:w-2/4 sm:max-w-full sm:flex flex-col justify-start items-start flex-wrap backdrop-blur border border-customBorder bg-[#293056] shadow-md rounded-lg p-4 mb-4"
+                className="w-full sm:w-2/4 sm:max-w-full sm:flex flex-col justify-start items-start flex-wrap border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 shadow-md rounded-3xl p-4 mb-4"
               >
                 {/* Same structure as New Contributors */}
                 <div className="flex items-center space-x-3 sm:mr-4 font-kern rounded-full border border-customBorder w-fit p-1 bg-[#0D0F1C]">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-white">
+                  <div className="w-5 h-5 rounded-full flex items-center justify-center text-white">
                     <img src={profilePic1}></img>
                   </div>
                   <div>
-                    <h3 className="text-white pr-2 font-light">
+                    <h3 className="text-white pr-2 font-light text-xs">
                       {contributor.name || "Unknown"}
                     </h3>
                   </div>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:flex-grow space-y-4 pt-4">
                   <p className="text-white text-sm flex">
-                    <span className="font-semibold text-gray-400 flex pr-2">
+                    <span className="font-semibold text-grayBlue flex pr-2">
                       <img src={task} className="pr-1"></img>Current Task:
                     </span>
                     {contributor.currentTask || "No task assigned"}
                   </p>
                   <p className="text-white text-sm flex">
-                    <span className="font-semibold text-gray-400 flex pr-2">
+                    <span className="font-semibold text-grayBlue flex pr-2">
                       <img src={date} className="pr-1"></img>Join Date:
                     </span>
                     {contributor.joinedDate || "Unknown"}
@@ -145,8 +145,10 @@ const Analytics: React.FC = () => {
       {/* Section: Most Active Contributors */}
       <div>
         <h2 className="text-xl font-semibold mb-4">Most Active Contributors</h2>
-        <div className="bg-[#293056] p-6 rounded-xl border border-customBorder overflow-x-auto">
+        <div className="border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 p-6 rounded-3xl overflow-x-auto">
           {/* Table to display active contributors */}
+          <div className="border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 rounded-3xl overflow-auto">
+
           <table className="w-full rounded-xl border border-customBorder text-sm">
             <thead>
               <tr className="text-left font-thin text-white bg-[#0D0F1C]">
@@ -160,8 +162,8 @@ const Analytics: React.FC = () => {
               {metrics?.activeContributors?.length > 0 ? (
                 metrics.activeContributors.map((contributor, index) => (
                   <tr
-                    key={index}
-                    className="bg-[#101323] text-white h-6 border border-b-[#293056]"
+                  key={index}
+                  className="bg-[#101323] text-white h-6 border border-b-[#293056]"
                   >
                     {/* Displays contributor data */}
                     <td className="py-4 px-4">
@@ -195,14 +197,17 @@ const Analytics: React.FC = () => {
               )}
             </tbody>
           </table>
+              </div>
         </div>
       </div>
 
       {/* Section: Struggling Contributors */}
       <div>
         <h2 className="text-lg font-semibold mb-4">Struggling Contributors</h2>
-        <div className="bg-[#293056] p-6 rounded-xl border border-customBorder overflow-x-auto">
+        <div className="border-border backdrop-blur-md border-[1px] bg-white bg-opacity-5 p-6 rounded-3xl  overflow-x-auto">
           {/* Table for struggling contributors */}
+          <div className="border-border border-opacity-35 backdrop-blur-md border-[1px] bg-white bg-opacity-5 rounded-3xl overflow-auto">
+
           <table className="w-full rounded-lg border border-customBorder text-sm">
             <thead>
               <tr className="text-left font-thin text-white bg-[#0D0F1C]">
@@ -253,6 +258,7 @@ const Analytics: React.FC = () => {
               )}
             </tbody>
           </table>
+                </div>
         </div>
       </div>
     </div>

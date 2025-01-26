@@ -1,6 +1,6 @@
+// import { githubAuth } from "@/services/api";
 import { AppDispatch } from "../";
 import {
-  signInWithGitHub,
   signInWithGoogle,
   signOutUser,
 } from "../../services/firebase";
@@ -13,17 +13,18 @@ import { setUser, setLoading, setError } from "../reducers/auth";
 export const loginWithGitHub = () => async (dispatch: AppDispatch) => {
   dispatch(setLoading(true));
   try {
-    const user = await signInWithGitHub();
-    dispatch(
-      setUser({
-        uid: user.uid,
-        displayName: user.displayName,
-        email: user.email,
-        photoURL: user.photoURL,
-        username: user.displayName?.replace(/\s+/g, "").toLowerCase() || "anonymous",
-        token: null,
-      })
-    );
+    // const user = await githubAuth();
+    // console.log(user)
+    // dispatch(
+    //   setUser({
+    //     uid: user.uid,
+    //     displayName: user.displayName,
+    //     email: user.email,
+    //     photoURL: user.photoURL,
+    //     username: user.displayName?.replace(/\s+/g, "").toLowerCase() || "anonymous",
+    //     token: null,
+    //   })
+    // );
     dispatch(setError(null));
   } catch (error: any) {
     dispatch(setError(error.message));
