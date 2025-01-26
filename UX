@@ -1,0 +1,444 @@
+Client requirement 
+
+Project Goals:: 
+
+● Facilitate Contributions: Make it easier for developers to find and contribute to
+Ethereum projects that match their skills and interests.
+● Skill Development: Provide educational resources and mentorship opportunities to help
+developers improve their Ethereum development skills.
+● Community Building: Foster a strong, collaborative community of Ethereum developers
+and project maintainers.
+● Project Visibility: Increase visibility for Ethereum projects, helping them attract the right
+talent and contributors.
+
+Highlight Idea::
+
+Platform that creates a space for ethereum developers to interact on open source projects.
+Platform will create an avenue where any one with any level of skill can contribute.
+Platform will track issues and categorize them based on different criterias and blockchain inches.
+Platform will have an active community that supports everyone and encourages effective collaboration when bugs are identified, or when codes are written poorly.
+Platform will have organized materials that are broken down with a perfect journey on how one can start as a novice and become a master.
+Platform will accept open source projects with solidity as the base language.
+Contributors are not limited to coding alone but other forms of skills like design, graphics, product management etc.
+
+Problem statement ::
+
+Ethereum development is a complex and rapidly evolving field, with developers often struggling to find the right projects to contribute to or the resources needed to upskill. 
+Existing platforms for open-source contributions are often too generic, lacking the specialized tools and community
+support needed for Ethereum development
+This creates barriers for both new and experienced
+developers to engage effectively with the Ethereum ecosystem.
+
+
+Other Problems ::
+
+Users of network
+High transaction costs
+Scalability limitations
+
+Security vulnerabilities
+Maintaining compatibility with Ethereum's rapidly evolving protocol
+Protocol changes
+Interoperability challenges
+Competition from better-funded alternatives
+Lack of funding
+Competitor advantages
+Regulatory uncertainty
+Complexity
+Sustainability concerns
+Ethereum based platforms like OnlyDust
+Broken down Ideas 
+GitHub Integration: Integrate with GitHub projects and repositories. 
+
+
+Project Aggregation: aggregates GitHub projects and tasks. 
+
+
+Project Curation: Curates and highlights featured projects. 
+
+
+Project Listing: Displays featured projects on their website. 
+
+
+Profile Creation: Possibly allows users to create profiles showcasing their skills.
+
+
+Search Functionality: Likely allows searching for projects and contributors.
+
+
+Project Filtering: May offer filters to narrow down projects by criteria. 
+
+
+Talent Matching: Acts as a matchmaker between GitHub projects and talented contributors. 
+
+
+Contributor Discovery: Helps developers find suitable projects to contribute to. 
+
+
+Collaboration Tool: Facilitates collaboration between developers and projects. 
+
+
+Task Management: Likely allows for task assignment and tracking within aggregated projects. 
+
+
+Analytics: Likely provides insights on project activity and contributor engagement. 
+
+
+Ticketing system for issue tracking 
+
+
+Pull-request mechanism for contributions  
+
+
+Transparency Project difficulties: project is ranked based on how difficult it should be and funds allocation.
+
+Project visibility : Projects are visible to all, but some are reserved for new developers 
+
+ Project match maker: match each project based on difficulty and funding to skill set based on expertise. 
+
+Platform will track issues and categorize them based on different criterias and blockchain inches. Issues related to niche  Depin Defin Dapps etc or activity eg task, bugs etc 
+Issues as Task Management: GitHub Issues are used to manage tasks, bugs, or feature requests. 
+Creating Issues: Maintainers or contributors can create issues to track specific tasks. Each issue has a title, description, and relevant labels (e.g., bug, enhancement, help wanted).
+Syncing Projects and Issues: Platforms like OnlyDust often integrate with GitHub so that the project tasks (issues) on GitHub are linked to tasks within the platform itself
+Assigning Issues: Maintainers can assign issues to contributors via GitHub, which are then reflected on the platform for task management
+Matching Based on Skills: The platform can recommend specific issues to contributors based on their skills and experience, making it easier for them to find tasks they can work on.
+Claiming Issues: Contributors can claim issues directly through the platform, and their claim will be reflected on the GitHub repository.
+Issue Status Updates: When contributors work on an issue, they can change its status (e.g., open, in-progress, closed). The status changes are synced between GitHub and the platform, ensuring everyone remains updated.
+Discussions and Comments: GitHub Issues allow contributors and maintainers to comment, ask questions, or provide feedback. These discussions are integral to understanding and completing tasks effectively.
+Centralized Management: Contributors and maintainers don’t need to manually switch between the platform and GitHub to see what work is available or who is working on what. Everything is synced.
+Transparency: GitHub Issues provide transparency for everyone involved in the project, allowing contributors to understand what work has been completed, what's pending, and what's being actively worked on.
+Typical Workflow
+Maintainer Creates an Issue: The maintainer defines a new issue in GitHub, with all the details about the task.
+Issue Appears on the Platform: The issue is automatically listed on the platform (OnlyDust), categorized with other issues from the same project.
+Contributor Selects an Issue: Contributors can browse the platform, find an issue that matches their skill set, and claim it.
+Contributions and Updates: The contributor works on the task, provides status updates via GitHub, and ultimately submits the work as a pull request.
+Review and Closure: The maintainer reviews the pull request, provides feedback, and eventually merges the change and closes the issue.
+Platform will have an active community that supports everyone and encourages effective collaboration when bugs are identified, or when codes are written poorly., Events are done, Grants are given, Mentorship is done, Education Resources development are Encouragement.
+
+Platform will have organized materials that are broken down with a perfect journey on how one can start as a novice and become a master. 
+
+Community will help in breaking down the complexity of solidity code by creating simple libraries 
+
+Contributors are not limited to coding alone but other forms of skills like design, graphics, product management etc.Decentralized labor . 
+
+Expression of idea
+
+Platform Flow 
+
+Project Creation: You create a project on the platform's website.
+
+ Repository Setup: The platform automatically sets up a GitHub repository for collaboration. 
+
+Collaborator Invitation: You invite collaborators to work on the project. 
+
+Contribution Process: Collaborators fork the repository to their own GitHub accounts. 
+
+They create pull requests with their contributions. 
+
+Other collaborators or code maintainers review and discuss these pull requests.
+
+Payment System: The platform facilitates payment for contributions, possibly through GitHub Sponsors or a custom system.
+
+ Skill Enhancement: As contributors work on projects, they may earn badges or credits. 
+
+Contribution Tracking: The platform tracks contributions to projects. 
+
+Community Support: Developers can ask questions and seek help through community forums. 
+
+User flow: Maintainer, Contributors , Sponsors 
+Contributors
+
+Account Creation: Contributors create an account on the platform. 
+Sign up or login 
+Sign up with GitHub, Google or email 
+Prompt to add telegram , and auto detection of email
+Terms and conditions 
+Profile creation 
+Payment Setup: They set up their preferred payment method, which could include MetaMask or other cryptocurrency wallets.
+ Project Selection: Contributors browse available projects and choose ones they want to collaborate on.
+
+ Contribution Process: Fork the repository to their own GitHub account.
+
+Make contributions (code changes, bug fixes, etc.) Submit pull requests
+
+ Review and Approval: Other collaborators review and approve or suggest changes to the contributions. 
+
+Payment Tracking: The platform tracks contributions and prepares payment records.
+
+ Payment Processing: Payments are facilitated through the chosen payment method (possibly MetaMask). 
+
+Skill Tracking: Contributions may earn badges or credits for skill development. 
+
+Community Engagement: Contributors can participate in discussions, ask questions, and seek help through community forums.
+
+Work flow Maintainer
+
+Same registration as contributors
+Create or Claim a Project:After signing up, you can either create a new project or claim an existing one you manage
+Define Scope and Goals: Establish the vision and objectives of the project. This includes defining the project's purpose, expected outcomes, and timelines.
+Break Down Tasks: Split the project into smaller, manageable tasks. Clearly describe each task, including its requirements and the expected results.
+Attract Contributors: Share tasks with the community and set up incentives if applicable (e.g., grants, bounties). Make your project appealing to potential contributors by articulating its impact and benefits.
+Review Applications: Receive contributor applications. Evaluate based on relevant skills, experience, and enthusiasm for the project.
+Onboard Contributors: Onboard approved contributors by providing necessary information, resources, or access to code repositories. Share guidelines or documentation to help them get started smoothly.
+Assign Tasks: Once a contributor is onboarded, assign them tasks that align with their skills and experience.
+Provide Clarity: Ensure contributors have a clear understanding of the task's requirements. Make sure to answer any questions they have to reduce ambiguity.
+Set Deadlines: Define deadlines and expectations for each task. Use task management tools to keep everything organized and visible.
+Provide Support: Maintain constant communication with contributors through collaboration tools like Slack, Discord, or direct messages.
+Conduct Meetings: Hold regular meetings or check-ins to ensure the contributors are on track, answer questions, and provide feedback.
+Mentor: Offer mentorship to help contributors grow, share knowledge on best practices, coding standards, or domain-specific knowledge. This helps the project and builds a strong community.
+Review Contributions: As contributors submit work, perform code reviews to ensure it meets the project's standards and objectives. Provide constructive feedback to help contributors improve.
+Merge Changes: Once the code or work is approved, merge it into the main project. This can include reviewing pull requests, running tests, and validating contributions before accepting them.
+Address Issues: Identify bugs, issues, or quality concerns within the submitted contributions and collaborate with the contributors to resolve them.
+Track Progress: Regularly monitor the project's overall progress against its roadmap or goals. Update timelines or expectations based on the pace of contributions.
+Iterate and Refine: Update or modify tasks as needed, add new tasks based on the project's needs, and adjust the project scope if there are changes in direction.
+Document Changes: Keep documentation updated based on recent changes, new features, or iterations. Ensure contributors and the community have access to the latest information.
+Engage with Contributors: Foster a sense of community by maintaining regular communication and making contributors feel valued.
+Recognize Contributions: Acknowledge contributors publicly, thank them for their effort, and provide rewards or incentives.
+Build Long-term Relationships: Encourage contributors to become long-term participants or even take on more responsibilities as they gain experience.
+Complete Tasks: Finalize all assigned tasks and ensure everything is properly integrated and functional.
+Project Handoff or Maintenance: Depending on the project type, either close it once objectives are met or continue to maintain and improve it by accepting new contributions.
+Documentation: Make sure final documentation is in place, including lessons learned, which can help in future projects.
+
+
+Flow Sponsor 
+
+Prioritize Requirements
+
+ Must-Have (Core for MVP)
+
+These features are essential for the core value of the platform—facilitating collaboration and contributing to open source projects. They must be implemented in the initial version for the platform to provide its core functionality.
+
+1. Platform for Ethereum Developers to Collaborate: Establish the foundation for the platform where developers can interact and collaborate on open-source projects.
+
+2. Project Listing & Aggregation: Display featured projects and aggregate GitHub projects and tasks, providing visibility to ongoing work.
+
+3. GitHub Integration: Connect with GitHub/Google auth to facilitate project setup and collaboration.
+
+4. Repository Setup & Contribution Process: Set up GitHub repositories automatically and enable developers to fork, contribute, and create pull requests.
+
+5. Task Management & Ticketing System: Allow task assignment and track issues for effective collaboration.
+
+6. Project Matchmaker: Match projects to contributors based on difficulty, skills, and funding. This is critical for efficient collaboration.
+
+7. Payment System Integration: Facilitate payments through a custom system or integrations like GitHub Sponsors.
+
+8. Profile Creation: Let contributors create profiles showcasing their skills and track their progress.
+
+9. Every User has a unique dashboards 
+
+10. Community Forums & Support:  Provide a community forum for questions and support, fostering a collaborative environment.
+
+Should-Have (High Priority but Not Essential for MVP)
+
+These features greatly enhance user experience but are not strictly required for the platform's first release.
+
+1. Project Curation: Curate and highlight featured projects to draw attention to significant or high-quality initiatives.
+
+2. Contributor Discovery & Talent Matching: Help developers find projects they are best suited for, boosting participation.
+
+3. Search and Filtering Functionality: Allow developers to search for projects and contributors and filter them by relevant criteria.
+
+4. Collaboration Tools: Additional collaboration features that facilitate communication beyond GitHub integration.
+
+5. Project Difficulty & Visibility Settings: Rank projects based on difficulty and set visibility by skill level, adding nuance to how projects are displayed.
+
+6. Skill Enhancement & Badges: Reward contributors for their work and skills with badges to keep them motivated.
+
+7. Mentorship & Events: Host mentorship programs and events to support developers, fostering growth and community engagement.
+
+
+
+KCould-Have (Nice-to-Have, Future Versions)
+These features are valuable additions that enhance the overall platform but can be deferred until after the core platform is established.
+
+1. Project Analytics: Provide insights on project activity and contributor engagement. This can be added later once collaboration data has accumulated.
+
+2. Grants & Funding Opportunities: Offer grants and funding opportunities for projects, helping developers get financial support.
+
+3. Resource Development & Skill Learning Journey: Create educational content organized for different levels (novice to expert), including structured resources and exams for skill development.
+
+4. Decentralized Labor Expansion: Expand the platform to cater to skills beyond coding, like graphic design and product management.
+
+5. Issue Categorization Based on Blockchain Niches: Track and categorize issues by niche areas (e.g., DeFi, dApps) for specialized issue tracking.
+
+6. Community Events for Networking & Recognition: Organize community events to encourage collaboration and reward contributors.
+
+Learning resources: Learning curve, hands on, quest inclined, simple flow. 
+
+
+Users research
+Goal: As a Product Manager, I want to:
+Identify User Pain Points and Unmet Needs
+Understand the specific challenges and unmet needs of both technical users (Ethereum developers, smart contract engineers) and non-technical users (designers, product managers, etc.) when contributing to open-source projects, to ensure that the platform can support efficient collaboration.
+Validate Product Ideas and Features
+Confirm that the product ideas and key features of the platform resonate with both technical and non-technical users, and prioritize which features will be most beneficial to these user groups before development begins.
+Users 
+Technical code base
+Expert developers 
+Intermediate developers 
+Beginners developers 
+Non technical non code base 
+Expert developers 
+Intermediate developers 
+Beginners developers 
+Research Focus:
+Identify User Pain Points and Unmet Needs
+Technical Users (Ethereum Developers):
+What challenges do developers face when building Ethereum projects?
+What pain points exist in their current workflows (e.g., smart contract development, deployment, debugging)?
+How do they collaborate with non-technical contributors (designers, product managers) in open-source projects? What tools do they currently use, and where are the gaps?
+Non-Technical Users (Designers, Product Managers, etc.):
+What barriers do non-technical contributors face when working on Ethereum-based projects?
+What gaps exist in tools or workflows that make it hard for them to collaborate with developers?
+What features or support would make their participation in Ethereum projects more seamless and effective?
+
+Validate Product Ideas and Features
+Which product features are most appealing and useful to technical users (e.g., developer tools, Ethereum testnet integration, code-sharing)?
+What tools would help non-technical users contribute (e.g., UI/UX collaboration tools, visual design integration)?
+Do different skill levels (beginner, intermediate, expert) prioritize features differently?
+Quantitative:
+Pre-Launch Survey:
+Online surveys:(Reddit, GitHub, Stack Overflow)
+Prelaunch Survey Questions:
+For Technical Users (Ethereum Developers, Engineers, etc.):
+What is your experience level with Ethereum development?
+☐ Beginner
+☐ Intermediate
+☐ Expert
+Which development tools do you currently use when working with Ethereum projects? (Select all that apply)
+☐ Remix
+☐ Hardhat
+☐ Truffle
+☐ Foundry
+☐ Other (please specify)
+On a scale of 1-5, how satisfied are you with your current Ethereum development workflow?
+1 (Very Dissatisfied) – 5 (Very Satisfied)
+What are the biggest pain points in your Ethereum development process? (Select up to 3)
+☐ Setting up development environments
+☐ Smart contract debugging
+☐ Interacting with non-technical team members
+☐ Deployment to mainnet/testnet
+☐ Lack of documentation
+☐ Other (please specify)
+How important is collaboration with non-technical contributors (e.g., designers, product managers) in your Ethereum projects?
+☐ Not Important
+☐ Somewhat Important
+☐ Very Important
+What features would be most helpful in a platform designed to support Ethereum-based open-source projects? (Select up to 3)
+☐ Built-in Ethereum testing tools
+☐ Code collaboration and review
+☐ Task management and assignment
+☐ Integration with GitHub
+☐ Community and support
+☐ Other (please specify)
+On a scale of 1-5, how confident are you in contributing to an Ethereum project with contributors of various expertise levels (beginners to experts)?
+1 (Not Confident) – 5 (Very Confident)
+How frequently do you contribute to open-source Ethereum projects?
+☐ Never
+☐ Occasionally
+☐ Frequently
+What motivates you to contribute to open-source Ethereum projects? (Select all that apply)
+☐ Learning and skill development
+☐ Building my portfolio
+☐ Collaborating with others
+☐ Contributing to a meaningful project
+☐ Financial incentives (e.g., token rewards)
+☐ Other (please specify)
+On a scale of 1-5, how likely are you to use a platform that simplifies collaboration on Ethereum projects?
+1 (Not Likely) – 5 (Very Likely)
+
+For Non-Technical Users (Designers, Product Managers, etc.):
+What is your experience level with working on Ethereum or blockchain-based projects?
+☐ Beginner
+☐ Intermediate
+☐ Expert
+Which tools do you currently use to collaborate with technical teams? (Select all that apply)
+☐ Figma
+☐ Miro
+☐ Jira
+☐ Trello
+☐ Other (please specify)
+On a scale of 1-5, how satisfied are you with your ability to collaborate with technical team members (e.g., developers)?
+1 (Very Dissatisfied) – 5 (Very Satisfied)
+What are the biggest challenges you face when contributing to Ethereum-based projects? (Select up to 3)
+☐ Lack of understanding of technical concepts
+☐ Limited access to tools that integrate with blockchain
+☐ Communication barriers with developers
+☐ Difficulty managing tasks and workflows
+☐ Other (please specify)
+How comfortable are you collaborating with technical team members on blockchain projects?
+☐ Not Comfortable
+☐ Somewhat Comfortable
+☐ Very Comfortable
+What features would be most helpful in a platform designed to support your contributions to Ethereum-based open-source projects? (Select up to 3)
+☐ Clear task management system
+☐ Easy communication with developers
+☐ Visual collaboration tools (e.g., Figma integration)
+☐ Access to tutorials and documentation
+☐ Other (please specify)
+On a scale of 1-5, how important is it to have a platform that simplifies collaboration between technical and non-technical contributors?
+1 (Not Important) – 5 (Very Important)
+How frequently do you work on open-source or collaborative projects (technical or non-technical)?
+☐ Never
+☐ Occasionally
+☐ Frequently
+What motivates you to participate in open-source projects? (Select all that apply)
+☐ Expanding my portfolio
+☐ Gaining experience with Ethereum and blockchain projects
+☐ Building relationships with developers and other contributors
+☐ Contributing to impactful projects
+☐ Other (please specify)
+On a scale of 1-5, how likely are you to use a platform that helps non-technical users collaborate with Ethereum developers?
+1 (Not Likely) – 5 (Very Likely)
+Survey Tools: Google Forms, Typeform.
+
+Qualitative:
+For Technical Users (Ethereum Developers, Engineers, etc.):
+Can you describe the most significant challenges you've faced when working on Ethereum projects?
+This question will help identify technical barriers, workflow issues, or specific frustrations within Ethereum development.
+What tools or resources do you currently rely on when developing for Ethereum, and where do they fall short?
+This explores the tools developers use (Remix, Hardhat, etc.) and what gaps exist in their current toolsets.
+How do you collaborate with non-technical contributors (e.g., designers, product managers) in your Ethereum projects? What works well, and what doesn’t?
+This gives insights into collaboration pain points and what features could improve communication and workflows between teams.
+What motivates or discourage you to contribute to open-source Ethereum projects?
+This will help uncover motivations like learning opportunities, portfolio building, or contributing to meaningful projects.
+If you could improve one aspect of your Ethereum development workflow, what would it be and why?
+This can point to specific areas for product improvement, highlighting unmet needs and desired features.
+
+For Non-Technical Users (Designers, Product Managers, etc.):
+What has been your experience working on Ethereum or blockchain-related projects? What challenges did you encounter?
+This helps to understand the technical barriers or frustrations non-technical contributors face when working with Ethereum developers.
+How do you currently collaborate with developers on technical projects, and what could make this process easier for you?
+This question focuses on communication and process issues that may hinder collaboration between technical and non-technical teams.
+What kind of tools, features, or support would make it easier for you to contribute to Ethereum-based projects?
+This will provide insights into the kinds of tools that would help non-technical users (e.g., visual collaboration tools, educational resources).
+What do you find most exciting about participating in open-source projects? What makes a project appealing for you to join?
+This explores motivations for non-technical users, which could include creative fulfillment, learning, or building a portfolio.
+If you could suggest one improvement to how non-technical contributors can work with developers on Ethereum projects, what would it be?
+This will highlight specific pain points or feature ideas that could improve cross-functional collaboration.
+
+General (For Both Technical and Non-Technical Users):
+What’s the main reason you would (or wouldn’t) contribute to an open-source Ethereum project?
+This explores the general motivations and barriers that influence participation.
+How do you prefer to learn about new tools or processes for working on blockchain projects?
+This will reveal preferences for documentation, tutorials, peer learning, etc., helping to understand what educational resources should be provided.
+What factors would make you choose one platform over another for collaborating on Ethereum projects?
+This helps to identify competitive differentiators or missing features that could set your platform apart.
+What features or tools would most improve your productivity when working on an open-source Ethereum project?
+This helps validate which features would make the most significant impact on both technical and non-technical users.
+What concerns or hesitations do you have about working on Ethereum or blockchain-based projects?
+This will uncover the main risks or obstacles that prevent people from participating, which you can address in the platform design.
+
+2. Validating Product Ideas and Features
+Research Focus:
+As above in this document 
+Quantitative:
+Feature Survey:
+Qualitative survey 
+Feature Survey 
+
+
+
+Learning Hub IDEA: 
+
+
