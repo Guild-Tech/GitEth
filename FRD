@@ -1,0 +1,1149 @@
+
+INTRODUCTION 
+1.1 Purpose of the Document
+The purpose of this Functional Requirements Document (FRD) is to define the functional requirements for the Eth-Open Source. This document outlines the specific functionalities and features that the app must possess to meet the needs of its users and achieve its objectives. It serves as a formal statement of the application's functional requirements, ensuring that all stakeholders have a clear understanding of what the app is intended to do and how it will operate.
+
+
+1.2 Scope of the Project
+Create a dedicated platform for Ethereum developers
+Provide resources, tools, and community support
+Facilitate collaboration on open-source projects
+Enhance developers' skills and contribute to the Ethereum ecosystem
+
+1.3 Objectives
+
+
+Facilitate easy contribution to Ethereum projects
+Offer educational resources and mentorship
+Build a strong, collaborative community
+Increase visibility for Ethereum projects
+Support both new and experienced developers
+
+2. Functional Requirements
+
+Requirements for all inputs and output of the app.
+
+   2.1 Requirement Identification and prioritization.
+
+ Must-Have (MVP) core
+
+These features are essential for the core value of the platform—facilitating collaboration and contributing to open source projects. They must be implemented in the initial version for the platform to provide its core functionality.
+
+1. Platform for Ethereum Developers to Collaborate: Establish the foundation for the platform where developers can interact and collaborate on open-source projects.
+
+2. Project Listing & Aggregation: Display featured projects and aggregate GitHub projects and tasks, providing visibility to ongoing work.
+
+3. GitHub Integration: Connect with GitHub/Google auth to facilitate project setup and collaboration.
+
+4. Repository Setup & Contribution Process: Set up GitHub repositories automatically and enable developers to fork, contribute, and create pull requests.
+
+5. Task Management & Ticketing System: Allow task assignment and track issues for effective collaboration.
+
+6. Project Matchmaker: Match projects to contributors based on difficulty, skills, and funding. This is critical for efficient collaboration.
+
+7. Payment System Integration: Facilitate payments through a custom system or integrations like GitHub Sponsors.
+
+8. Profile Creation: Let contributors create profiles showcasing their skills and track their progress.
+
+9. Every User has a unique dashboards 
+
+10. Community Forums & Support:  Provide a community forum for questions and support, fostering a collaborative environment.
+
+
+
+Should-Have (High Priority but Not Essential for MVP) non core
+
+These features greatly enhance user experience but are not strictly required for the platform's first release.
+
+1. Project Curation: Curate and highlight featured projects to draw attention to significant or high-quality initiatives.
+
+2. Contributor Discovery & Talent Matching: Help developers find projects they are best suited for, boosting participation.
+
+3. Search and Filtering Functionality: Allow developers to search for projects and contributors and filter them by relevant criteria.
+
+4. Collaboration Tools: Additional collaboration features that facilitate communication beyond GitHub integration.
+
+5. Project Difficulty & Visibility Settings: Rank projects based on difficulty and set visibility by skill level, adding nuance to how projects are displayed.
+
+6. Skill Enhancement & Badges: Reward contributors for their work and skills with badges to keep them motivated.
+
+7. Mentorship & Events: Host mentorship programs and events to support developers, fostering growth and community engagement.
+
+Could-Have (Nice-to-Have, Future Versions)
+These features are valuable additions that enhance the overall platform but can be deferred until after the core platform is established.
+
+1. Project Analytics: Provide insights on project activity and contributor engagement. This can be added later once collaboration data has accumulated.
+
+2. Grants & Funding Opportunities: Offer grants and funding opportunities for projects, helping developers get financial support.
+
+3. Resource Development & Skill Learning Journey: Create educational content organized for different levels (novice to expert), including structured resources and exams for skill development.
+
+4. Decentralized Labor Expansion: Expand the platform to cater to skills beyond coding, like graphic design and product management.
+
+5. Issue Categorization Based on Blockchain Niches: Track and categorize issues by niche areas (e.g., DeFi, dApps) for specialized issue tracking.
+
+6. Community Events for Networking & Recognition: Organize community events to encourage collaboration and reward contributors
+
+  
+      
+   2.2 Functional Requirements List, Story and Flow.
+
+       2.2.1 Platform for Ethereum Developers to Collaborate.
+
+ User Story
+
+As an Ethereum developer, I want to collaborate with others on open-source projects so that I can contribute my skills, learn, and build valuable projects.
+
+User Flow (System-Wide)
+
+1. Platform Access: Users (both contributors and maintainers) visit the platform.
+2. Authentication: Sign-up/Login using GitHub, Google, or email.
+3. Profile Creation: Users create profiles showcasing skills, projects worked on, and set up preferences.
+4. Explore Projects: Users navigate through the aggregated GitHub projects to find opportunities.
+
+2.2.2.Project Listing & Aggregation
+
+User Story
+
+As a developer, I want to see a list of ongoing projects and tasks, so I can find something that fits my interests and skills.
+
+User Flow
+1. Home Screen: Users see a dashboard with featured and aggregated GitHub projects.
+2. Filter & Search: Users can filter or search projects based on their preferences (difficulty, niche, tags).
+3. Select Project: Users click on a project to view more details.
+
+2.2. 3. GitHub Integration (Authentication and Repository Setup)
+
+ User Story
+As a developer, I want to authenticate using GitHub and link projects directly to repositories so that my contributions and tasks are synchronized seamlessly.
+
+ User Flow
+1. GitHub Login: User selects "Login with GitHub" option.
+2. Authentication: OAuth process allows permission to access GitHub repositories.
+3. Platform Integration: System fetches linked repositories and presents them on the platform.
+4. Repository Setup: For maintainers, a new repository is set up upon project creation.
+
+2.2.4. Repository Setup & Contribution Process
+
+User Story (Contributor)
+As a contributor, I want to fork repositories, make changes, and submit pull requests, so I can contribute directly to the project.
+
+User Flow (Contributor)
+1. Browse Project: User selects a project they wish to contribute to.
+2. Fork Repository: Platform provides an option to fork the GitHub repository.
+3. Make Contributions: User clones the fork locally and works on the task.
+4. Submit Pull Request: User pushes changes and submits a pull request for review.
+5. Review & Approval: Maintainers review the pull request and either approve it or request changes.
+
+User Story (Maintainer)
+As a maintainer, I want to set up a repository for the project, onboard contributors, and manage their pull requests so that the project progresses smoothly.
+
+ User Flow (Maintainer)
+1. Create Project: Maintainer creates a new project on the platform.
+2. GitHub Repository Setup: Platform automatically sets up a GitHub repository linked to the platform.
+3. Manage Contributions: Monitor and review contributions from contributors.
+4. Merge Contributions: Merge approved pull requests into the main branch.
+
+2.2.5. Task Management & Ticketing System
+
+ User Story
+As a maintainer, I want to assign tasks and track issues so that contributors can work effectively on specific parts of the project.
+
+User Flow
+1. Create Task/Issue: Maintainer creates tasks/issues via the platform, which are automatically reflected on GitHub.
+2. Assign Tasks: Tasks can be assigned to specific contributors based on their skills.
+3. Track Progress: Both contributors and maintainers can track the progress of issues/tasks through the platform.
+
+2.2.6. Project Matchmaker
+
+ User Story
+As a contributor, I want the platform to suggest projects that match my skill set and experience so I can easily find the best opportunities for me.
+
+User Flow
+1. Profile Setup: User provides their skills, interests, and preferences.
+2. Project Matching: The system recommends projects based on difficulty, skills, and funding.
+3. Notification: User is notified of new suitable opportunities.
+
+
+2.2.7. Payment System Integration
+
+User Story
+
+As a contributor, I want to be able to receive payments for my contributions through cryptocurrency wallets or other systems so that I can be rewarded for my work.
+
+User Flow
+1. Payment Setup: User sets up a payment method (e.g., MetaMask wallet).
+2. Track Payment:  Contributions are tracked for payment.
+3. Payment Processed: On successful task completion, payment is processed through the chosen method.
+
+ 2.2.8. Profile Creation
+
+ User Story
+As a user, I want to create a profile on the platform to showcase my skills, contributions, and experience, so that I can be recognized for my work.
+
+ User Flow
+1. Profile Creation: After signing up, users create a profile detailing their skills, past projects, and preferences.
+2. Profile Editing: Users can add more information and achievements over time.
+3. Profile Visibility: Profiles can be made public for contributors or sponsors to view.
+
+2.2.9. Unique Dashboards for Every User
+
+User Story
+As a user, I want a unique dashboard where I can see all my ongoing projects, tasks, and contributions so that I can track my work easily.
+
+User Flow
+1. Login: User logs in and is directed to their unique dashboard.
+2. Dashboard Overview: Display project involvement, assigned tasks, and recent activities.
+3. Track Contributions: Monitor payment status, contribution reviews, and project progress.
+
+2.2.10. Community Forums & Support
+
+ User Story
+As a developer, I want to engage in a community forum where I can ask questions, seek help, and discuss issues so that I can collaborate and learn effectively.
+
+User Flow
+1. Community Access: Users can access the forum via the platform.
+2. Post Questions: Users can post questions or discussions.
+3. Engage: Users respond, participate in discussions, and help solve issues.
+4. Recognition: Users earn recognition for their helpful contributions to the community.
+
+3. Use Case
+ 3.1 Use Case Diagram
+The use case diagram visually represents the interactions between different actors and the system. In this scenario, we have the following actors:
+Maintainer: The person who creates and manages a project.
+Contributor: The individual who contributes to a project by solving tasks.
+Sponsor: An individual or entity providing financial support for a project or contributors.
+Platform Admin: The administrator of the platform, responsible for maintaining its operations.
+System: Represents platform processes and external integrations (e.g., GitHub).
+
+3.2 Use Case Descriptions
+3.2.1 Use Case 1: Project Creation
+Actor: Maintainer
+Description: The maintainer creates a new project on the platform, specifying details such as scope, requirements, and objectives.
+Preconditions:
+The maintainer has a registered account on the platform.
+The maintainer is signed in.
+Basic Flow:
+Maintainer navigates to the "Create Project" page.
+Maintainer provides project details (title, description, requirements, scope).
+Maintainer submits the form.
+System automatically sets up a GitHub repository for the project.
+System confirms project creation and displays project details.
+Postconditions:
+A new project is created on the platform and a GitHub repository is established.
+Project becomes available in the project listings.
+Exceptions:
+If the GitHub integration fails, the system displays an error and prompts the maintainer to try again.
+3.2.2 Use Case 2: Project Listing & Aggregation
+Actor: Maintainer, Contributor
+Description: Projects are listed on the platform for contributors to explore.
+Preconditions:
+Projects have been created on the platform.
+Basic Flow:
+Contributor navigates to the "Explore Projects" page.
+System displays a list of ongoing projects, including featured and aggregated GitHub projects.
+Contributor selects a project to view more details.
+Postconditions:
+Contributors can see the details of the selected project, including requirements and how to apply to contribute.
+3.2.3 Use Case 3: Contributor Registration
+Actor: Contributor
+Description: A contributor registers on the platform to collaborate on projects.
+Preconditions:
+The contributor is not registered on the platform.
+Basic Flow:
+Contributor navigates to the "Sign Up" page.
+Contributor selects a sign-up method (GitHub, Google, email).
+Contributor provides necessary information (username, email).
+Contributor agrees to the terms and conditions.
+System verifies the information and creates an account.
+Postconditions:
+Contributor's account is created, and they are redirected to the dashboard.
+Exceptions:
+If email verification fails, the contributor is notified to retry.
+3.2.4 Use Case 4: Contribution Process
+Actor: Contributor, Maintainer
+Description: A contributor selects a project, forks the repository, makes changes, and submits a pull request.
+Preconditions:
+The contributor is registered and logged in.
+A project is available for contribution.
+Basic Flow:
+Contributor selects a project they want to contribute to.
+Contributor forks the repository on GitHub.
+Contributor makes the necessary changes and creates a pull request.
+System notifies the maintainer about the pull request.
+Maintainer reviews the contribution and provides feedback.
+If approved, the maintainer merges the contribution.
+Postconditions:
+The contribution is merged into the main project repository.
+Exceptions:
+If the pull request does not meet the requirements, it is rejected, and feedback is given.
+3.2.5 Use Case 5: Payment System Integration
+Actor: Contributor, Sponsor
+Description: Payment is made for contributions using GitHub Sponsors or the platform's custom system.
+Preconditions:
+The contributor has a payment setup in their profile.
+Basic Flow:
+Contributor completes a task and submits a pull request.
+Maintainer approves the contribution.
+System calculates payment based on pre-defined rates or bounties.
+Payment is processed via GitHub Sponsors or a custom payment method (e.g., MetaMask).
+Postconditions:
+Payment is transferred to the contributor.
+Exceptions:
+If payment fails, the contributor is notified, and retry options are provided.
+3.2.6 Use Case 6: Task Management & Ticketing System
+Actor: Maintainer
+Description: The maintainer creates and assigns tasks to contributors through the ticketing system.
+Preconditions:
+The project has been created.
+Contributors are available to be assigned tasks.
+Basic Flow:
+Maintainer navigates to the project page.
+Maintainer selects "Create Task" and fills in the task details (title, description, requirements).
+System adds the task to the project's ticketing board.
+Maintainer assigns the task to a specific contributor.
+Contributor is notified of the assigned task.
+Postconditions:
+Task is assigned, and contributor can start working on it.
+Exceptions:
+If the task assignment fails, the maintainer is notified to retry.
+3.2.7 Use Case 7: Skill Enhancement & Badges
+Actor: Contributor
+Description: Contributors earn badges or credits for completing tasks and developing new skills.
+Preconditions:
+The contributor has completed a contribution.
+Basic Flow:
+System tracks contributions and evaluates contributor skills.
+Upon completing a set of tasks, the system awards badges or credits.
+Contributor can view earned badges in their profile.
+Postconditions:
+Badges or credits are added to the contributor’s profile, indicating skill enhancement.
+3.2.8 Use Case 8: Community Engagement
+Actor: Contributor, Maintainer
+Description: Contributors and maintainers participate in community forums to ask questions, seek help, and support one another.
+Preconditions:
+The user (maintainer or contributor) is logged in.
+Basic Flow:
+User navigates to the community forum page.
+User browses existing discussions or starts a new one.
+System notifies relevant users when there are responses.
+Postconditions:
+Users engage in discussions, helping resolve issues and supporting one another.
+3.2.9 Use Case 9: Profile Creation & Management
+Actor: Maintainer, Contributor
+Description: Users create and manage their profile to showcase skills and track progress.
+Preconditions:
+The user is registered on the platform.
+Basic Flow:
+User navigates to the "Profile" section.
+User provides details like skills, bio, and portfolio.
+System saves and displays profile information.
+Postconditions:
+User profile is created or updated.
+3.2.10 Use Case 10: Project Matchmaker
+Actor: Contributor
+Description: The platform suggests projects to contributors based on their skills and preferences.
+Preconditions:
+The contributor has a completed profile with listed skills.
+Basic Flow:
+Contributor navigates to the "Suggested Projects" section.
+System uses contributor skills and preferences to find matching projects.
+System displays a list of recommended projects.
+Postconditions:
+Contributor sees projects that match their skills.
+
+4. Detailed System Flow 
+The user flow involves two key user roles:
+Maintainers: Individuals or teams who create and manage projects.
+Contributors: Developers who wish to collaborate on projects.
+1. Project Creation & Setup (Maintainers)
+User Journey & Flow
+Entry Point:
+Maintainer logs in via a prominent "Log In" button, offering options like "GitHub Auth" or "Google Auth".
+Upon login, the dashboard serves as the landing page, showing an overview of existing projects, analytics, and collaboration opportunities.
+Key UI Components:
+Project Creation Form:
+Accessible via a "Create Project" button on the dashboard.
+UI Elements include text fields for project title, description, tags, and funding type.
+Consider having progressive disclosure—initially, keep the form simple and progressively add advanced options like funding information and skills required.
+Automatic Repository Setup:
+Once the project is created, show a loading animation indicating repository setup in GitHub.
+Confirmation UI: On completion, display a success screen, including a link to the GitHub repository.
+User Experience Considerations:
+Seamless Project Setup: Reducing the cognitive load by using autocomplete features for popular tags.
+Feedback Loop: Provide real-time feedback, such as “Setting up GitHub Repository…” to assure the user the platform is actively working.
+2 Contributor Discovery & Onboarding (Contributors & Maintainers)
+User Journey & Flow
+Entry Point:
+Contributors log in to create a profile.
+They can view a "Project Discovery" section or are prompted with project suggestions via a personalized onboarding experience.
+Key UI Components:
+Profile Creation Wizard:
+After login, Contributors are guided through a step-by-step wizard.
+Fields include skills selection (with auto-suggest), experience level, and preferred work type.
+Consider using progress bars to motivate users to complete their profile.
+Project Matchmaker:
+On the dashboard, show “Recommended Projects” based on their profile.
+Card Layout: Projects are displayed as cards with project title, difficulty, funding type, and tags.
+A "Match Score" indicator visually represents how well the contributor fits the project.
+User Experience Considerations:
+Personalized Recommendations: Use a mix of text and visuals (e.g., match score) to make it clear why each project is a good fit.
+Guided Onboarding: Use tooltips to explain each onboarding step, minimizing confusion.
+3. Task Management & Assignment
+User Journey & Flow
+Maintainer Action:
+Maintainers can create tasks via the project dashboard.
+They assign tasks either to a specific Contributor or leave them open.
+Key UI Components:
+Task Creation Form:
+Available within each project’s page under a "Manage Tasks" tab.
+UI Elements include text fields for task title, description, skill level, and estimated time.
+Drag-and-Drop Interface: Tasks can be easily reprioritized by dragging and dropping, providing a quick way to adjust workloads.
+Task Overview for Contributors:
+On the Contributor's dashboard, a "My Tasks" section lists assigned tasks, sorted by status (e.g., "In Progress", "Pending Review").
+Filter Options: Allow Contributors to filter by project, difficulty, or due date.
+User Experience Considerations:
+Visibility of Tasks: For Maintainers, tasks should be color-coded by priority.
+Quick Actions: Include quick actions like "Assign to Self" or "Request Help" on each task card.
+4. Contribution Process (Collaborative Development)
+User Journey & Flow
+Contributor Action:
+Contributor selects an assigned task and starts working.
+Uses "Fork Repository" and "Clone Repository" buttons, which link directly to GitHub.
+Key UI Components:
+Task Detail Page:
+Displays task description, GitHub links, and a "Start Task" button.
+Once the task is started, provide an option to “Track Progress” (possibly linking to their GitHub fork).
+Progress Tracking:
+On the Contributor dashboard, display progress bars indicating how many tasks have been completed versus total assigned.
+Add "Update Status" buttons to keep track of where they are (e.g., "Started", "Testing", "PR Created").
+User Experience Considerations:
+Seamless GitHub Integration: Directly embed GitHub elements where possible, e.g., showing pull requests or issues directly in the platform.
+Clarity on Status: Task status should be visually distinct with icons representing "in progress", "submitted", etc., minimizing ambiguity.
+5. Review & Feedback Loop
+User Journey & Flow
+Maintainer Action:
+Reviews pull requests submitted by the Contributor.
+Provides feedback or approves the contribution.
+Key UI Components:
+Pull Request Review Page:
+Accessible via the task management dashboard.
+Include a code review panel with a split-screen view, showing "Code Changes" on one side and comments on the other.
+Feedback Notification for Contributors:
+When feedback is given, Contributors are notified via in-app notifications and emails.
+Notification UI: Notifications should be concise, with a "View Feedback" button leading directly to the GitHub PR.
+User Experience Considerations:
+Visual Indicators for Feedback: Tasks with pending feedback should have visual markers (like red dots).
+Interactive Feedback: Allow Contributors to respond to feedback directly within the platform or link them back to GitHub seamlessly.
+6. Incentive & Payment Processing
+User Journey & Flow
+Contributor Action:
+Completes a task, marks it as “Ready for Review”, and awaits approval.
+Maintainer/System Action:
+After approval, Maintainer initiates payment.
+Payments are tracked on the Contributor's Profile.
+Key UI Components:
+Payments Dashboard:
+Contributors can access their payment details on their dashboard.
+Include "Earnings Overview" to summarize total payments received, pending payments, and historical earnings.
+Payment Confirmation:
+Once payment is made, show a "Payment Successful" screen.
+Include payment method details (like GitHub Sponsors or wallet addresses).
+User Experience Considerations:
+Transparency in Payments: Display expected payout timelines and methods clearly.
+Visual History: Show past payments using a timeline or a list with dates.
+7. Community Interaction (Forum and Support)
+User Journey & Flow
+Community Engagement:
+Contributors and Maintainers can engage in forums for support, ask questions, and participate in discussions.
+Key UI Components:
+Community Forum:
+Accessible from the dashboard with categories like "General Discussion", "Project Help", and "Feature Requests".
+Include threaded comments for structured discussions.
+Support UI:
+Include a “Help & Support” button throughout key pages that links directly to relevant forum topics.
+For live support, consider adding a “Live Chat” widget that connects to a community moderator.
+User Experience Considerations:
+Easy Navigation: Use a breadcrumb navigation system in the forum to help users quickly get back to the main categories.
+Gamification for Engagement: Introduce a points system to reward helpful contributors with badges or display their "Community Rank".
+4.2. Interplay between Maintainers and Contributors
+Maintainers:
+Have a "Manage Projects" dashboard with a complete view of all ongoing tasks and assigned Contributors.
+The platform should provide easy ways to filter and find Contributors based on skill level and performance.
+Contributors:
+View tasks on their "My Projects" page, showing assigned work with a clear "Next Step" indicator for each task.
+Contributors should see their “Contributions at a Glance” widget, summarizing active, pending, and completed tasks.
+4.3. System-Wide Integration Considerations
+Global Navigation: Use a unified top bar that allows users to move between projects, forums, tasks, and payments effortlessly.
+Consistent Design Language: Maintain consistency in design (colors, typography, buttons) across the platform to reduce cognitive load and make the experience intuitive.
+Notification System: Ensure notifications are context-aware and timely. Include a central notification hub that aggregates activities across tasks, reviews, payments, and forums.
+
+5.1 Prototype Overview
+The functional prototype provides a tangible representation of the platform’s core features. It allows users to interact with the system and experience the main functionalities before full development. This prototype aims to:
+Test the usability and interaction of core features like project creation, contribution process, and profile management.
+Collect user feedback to improve the platform before final deployment.
+Serve as a guide for designers and developers to ensure alignment with user needs.
+The prototype includes mockups of user flows for Maintainers, Contributors, and Sponsors, allowing stakeholders to understand how the system functions in real-world scenarios.
+5.2 Prototype Features
+The prototype includes the essential features that make up the Minimum Viable Product (MVP):
+User Registration & Authentication (GitHub Integration):
+Allows users to sign up via GitHub or Google for seamless project contribution.
+Provides access to personalized dashboards upon successful login.
+Project Creation & Management:
+Maintainers can create projects, specifying scope, requirements, and tasks.
+GitHub repository setup is automated, and project details are aggregated and displayed.
+Task Management & Ticketing System:
+Maintainers can create tasks for contributors and assign them via a ticketing system.
+Contributors can view and claim tasks, creating a more efficient collaboration process.
+Profile Creation & Management:
+Users (both maintainers and contributors) can set up personal profiles showcasing skills and experience.
+Contributors can track their contributions and achievements.
+Contribution & Pull Request Process:
+Contributors can select tasks, fork repositories, and submit pull requests to contribute to projects.
+Maintainers review and merge contributions.
+Project Matchmaker:
+A recommendation engine suggests projects based on a contributor’s skills, preferences, and activity level.
+Contributors are matched with tasks suited to their capabilities and goals.
+Payments & Rewards System:
+Includes mockups for how payments can be processed, either through GitHub Sponsors or an internal payment system.
+Contributors receive payment upon successful task completion.
+Community Forum & Support:
+A space for maintainers and contributors to ask questions, share knowledge, and receive support.
+Basic functionality for creating threads and replying to discussions is included.
+Project Listings & Search:
+Users can browse or search for projects based on various filters like skill requirements, difficulty, and contribution history.
+5.3 Prototype Limitations
+While the functional prototype provides a strong foundation for the platform, it has certain limitations that will be addressed in later iterations:
+Full Payment System Integration:
+The prototype only demonstrates the flow for payments but does not include full payment processing functionality.
+Integration with actual payment providers (e.g., GitHub Sponsors, PayPal, or cryptocurrencies) will be implemented later.
+Limited GitHub Integration:
+While the prototype shows the user flow for forking repositories and submitting pull requests, full GitHub API integration is not functional in the prototype phase.
+The prototype only simulates these processes for testing purposes.
+No Advanced Filtering & Search:
+The search functionality is basic in this version and does not include advanced filtering based on niche blockchain categories, difficulty level, or contributor experience.
+More sophisticated search and filter tools will be implemented in future iterations.
+Limited Community Features:
+The community forum is currently a static representation with basic posting and replying options.
+In the final version, features like upvoting, tagging, and user mentions will be added to foster better community engagement.
+No Real-Time Notifications:
+The prototype lacks real-time notifications for task assignments, pull request approvals, and messages.
+These will be added to improve responsiveness and collaboration within the platform.
+No Skill Enhancement & Badges:
+The prototype does not yet support the awarding of badges or tracking skill progression.
+This feature will be developed in a later phase to encourage long-term engagement.
+Scalability & Performance Testing:
+The prototype has not yet been tested for scalability or performance under heavy user loads.
+Once the core functionality is in place, performance tuning will be prioritized to ensure smooth operation.
+6.0 Non Functional Requirements 
+6.1 Performance Requirements
+Response Time: The platform should provide a response time of less than 2 seconds for standard operations such as navigating between pages, searching projects, or creating tasks.
+Task Handling: When contributors claim tasks or submit pull requests, the system should process these actions within 1-2 seconds.
+Real-Time Updates: Notifications for task assignments, pull request approvals, or changes in project status should appear within 1 second of the action.
+Project Aggregation: Projects fetched from GitHub and other integrated systems should load within 3-5 seconds.
+Server Uptime: The platform must have an uptime of at least 99.9% to ensure continuous availability for users.
+6.2 Usability Requirements
+Intuitive UI: The user interface should be designed in a way that new users can easily understand how to create or find projects, claim tasks, and contribute without needing extensive tutorials.
+Accessibility: The platform must meet Web Content Accessibility Guidelines (WCAG) 2.1 to ensure users with disabilities can access all features.
+Mobile and Web Responsiveness: The platform should function smoothly across devices, ensuring a responsive layout that adapts to mobile, tablet, and desktop views.
+Onboarding Experience: A streamlined onboarding process, including GitHub or Google sign-in, should take no more than 2 minutes for users to complete.
+Task Assignment: Contributors should be able to easily search and assign themselves tasks, with task status clearly visible in their dashboard.
+6.3 Security Requirements
+Authentication & Authorization: User authentication must be handled via OAuth (GitHub or Google) to ensure secure logins, and role-based access control (RBAC) should be implemented to manage permissions (e.g., maintainers vs. contributors).
+Data Encryption: All data, both at rest and in transit, must be encrypted using AES-256 encryption. HTTPS should be enforced for all communications.
+Secure API Access: API keys and tokens should be stored securely, and access to APIs should be protected using OAuth 2.0.
+Vulnerability Management: The platform should regularly undergo security audits, and critical vulnerabilities should be addressed within 24 hours of discovery.
+GitHub Permissions: Ensure that OAuth scopes requested from GitHub are the minimal needed to function (e.g., reading user data, repositories) and do not overextend permissions.
+6.4 Scalability Requirements
+Horizontal Scalability: The platform architecture should support horizontal scaling to handle increased traffic and user activity without performance degradation.
+Load Balancing: The system should utilize load balancing to distribute traffic efficiently across servers, ensuring a seamless experience for large numbers of simultaneous users.
+Database Scalability: The database should be optimized for both read and write-heavy operations. As user data (profiles, projects, tasks) grows, the system must be able to handle up to 1 million users and tens of thousands of active projects without significant slowdowns.
+Task Queue Management: For tasks like project matchmaker, GitHub syncs, or payments, implement asynchronous processing via message queues (e.g., RabbitMQ) to prevent bottlenecks.
+6.5 Reliability Requirements
+Data Backup & Recovery: Regular data backups should be performed daily, with a disaster recovery plan in place that ensures no more than 1 hour of data loss in the event of a failure.
+Failover Systems: The platform should have failover systems in place so that, in the case of server failure, another server can seamlessly take over within 1 minute.
+Error Logging & Monitoring: Implement centralized logging and error monitoring to catch and resolve issues quickly. Use tools like Sentry or Datadog for real-time error tracking.
+Transaction Integrity: Ensure that critical actions, such as payments or task assignments, are fully processed, and any errors result in rolling back incomplete transactions.
+6.6 Compatibility Requirements
+Cross-Browser Support: The platform should be compatible with all modern browsers, including Chrome, Firefox, Safari, and Edge, with a target compatibility range of the last two major versions.
+Mobile Compatibility: The platform should support Android and iOS devices, ensuring smooth navigation and feature functionality on mobile browsers.
+Third-Party Integration: Seamless integration with third-party tools such as GitHub, Google authentication, and payment processors is required.
+API Compatibility: The platform should provide RESTful APIs that follow industry-standard conventions (e.g., OpenAPI), making it easy to integrate with other developer tools or systems.
+
+
+7. Product backlogs 
+1. Platform for Ethereum Developers to Collaborate
+User Story:
+As a developer, I want a platform where I can collaborate with other developers on Ethereum open-source projects, so I can contribute effectively.
+Sub-User Stories:
+1.1 As a developer, I want to register and log in via GitHub/Google OAuth, so I can access the platform quickly.
+ 1.2 As a project maintainer, I want to invite collaborators to my projects, so I can get contributions. 
+1.3 As a developer, I want to view all available projects, so I can choose which ones to contribute to. 
+1.4 As a project maintainer, I want to approve or reject contributor access, so I can control who contributes to my project.
+ 1.5 As a developer, I want to see a list of recent contributions and updates on projects I follow, so I can stay informed.
+2. Project Listing & Aggregation
+User Story:
+As a developer, I want to see a list of available open-source projects from GitHub and other sources, so I can find tasks that match my interests.
+Sub-User Stories:
+2.1 As a developer, I want to browse projects by categories (e.g., DeFi, DAOs, NFTs), so I can filter based on my area of interest.
+ 2.2 As a developer, I want to view project details (repository, description, issue count), so I can decide whether to contribute.
+ 2.3 As a developer, I want to follow projects and receive notifications about updates, so I can stay informed about changes.
+ 2.4 As a project maintainer, I want to update the project details and add tags, so the project is more visible to the right developers.
+
+3. GitHub Integration
+User Story:
+As a developer, I want seamless integration with GitHub, so I can fork, contribute, and submit pull requests directly from the platform.
+Sub-User Stories:
+3.1 As a developer, I want to link my GitHub account during registration, so I can import my existing projects.
+ 3.2 As a developer, I want to automatically fork repositories directly from the platform, so I can work on tasks quickly. 
+3.3 As a project maintainer, I want to pull contributions from developers into my GitHub repository, so I can merge their work easily. 
+3.4 As a developer, I want to track my GitHub activity and contributions on my profile, so I can showcase my work.
+
+4. Repository Setup & Contribution Process
+User Story:
+As a project maintainer, I want to set up repositories and enable contributions automatically, so developers can contribute easily.
+Sub-User Stories:
+4.1 As a maintainer, I want to create or link existing GitHub repositories to my project, so it appears on the platform.
+ 4.2 As a developer, I want to fork a project’s repository directly, so I can start contributing right away. 
+4.3 As a developer, I want to submit a pull request after completing a task, so the maintainer can review and merge my work. 
+4.4 As a maintainer, I want to review and merge pull requests via the platform, so I can control contributions effectively.
+
+5. Task Management & Ticketing System
+User Story:
+As a project maintainer, I want a task and ticketing system, so I can manage development efficiently.
+Sub-User Stories:
+5.1 As a maintainer, I want to create tasks or tickets with descriptions, so contributors can understand what is needed. 
+5.2 As a developer, I want to claim tasks or tickets, so others know I am working on them. 
+5.3 As a maintainer, I want to set deadlines or priority levels on tasks, so contributors can manage their work effectively. 
+5.4 As a developer, I want to submit my work on a task and mark it as complete, so it can be reviewed by the maintainer.
+ 5.5 As a maintainer, I want to reassign tasks if needed, so I can ensure work is progressing efficiently.
+
+6. Project Matchmaker
+User Story:
+As a developer, I want to be matched with projects that align with my skills, so I can contribute meaningfully.
+Sub-User Stories:
+6.1 As a developer, I want to input my skills and experience level, so the platform can recommend appropriate projects. 
+6.2 As a developer, I want to be notified about projects based on my skills and preferred difficulty level, so I can contribute to relevant work. 
+6.3 As a maintainer, I want to view matched contributors who are qualified to work on my project, so I can approve them.
+ 6.4 As a developer, I want to update my skill profile to refine matches, so I receive relevant project recommendations.
+
+7. Payment System Integration
+User Story:
+As a contributor, I want to be paid for my contributions, so I am motivated to participate.
+Sub-User Stories:
+7.1 As a developer, I want to link a payment account (e.g., PayPal, crypto wallet), so I can receive payments. 
+7.2 As a maintainer, I want to offer bounties or payments for specific tasks, so contributors are incentivized to work on them. 
+7.3 As a developer, I want to track my earnings from contributions, so I can see how much I have earned over time.
+ 7.4 As a developer, I want to be paid upon completing a task or getting my pull request merged, so I am rewarded for my work.
+
+8. Profile Creation
+User Story:
+As a developer, I want to create a profile showcasing my skills and contributions, so I can attract project invitations and showcase my work.
+Sub-User Stories:
+8.1 As a developer, I want to add details about my skills, experience, and interests to my profile, so I can stand out to project maintainers. 
+8.2 As a developer, I want to view my past contributions and projects, so I can track my progress and share it with others. 
+8.3 As a maintainer, I want to view developer profiles before accepting them into my project, so I can assess their skills.
+ 8.4 As a developer, I want to update my profile to reflect new skills and experiences, so I stay relevant to potential projects.
+
+9. Unique User Dashboards
+User Story:
+As a user, I want a dashboard that tracks my contributions, earnings, and project involvement, so I can manage my work easily.
+Sub-User Stories:
+9.1 As a developer, I want a dashboard that shows my active tasks, so I can manage my workload.
+ 9.2 As a maintainer, I want a dashboard that shows the progress of all tasks and contributions, so I can monitor project development. 
+9.3 As a developer, I want to see my earnings and contributions history on my dashboard, so I can track my progress. 
+9.4 As a maintainer, I want to see pending pull requests and tasks, so I can manage approvals efficiently.
+
+10. Community Forums & Support
+User Story:
+As a user, I want access to community forums and support, so I can ask questions and resolve issues.
+Sub-User Stories:
+10.1 As a developer, I want to ask questions and get help from other developers in the community forum, so I can resolve issues quickly. 
+10.2 As a maintainer, I want to post project-specific updates or discussions in the forum, so contributors can stay informed. 
+10.3 As a developer, I want to receive notifications when my forum questions are answered, so I can get feedback quickly. 
+10.4 As a developer, I want access to customer support if I encounter platform issues, so I can resolve technical difficulties
+
+
+8.0 Risk
+
+User Registration & Authentication (Highest Priority)
+1.1. As a developer, I want to register and log in via GitHub/Google OAuth
+Risk Description: OAuth integrations may fail due to API changes or service unavailability.
+Likelihood: Medium
+Impact: High (If users cannot log in, they can't access the platform)
+Mitigation: Implement fallback authentication (email/password) and monitor OAuth API status.
+1.2. As a project maintainer, I want to approve or reject contributor access
+Risk Description: Manual approval could create bottlenecks in onboarding contributors, or approvals may be delayed.
+Likelihood: Medium
+Impact: Medium (Delays in project development)
+Mitigation: Enable automation for certain approval processes based on predefined criteria.
+
+2. GitHub Integration (Critical for Collaboration)
+2.1. As a developer, I want to link my GitHub account during registration
+Risk Description: API rate limits from GitHub could block users from linking accounts.
+Likelihood: Medium
+Impact: High (Critical feature; without it, developers may leave the platform)
+Mitigation: Implement API usage monitoring and caching, and set up notifications for API rate limit issues.
+2.2. As a developer, I want to fork repositories directly from the platform
+Risk Description: GitHub may limit repository forks, causing issues for users.
+Likelihood: Low
+Impact: High (Forking is essential to the platform’s functionality)
+Mitigation: Pre-check API usage, set error messages, and consider alternative forking mechanisms.
+2.3. As a developer, I want to track my GitHub activity on my profile
+Risk Description: API changes could disrupt activity tracking.
+Likelihood: Medium
+Impact: Medium (Affects user experience but not core functionality)
+Mitigation: Monitor API changes and provide backups for essential functionality.
+2.4. As a project maintainer, I want to pull contributions from developers into my GitHub repository
+Risk Description: Merging conflicts or GitHub API issues could cause pull requests to fail.
+Likelihood: Low
+Impact: Medium (Could delay project progress)
+Mitigation: Set up automated testing for PRs and clearly display conflicts before merging.
+
+3. Project Listing & Aggregation (Core Feature for Discoverability)
+3.1. As a developer, I want to browse projects by categories
+Risk Description: Projects may not be categorized accurately, affecting discoverability.
+Likelihood: Medium
+Impact: Medium (Users may find it hard to locate relevant projects)
+Mitigation: Implement manual and automatic categorization with periodic audits.
+3.2. As a developer, I want to view project details
+Risk Description: Project data may not be displayed properly or updated on time.
+Likelihood: Low
+Impact: Medium (Inaccurate data may deter developers)
+Mitigation: Implement regular data updates and allow maintainers to update details manually.
+3.3. As a developer, I want to follow projects and receive notifications
+Risk Description: Notifications could become overwhelming, leading to frustration.
+Likelihood: Medium
+Impact: Low (Annoying but not critical)
+Mitigation: Allow users to control notification settings and frequency.
+3.4. As a project maintainer, I want to update project details and add tags
+Risk Description: Tags may not be standardized, leading to discoverability issues.
+Likelihood: Low
+Impact: Medium (Reduces project visibility)
+Mitigation: Set tagging guidelines and create a validation system for project tags.
+
+4. Repository Setup & Contribution Process (Critical for Task Execution)
+4.1. As a maintainer, I want to create or link existing GitHub repositories to my project
+Risk Description: GitHub repository linking might fail, causing delays in project setup.
+Likelihood: Medium
+Impact: High (Critical for project onboarding)
+Mitigation: Provide detailed documentation for setup and include error handling for repository linking.
+4.2. As a developer, I want to fork a project’s repository directly
+Risk Description: Forking limitations (e.g., repository size, API limits) could prevent users from forking.
+Likelihood: Low
+Impact: Medium (Could frustrate developers, but workaround options exist)
+Mitigation: Allow downloading the repository manually if forking fails.
+4.3. As a developer, I want to submit a pull request after completing a task
+Risk Description: Pull requests could contain errors or be rejected, leading to delays.
+Likelihood: Medium
+Impact: Medium (Common developer frustration)
+Mitigation: Provide clear feedback when PRs are rejected and allow maintainers to comment on fixes.
+4.4. As a maintainer, I want to review and merge pull requests via the platform
+Risk Description: API limitations or GitHub service outages could block PR merging.
+Likelihood: Low
+Impact: Medium (Could delay contributions)
+Mitigation: Implement notifications for outages and allow maintainers to merge PRs directly via GitHub.
+
+5. Task Management & Ticketing System (Essential for Project Organization)
+5.1. As a maintainer, I want to create tasks or tickets
+Risk Description: Miscommunication in task creation could lead to misunderstandings.
+Likelihood: Medium
+Impact: Medium (May cause development inefficiencies)
+Mitigation: Provide task templates and guidelines to ensure task clarity.
+5.2. As a developer, I want to claim tasks or tickets
+Risk Description: Multiple developers may claim the same task, leading to redundancy.
+Likelihood: Low
+Impact: Medium (Inefficiencies in development)
+Mitigation: Implement task-locking mechanisms to prevent duplicate claims.
+5.3. As a maintainer, I want to set deadlines or priority levels on tasks
+Risk Description: Deadlines may be ignored or lead to rushed work.
+Likelihood: Medium
+Impact: Low (Most developers work at their own pace)
+Mitigation: Offer flexible deadlines or negotiate deadlines with contributors.
+5.4. As a developer, I want to submit my work on a task and mark it as complete
+Risk Description: Incomplete or buggy work may be submitted.
+Likelihood: Medium
+Impact: Medium (Causes rework for maintainers)
+Mitigation: Include automated code review and continuous integration (CI) checks before task completion.
+5.5. As a maintainer, I want to reassign tasks if needed
+Risk Description: Task reassignments may cause confusion or delays.
+Likelihood: Medium
+Impact: Medium (Leads to project delays)
+Mitigation: Notify all stakeholders during task reassignment and maintain task history.
+
+6. Profile Creation (Medium Priority for User Personalization)
+6.1. As a developer, I want to add details about my skills, experience, and interests to my profile
+Risk Description: Profile data may not be used effectively by the system or match projects well.
+Likelihood: Low
+Impact: Medium (Affects developer satisfaction)
+Mitigation: Allow developers to update and refine their profiles periodically.
+6.2. As a developer, I want to view my past contributions
+Risk Description: Past contributions may not sync properly with the platform.
+Likelihood: Medium
+Impact: Medium (Impacts profile accuracy)
+Mitigation: Implement regular sync checks and allow manual syncing if needed.
+
+7. Payment System Integration (Medium Priority for Paid Projects)
+7.1. As a developer, I want to link a payment account
+Risk Description: Payment account linking could fail due to integration or security issues.
+Likelihood: Medium
+Impact: High (Critical for paid contributions)
+Mitigation: Use a trusted payment API (e.g., PayPal, Stripe) with robust testing and security.
+7.2. As a maintainer, I want to offer bounties or payments
+Risk Description: Bounty payments may be delayed or fail to process.
+Likelihood: Medium
+Impact: High (Affects contributor trust)
+Mitigation: Automate payments on task completion and include error messages for failures.
+7.3. As a developer, I want to track my earnings
+Risk Description: Earnings may not reflect accurately due to system bugs.
+Likelihood: Low
+Impact: Medium (Could lead to user dissatisfaction)
+Mitigation: Ensure clear financial tracking and auditing systems.
+
+8. Community Forums & Support (Low Priority for MVP)
+8.1. As a developer, I want to ask questions and get help in the community forum
+Risk Description: Forums may become cluttered or spammy, leading to low-quality content.
+Likelihood: Medium
+Impact: Low (Not core to the platform)
+Mitigation: Moderate content and allow upvoting for valuable responses.
+
+9.0 Dependencies 
+User Registration & Authentication (Highest Priority)
+1.1. As a developer, I want to register and log in via GitHub/Google OAuth
+Dependencies: None (This is a core starting feature for authentication)
+1.2. As a project maintainer, I want to approve or reject contributor access
+Dependencies:
+1.1 (The maintainer and contributors must be able to log in before approving/rejecting access)
+2.1 (GitHub integration must be completed to handle project access approvals)
+
+2. GitHub Integration (Critical for Collaboration)
+2.1. As a developer, I want to link my GitHub account during registration
+Dependencies:
+1.1 (Basic registration functionality must be in place)
+2.2. As a developer, I want to fork repositories directly from the platform
+Dependencies:
+2.1 (GitHub account linking must be completed to allow forking repositories)
+2.3. As a developer, I want to track my GitHub activity on my profile
+Dependencies:
+2.1 (GitHub account linking must be completed to sync user activities)
+2.4. As a project maintainer, I want to pull contributions from developers into my GitHub repository
+Dependencies:
+2.1 (GitHub integration to repositories must be functional for contributions)
+
+3. Project Listing & Aggregation (Core Feature for Discoverability)
+3.1. As a developer, I want to browse projects by categories
+Dependencies:
+1.1 (Login functionality must be available for users to browse projects)
+3.2. As a developer, I want to view project details
+Dependencies:
+3.1 (Projects must be listed for details to be viewed)
+3.3. As a developer, I want to follow projects and receive notifications
+Dependencies:
+3.2 (Project details must be available before following can happen)
+3.4. As a project maintainer, I want to update project details and add tags
+Dependencies:
+3.2 (Project details must exist for maintainers to edit)
+
+4. Repository Setup & Contribution Process (Critical for Task Execution)
+4.1. As a maintainer, I want to create or link existing GitHub repositories to my project
+Dependencies:
+2.1 (GitHub linking must be complete for repository creation and linkage)
+4.2. As a developer, I want to fork a project’s repository directly
+Dependencies:
+4.1 (Repositories must exist to be forked)
+4.3. As a developer, I want to submit a pull request after completing a task
+Dependencies:
+4.2 (Repositories must be forked for contributions to be made)
+4.4. As a maintainer, I want to review and merge pull requests via the platform
+Dependencies:
+4.3 (Pull requests must be submitted for reviewing and merging)
+
+5. Task Management & Ticketing System (Essential for Project Organization)
+5.1. As a maintainer, I want to create tasks or tickets
+Dependencies:
+1.1 (Maintainers must be able to log in to create tasks)
+4.1 (Repositories must be linked to associate tasks with them)
+5.2. As a developer, I want to claim tasks or tickets
+Dependencies:
+5.1 (Tasks must be created for developers to claim)
+5.3. As a maintainer, I want to set deadlines or priority levels on tasks
+Dependencies:
+5.1 (Tasks must exist for maintainers to set deadlines)
+5.4. As a developer, I want to submit my work on a task and mark it as complete
+Dependencies:
+5.2 (Tasks must be claimed before they can be completed)
+5.5. As a maintainer, I want to reassign tasks if needed
+Dependencies:
+5.2 (Tasks must be assigned or claimed for reassignment to occur)
+
+6. Profile Creation (Medium Priority for User Personalization)
+6.1. As a developer, I want to add details about my skills, experience, and interests to my profile
+Dependencies:
+1.1 (Users must be able to register and log in to create profiles)
+6.2. As a developer, I want to view my past contributions
+Dependencies:
+4.3 (Developers must have contributed for past contributions to be tracked)
+
+7. Payment System Integration (Medium Priority for Paid Projects)
+7.1. As a developer, I want to link a payment account
+Dependencies:
+1.1 (Developers must have accounts to link a payment method)
+7.2. As a maintainer, I want to offer bounties or payments
+Dependencies:
+7.1 (Payment accounts must be linked to facilitate bounty payouts)
+7.3. As a developer, I want to track my earnings
+Dependencies:
+7.2 (Bounties must be offered for earnings to be tracked)
+
+8. Community Forums & Support (Low Priority for MVP)
+8.1. As a developer, I want to ask questions and get help in the community forum
+Dependencies:
+1.1 (Users must be registered to post questions in the forum)
+6.1 (Profiles could be linked to forum activity for personalized support)
+
+Dependency Hierarchy
+Authentication & Profile Setup (User login, GitHub OAuth linking) → Core foundational features
+GitHub Integration (Repository forking, contribution tracking) → Critical for collaboration
+Project Listing & Aggregation (Browsing, tagging projects) → Discoverability of projects
+Repository Setup & Contribution Process (Creating repos, submitting PRs) → Handling developer contributions
+Task Management (Creating, claiming, completing tasks) → Managing contributions and work
+Payment System Integration (Linking payment accounts, tracking earnings) → Handling bounties and incentives
+Community Forums & Support (Forums, question answering) → Building community support
+
+
+
+No
+User Story
+Category
+Risk (Likelihood + Impact)
+Dependency
+Priority
+Note
+1
+1.1. User Registration & Authentication
+Must-Have
+Medium + High
+None
+1
+Core functionality. Must have OAuth (GitHub/Google) integration.
+2
+1.2. Approve/Reject Contributor Access
+Must-Have
+Low + Medium
+1.1
+2
+Requires registration system; maintainers approve contributors.
+3
+2.1. GitHub Account Linking
+
+
+Medium + High
+1.1
+3
+Essential for project collaboration; OAuth integration needed.
+4
+2.2. Forking Repositories
+
+
+Low + High
+2.1
+4
+Contributors need to fork repositories for collaboration.
+5
+2.3. Track GitHub Activity on Profile
+
+
+Low + Medium
+2.2
+5
+Profiles must show GitHub activity to track contributions.
+6
+5.1. Create Tasks or Tickets
+
+
+Medium + High
+2.2
+6
+Core for task assignment and tracking in the project workflow.
+7
+5.2. Claim Tasks
+
+
+Medium + Medium
+5.1
+7
+Contributors need to claim tasks for collaboration.
+8
+5.4. Submit Task Work/Mark Task as Complete
+
+
+Low + Medium
+5.2
+8
+Contributors must submit completed tasks and notify maintainers.
+9
+4.1. Create/Link Repositories to Projects
+
+
+Low + High
+2.1
+9
+Core feature; contributors link repositories to their projects.
+10
+6.1. Create Profile
+
+
+Low + Medium
+None
+10
+Contributors need profiles to manage contributions and roles.
+11
+7.1. Link Payment Account
+
+
+Medium + High
+6.1
+11
+Contributors link payment accounts for rewards or bounties.
+12
+3.1. Browsing Projects by Categories
+
+
+Medium + High
+2.1, 5.1
+12
+Users need to browse projects to participate.
+13
+7.2. Offer Bounties or Payments
+
+
+Low + High
+7.1
+13
+Payments system for bounties must be integrated securely.
+14
+3.2. Viewing Project Details
+Should-Have
+Low + Medium
+3.1
+14
+Contributors should be able to view detailed project info.
+15
+8.1. Use Community Forums
+
+
+Medium + Low
+None
+15
+Provides a support network for contributors.
+
+
+2.3. Search & Filter Projects
+
+
+Low + Medium
+3.1
+16
+Advanced search features enhance user experience.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
