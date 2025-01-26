@@ -1,0 +1,191 @@
+[
+    {
+      "name": "Alice Johnson",
+      "username": "alice_dev",
+      "role": "contributor",
+      "location": "San Francisco, USA",
+      "telegram": "@alice_dev",
+      "email": "alice.johnson@example.com",
+      "website": "https://alicejohnson.dev",
+      "bio": "A passionate blockchain developer specializing in DeFi protocols and Solidity.",
+      "profilePicture": "https://example.com/profiles/alice.jpg",
+      "projects": [
+        {
+          "title": "DeFi Staking Platform",
+          "tasks": [
+            {
+              "title": "Design smart contracts",
+              "status": "completed",
+              "progress": "100%",
+              "dueDate": "2024-12-01"
+            },
+            {
+              "title": "Integrate front-end with smart contracts",
+              "status": "in-progress",
+              "progress": "60%",
+              "dueDate": "2024-12-15"
+            }
+          ]
+        },
+        {
+          "title": "Crowdfunding Platform",
+          "tasks": [
+            {
+              "title": "Design front-end",
+              "status": "completed",
+              "progress": "100%",
+              "dueDate": "2024-11-30"
+            },
+            {
+              "title": "Test user workflows",
+              "status": "pending",
+              "progress": "0%",
+              "dueDate": "2024-12-20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bob Smith",
+      "username": "bob_the_builder",
+      "role": "maintainer",
+      "location": "London, UK",
+      "telegram": "@bobsmith",
+      "email": "bob.smith@example.com",
+      "website": "https://bobsmith.io",
+      "bio": "Maintainer of open-source projects in blockchain security and decentralized applications.",
+      "profilePicture": "https://example.com/profiles/bob.jpg",
+      "projects": [
+        {
+          "title": "Smart Contract Security Audit",
+          "tasks": [
+            {
+              "title": "Review contract code",
+              "status": "completed",
+              "progress": "100%",
+              "dueDate": "2024-12-05"
+            },
+            {
+              "title": "Perform security tests",
+              "status": "in-progress",
+              "progress": "75%",
+              "dueDate": "2024-12-10"
+            }
+          ]
+        },
+        {
+          "title": "DAO Governance Tool",
+          "tasks": [
+            {
+              "title": "Create voting interface",
+              "status": "in-progress",
+              "progress": "50%",
+              "dueDate": "2024-12-25"
+            },
+            {
+              "title": "Test security features",
+              "status": "pending",
+              "progress": "0%",
+              "dueDate": "2025-01-05"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Clara Davis",
+      "username": "clarad",
+      "role": "contributor",
+      "location": "Berlin, Germany",
+      "telegram": "@clara_d",
+      "email": "clara.davis@example.com",
+      "website": "https://clarad.dev",
+      "bio": "Frontend developer with a knack for designing user-friendly blockchain interfaces.",
+      "profilePicture": "https://example.com/profiles/clara.jpg",
+      "projects": [
+        {
+          "title": "NFT Marketplace",
+          "tasks": [
+            {
+              "title": "Build marketplace interface",
+              "status": "completed",
+              "progress": "100%",
+              "dueDate": "2024-11-20"
+            },
+            {
+              "title": "Implement NFT minting",
+              "status": "in-progress",
+              "progress": "40%",
+              "dueDate": "2024-12-15"
+            }
+          ]
+        },
+        {
+          "title": "Crypto Wallet App",
+          "tasks": [
+            {
+              "title": "Design wallet interface",
+              "status": "in-progress",
+              "progress": "70%",
+              "dueDate": "2024-12-12"
+            },
+            {
+              "title": "Integrate basic functionality",
+              "status": "pending",
+              "progress": "0%",
+              "dueDate": "2024-12-20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Daniel Martinez",
+      "username": "daniel_m",
+      "role": "maintainer",
+      "location": "Toronto, Canada",
+      "telegram": "@danielm",
+      "email": "daniel.martinez@example.com",
+      "website": "https://danielmartinez.ca",
+      "bio": "Blockchain architect and project maintainer focused on DeFi and real estate tokenization.",
+      "profilePicture": "https://example.com/profiles/daniel.jpg",
+      "projects": [
+        {
+          "title": "Real Estate Tokenization",
+          "tasks": [
+            {
+              "title": "Develop tokenization contracts",
+              "status": "in-progress",
+              "progress": "80%",
+              "dueDate": "2024-12-18"
+            },
+            {
+              "title": "Ensure compliance",
+              "status": "pending",
+              "progress": "0%",
+              "dueDate": "2024-12-31"
+            }
+          ]
+        },
+        {
+          "title": "Decentralized Lending Protocol",
+          "tasks": [
+            {
+              "title": "Design lending pool contracts",
+              "status": "completed",
+              "progress": "100%",
+              "dueDate": "2024-11-30"
+            },
+            {
+              "title": "Implement risk management features",
+              "status": "in-progress",
+              "progress": "50%",
+              "dueDate": "2024-12-25"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  

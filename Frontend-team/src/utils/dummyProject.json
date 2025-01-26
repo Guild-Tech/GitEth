@@ -1,0 +1,116 @@
+[
+  {
+    "logo": "src/assets/images/logo1.png",
+    "title": "DeFi Staking Platform",
+    "description": "The DeFi Staking Platform aims to revolutionize decentralized finance by providing a secure and user-friendly platform where users can stake their cryptocurrency assets to earn passive income. The project focuses on creating a seamless integration of smart contracts with an intuitive front-end interface, ensuring a robust and secure staking experience. Participants will also benefit from learning best practices in DeFi protocols and blockchain security.",
+    "skills": ["solidity", "defi", "security"],
+    "difficulty": "Intermediate",
+    "contributors": ["Alice", "Bob", "Charlie"],
+    "companyName": "ChainGuard",
+    "tags": ["design", "community", "react"],
+    "productLogo": "https://example.com/productLogo1.png",
+    "reward": 500,
+    "status": "in-progress",
+    "numberOfApplicants": 25,
+    "duration": "2 months",
+    "bugs": 5,
+    "taskDetail": {
+      "description": "Build a secure DeFi staking platform.",
+      "requirements": [
+        "Proficient in Solidity",
+        "Knowledge of DeFi protocols",
+        "Understanding of security best practices"
+      ],
+      "tasks": [
+        "Design smart contracts",
+        "Integrate front-end with smart contracts",
+        "Test and deploy"
+      ]
+    },
+    "timeLeftToComplete": "14 days",
+    "maintainer": "Jane Doe",
+    "experienceLevel": "Intermediate",
+    "projectType": "Blockchain",
+    "date": "2024-12-15",
+    "trend": true,
+    "mostActive": true,
+    "activeIssues": 3,
+    "fundingType": "volunteer"
+  },
+  {
+    "logo": "src/assets/images/logo2.png",
+    "title": "NFT Marketplace",
+    "description": "The NFT Marketplace project is an advanced platform designed for users to mint, buy, and sell non-fungible tokens (NFTs). The project emphasizes scalability, performance, and a polished user interface, ensuring a seamless experience for artists, collectors, and traders. With features such as wallet integration, minting tools, and customizable listings, this marketplace aims to set a new standard for NFT platforms while fostering a creative community.",
+    "skills": ["solidity", "react", "design"],
+    "difficulty": "Advanced",
+    "contributors": ["David", "Emma"],
+    "companyName": "NFTify",
+    "tags": ["react", "design", "community"],
+    "productLogo": "https://example.com/productLogo2.png",
+    "reward": 1000,
+    "status": "in-progress",
+    "numberOfApplicants": 40,
+    "duration": "3 months",
+    "bugs": 2,
+    "taskDetail": {
+      "description": "Develop an NFT marketplace with advanced features.",
+      "requirements": [
+        "Experience with NFT standards",
+        "Strong React skills",
+        "UI/UX expertise"
+      ],
+      "tasks": [
+        "Build marketplace interface",
+        "Integrate wallet functionality",
+        "Implement NFT minting"
+      ]
+    },
+    "timeLeftToComplete": "30 days",
+    "maintainer": "Mark Smith",
+    "experienceLevel": "Advanced",
+    "projectType": "Web3",
+    "date": "2024-12-10",
+    "trend": false,
+    "mostActive": true,
+    "activeIssues": 5,
+    "fundingType": "funded"
+  },
+  {
+    "logo": "src/assets/images/logo3.png",
+    "title": "Smart Contract Security Audit",
+    "description": "The Smart Contract Security Audit project is dedicated to identifying vulnerabilities in blockchain applications and ensuring the integrity of smart contracts. Participants will perform in-depth code reviews, implement penetration testing techniques, and provide actionable feedback to enhance security. This project is ideal for those with extensive experience in Solidity and blockchain security, aiming to create safe and trustworthy blockchain solutions.",
+    "skills": ["security", "solidity"],
+    "difficulty": "Expert",
+    "contributors": ["Sophia", "Liam"],
+    "companyName": "SecureCode",
+    "tags": ["security", "community"],
+    "productLogo": "https://example.com/productLogo3.png",
+    "reward": 2000,
+    "status": "in-progress",
+    "numberOfApplicants": 15,
+    "duration": "1 month",
+    "bugs": 0,
+    "taskDetail": {
+      "description": "Audit and secure smart contracts for vulnerabilities.",
+      "requirements": [
+        "Extensive experience in smart contract security",
+        "Proficient in Solidity",
+        "Penetration testing knowledge"
+      ],
+      "tasks": [
+        "Review contract code",
+        "Perform security tests",
+        "Document findings and fixes"
+      ]
+    },
+    "timeLeftToComplete": "10 days",
+    "maintainer": "Emily Johnson",
+    "experienceLevel": "Expert",
+    "projectType": "Audit",
+    "date": "2024-12-08",
+    "trend": true,
+    "mostActive": false,
+    "activeIssues": 1,
+    "fundingType": "volunteer"
+  }
+]
